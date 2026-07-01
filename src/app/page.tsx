@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Box, Code2, PlayCircle, Save } from "lucide-react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
