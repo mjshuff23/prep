@@ -6,6 +6,8 @@ import {
   StructureState,
 } from './types';
 import { InvalidCommandError } from './errors';
+import { stackDefinition } from '../structures/stack';
+import { queueDefinition } from '../structures/queue';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyDefinition = DataStructureDefinition<any, any>;
@@ -44,3 +46,7 @@ class DataStructureRegistry {
 }
 
 export const registry = new DataStructureRegistry();
+
+// Initialize the registry with the default structures
+registry.register(stackDefinition);
+registry.register(queueDefinition);

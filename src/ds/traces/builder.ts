@@ -34,9 +34,10 @@ export class TraceBuilder {
     highlights?: Highlight[];
     invariantCheck?: InvariantCheck;
   }): this {
+    const currentIndex = this.stepIndex++;
     this.steps.push({
-      id: `${this.idPrefix}-step-${this.stepIndex++}`,
-      index: this.stepIndex,
+      id: `${this.idPrefix}-step-${currentIndex}`,
+      index: currentIndex,
       ...options,
     });
     return this;
@@ -53,7 +54,7 @@ export class TraceBuilder {
   }
 
   build(): OperationTrace {
-    if (!this.initialState || !this.finalState) {
+    if (this.initialState === undefined || this.finalState === undefined) {
       throw new Error('TraceBuilder requires initial and final states to be set before building.');
     }
     return {

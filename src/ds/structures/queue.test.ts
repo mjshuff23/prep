@@ -67,6 +67,7 @@ describe('Queue Definition', () => {
       expect(trace.finalState).toEqual({ items: [1, 2] });
       expect(trace.steps).toHaveLength(1);
       expect(trace.steps[0].title).toBe('Peek Item');
+      expect(trace.steps[0].highlights).toContainEqual({ id: 'index-0', type: 'node' });
     });
 
     it('throws error when peeking empty queue', () => {
