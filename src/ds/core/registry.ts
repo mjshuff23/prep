@@ -5,19 +5,19 @@ import {
   StructureKind,
   StructureState,
 } from './types';
-import { InvalidCommandError } from './errors';
+import { InvalidCommandError, StructureNotFoundError, DataStructureError } from './errors';
 import { stackDefinition } from '../structures/stack';
 import { queueDefinition } from '../structures/queue';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyDefinition = DataStructureDefinition<any, any>;
 
-class DataStructureRegistry {
+export class DataStructureRegistry {
   private readonly structures: Map<StructureKind, AnyDefinition> = new Map();
 
   register(definition: AnyDefinition): void {
     if (this.structures.has(definition.kind)) {
-      throw new Error(`Data structure '${definition.kind}' is already registered.`);
+      throw new DataStructureError(`Data structure '${definition.kind}' is already registered.`);
     }
     this.structures.set(definition.kind, definition);
   }
@@ -25,7 +25,7 @@ class DataStructureRegistry {
   getStructure(kind: StructureKind): AnyDefinition {
     const structure = this.structures.get(kind);
     if (!structure) {
-      throw new InvalidCommandError(`Data structure '${kind}' is not registered.`);
+      throw new StructureNotFoundError(kind);
     }
     return structure;
   }

@@ -6,12 +6,13 @@ import {
   StructureState,
   TraceStep,
 } from '../core/types';
+import { InvariantViolationError } from '../core/errors';
 
 export class TraceBuilder {
-  private idPrefix: string;
+  private readonly idPrefix: string;
   private initialState: StructureState | undefined;
   private finalState: StructureState | undefined;
-  private steps: TraceStep[] = [];
+  private readonly steps: TraceStep[] = [];
   private stepIndex = 0;
   private complexity = { time: 'O(1)', space: 'O(1)', notes: undefined as string | undefined };
 
@@ -55,7 +56,7 @@ export class TraceBuilder {
 
   build(): OperationTrace {
     if (this.initialState === undefined || this.finalState === undefined) {
-      throw new Error('TraceBuilder requires initial and final states to be set before building.');
+      throw new InvariantViolationError('TraceBuilder requires initial and final states to be set before building.');
     }
     return {
       id: this.idPrefix,

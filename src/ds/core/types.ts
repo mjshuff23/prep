@@ -1,32 +1,38 @@
-export type StructureKind =
-  | 'array'
-  | 'linked-list'
-  | 'stack'
-  | 'queue'
-  | 'deque'
-  | 'hash-table'
-  | 'binary-tree'
-  | 'binary-search-tree'
-  | 'heap'
-  | 'graph'
-  | 'trie'
-  | 'disjoint-set';
+export const STRUCTURE_KINDS = [
+  'array',
+  'linked-list',
+  'stack',
+  'queue',
+  'deque',
+  'hash-table',
+  'binary-tree',
+  'binary-search-tree',
+  'heap',
+  'graph',
+  'trie',
+  'disjoint-set',
+] as const;
 
-export type OperationKind =
-  | 'insert'
-  | 'delete'
-  | 'search'
-  | 'update'
-  | 'push'
-  | 'pop'
-  | 'enqueue'
-  | 'dequeue'
-  | 'peek'
-  | 'connect'
-  | 'disconnect'
-  | 'heapify'
-  | 'traverse'
-  | 'reset';
+export type StructureKind = typeof STRUCTURE_KINDS[number];
+
+export const OPERATION_KINDS = [
+  'insert',
+  'delete',
+  'search',
+  'update',
+  'push',
+  'pop',
+  'enqueue',
+  'dequeue',
+  'peek',
+  'connect',
+  'disconnect',
+  'heapify',
+  'traverse',
+  'reset',
+] as const;
+
+export type OperationKind = typeof OPERATION_KINDS[number];
 
 export type OperationCommand<TPayload = unknown> = {
   structure: StructureKind;
@@ -35,8 +41,11 @@ export type OperationCommand<TPayload = unknown> = {
 };
 
 // Internal representation of the structure's state at a given time.
-// Kept intentionally vague here, implementations will refine this.
-export type StructureState = unknown;
+/**
+ * Represents the internal shape of a data structure.
+ * This explicitly requires states to be objects or arrays, preventing primitive states.
+ */
+export type StructureState = Record<string, unknown> | unknown[];
 
 export type Highlight = {
   id: string; // The ID of the node/edge to highlight

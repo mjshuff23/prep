@@ -9,13 +9,13 @@ import {
 import { TraceBuilder } from '../traces/builder';
 import { InvalidCommandError, UnsupportedOperationError } from '../core/errors';
 import { createInvariantCheck } from '../core/invariants';
+import { emptySchema, createLinearInitialState } from '../core/helpers';
 
 export type QueueState = {
   items: unknown[];
 };
 
 const enqueueSchema = z.object({ item: z.unknown() });
-const emptySchema = z.object({}).strict().or(z.undefined().transform(() => ({})));
 const queueCommandSchema = z.discriminatedUnion('operation', [
   z.object({ operation: z.literal('enqueue'), payload: enqueueSchema }),
   z.object({ operation: z.literal('dequeue'), payload: emptySchema }),
@@ -30,10 +30,7 @@ export const queueDefinition: DataStructureDefinition<QueueState, QueueCommandPa
   label: 'Queue',
   
   createInitialState(seed?: unknown): QueueState {
-    if (Array.isArray(seed)) {
-      return { items: [...seed] };
-    }
-    return { items: [] };
+    return createLinearInitialState(seed) as QueueState;
   },
 
   getSupportedOperations(): OperationSpec[] {
@@ -45,12 +42,19 @@ export const queueDefinition: DataStructureDefinition<QueueState, QueueCommandPa
     ];
   },
 
-  parseCommand(command: OperationCommand<unknown>): OperationCommand<QueueCommandPayload> {
-    const parsed = queueCommandSchema.parse(command);
+  parseCommand(command: unknown): OperationCommand<QueueCommandPayload> {
+    const raw = command as Record<string, unknown>;
+    if (raw?.structure !== 'queue') {
+      throw new InvalidCommandError(`Expected structure 'queue', but got '${raw?.structure}'`, command as OperationCommand);
+    }
+    const parsed = queueCommandSchema.safeParse(command);
+    if (!parsed.success) {
+      throw new InvalidCommandError(parsed.error.message, command as OperationCommand);
+    }
     return {
       structure: 'queue',
-      operation: parsed.operation,
-      payload: parsed.payload,
+      operation: parsed.data.operation,
+      payload: parsed.data.payload,
     };
   },
 

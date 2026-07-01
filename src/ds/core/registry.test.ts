@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { registry } from './registry';
 import { stackDefinition } from '../structures/stack';
-import { InvalidCommandError } from './errors';
+import { InvalidCommandError, StructureNotFoundError } from './errors';
 
 describe('DataStructureRegistry', () => {
   beforeEach(() => {
@@ -19,7 +19,7 @@ describe('DataStructureRegistry', () => {
   });
 
   it('throws when getting an unregistered structure', () => {
-    expect(() => registry.getStructure('graph')).toThrow(InvalidCommandError);
+    expect(() => registry.getStructure('graph')).toThrow(StructureNotFoundError);
   });
 
   it('executes a valid command and returns a trace', () => {

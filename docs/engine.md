@@ -23,14 +23,12 @@ To add a new data structure, follow these steps:
 4. **Register**: Ensure the data structure is registered in `registry.ts`.
 5. **Write Tests**: Create a corresponding `.test.ts` file covering all commands and payload validations.
 
-### Example
+### Example (Pseudocode)
 
 ```typescript
-import { registry } from '../core/registry';
-import { stackDefinition } from './stack';
+import { registry } from '@src/ds/core/registry';
+// The registry is pre-loaded with core structures (stack, queue)
 
-// Register
-registry.register(stackDefinition);
 
 // Execute Command
 const trace = registry.executeCommand(

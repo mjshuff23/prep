@@ -9,13 +9,13 @@ import {
 import { TraceBuilder } from '../traces/builder';
 import { InvalidCommandError, UnsupportedOperationError } from '../core/errors';
 import { createInvariantCheck } from '../core/invariants';
+import { emptySchema, createLinearInitialState } from '../core/helpers';
 
 export type StackState = {
   items: unknown[];
 };
 
 const pushSchema = z.object({ item: z.unknown() });
-const emptySchema = z.object({}).strict().or(z.undefined().transform(() => ({})));
 const stackCommandSchema = z.discriminatedUnion('operation', [
   z.object({ operation: z.literal('push'), payload: pushSchema }),
   z.object({ operation: z.literal('pop'), payload: emptySchema }),
@@ -30,10 +30,7 @@ export const stackDefinition: DataStructureDefinition<StackState, StackCommandPa
   label: 'Stack',
   
   createInitialState(seed?: unknown): StackState {
-    if (Array.isArray(seed)) {
-      return { items: [...seed] };
-    }
-    return { items: [] };
+    return createLinearInitialState(seed) as StackState;
   },
 
   getSupportedOperations(): OperationSpec[] {
@@ -45,12 +42,19 @@ export const stackDefinition: DataStructureDefinition<StackState, StackCommandPa
     ];
   },
 
-  parseCommand(command: OperationCommand<unknown>): OperationCommand<StackCommandPayload> {
-    const parsed = stackCommandSchema.parse(command);
+  parseCommand(command: unknown): OperationCommand<StackCommandPayload> {
+    const raw = command as Record<string, unknown>;
+    if (raw?.structure !== 'stack') {
+      throw new InvalidCommandError(`Expected structure 'stack', but got '${raw?.structure}'`, command as OperationCommand);
+    }
+    const parsed = stackCommandSchema.safeParse(command);
+    if (!parsed.success) {
+      throw new InvalidCommandError(parsed.error.message, command as OperationCommand);
+    }
     return {
       structure: 'stack',
-      operation: parsed.operation,
-      payload: parsed.payload,
+      operation: parsed.data.operation,
+      payload: parsed.data.payload,
     };
   },
 

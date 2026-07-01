@@ -21,6 +21,20 @@ export class UnsupportedOperationError extends DataStructureError {
   }
 }
 
+export class StructureNotFoundError extends DataStructureError {
+  constructor(kind: string) {
+    super(`Data structure '${kind}' is not registered.`);
+    this.name = 'StructureNotFoundError';
+  }
+}
+
+export class TraceSerializationError extends DataStructureError {
+  constructor(message: string, public readonly originalError?: unknown) {
+    super(`Serialization Error: ${message}`);
+    this.name = 'TraceSerializationError';
+  }
+}
+
 export class InvariantViolationError extends DataStructureError {
   constructor(message: string) {
     super(`Invariant Violation: ${message}`);

@@ -1,5 +1,6 @@
 import { z } from 'zod';
-import { OperationTrace } from './types';
+import { OperationTrace, STRUCTURE_KINDS, OPERATION_KINDS } from './types';
+import { TraceSerializationError } from './errors';
 
 export const highlightSchema = z.object({
   id: z.string(),
@@ -25,36 +26,8 @@ export const traceStepSchema = z.object({
 
 export const operationTraceSchema = z.object({
   id: z.string(),
-  structure: z.enum([
-    'array',
-    'linked-list',
-    'stack',
-    'queue',
-    'deque',
-    'hash-table',
-    'binary-tree',
-    'binary-search-tree',
-    'heap',
-    'graph',
-    'trie',
-    'disjoint-set',
-  ]),
-  operation: z.enum([
-    'insert',
-    'delete',
-    'search',
-    'update',
-    'push',
-    'pop',
-    'enqueue',
-    'dequeue',
-    'peek',
-    'connect',
-    'disconnect',
-    'heapify',
-    'traverse',
-    'reset',
-  ]),
+  structure: z.enum(STRUCTURE_KINDS),
+  operation: z.enum(OPERATION_KINDS),
   input: z.unknown(),
   initialState: z.unknown(),
   finalState: z.unknown(),
@@ -70,15 +43,20 @@ export function serializeTrace(trace: OperationTrace): string {
   try {
     return JSON.stringify(trace, null, 2);
   } catch (error) {
-    throw new Error(`Failed to serialize trace: ${error instanceof Error ? error.message : String(error)}`);
+    throw new TraceSerializationError(error instanceof Error ? error.message : String(error), error);
   }
 }
 
+/**
+ * Deserializes a JSON string into an OperationTrace.
+ * Note: `input`, `initialState`, and `finalState` are intentionally left unvalidated 
+ * (as `z.unknown()`) in the schema because their shapes are structure-specific.
+ */
 export function deserializeTrace(json: string): OperationTrace {
   try {
     const parsed = JSON.parse(json);
     return operationTraceSchema.parse(parsed) as OperationTrace;
   } catch (error) {
-    throw new Error(`Failed to deserialize trace: ${error instanceof Error ? error.message : String(error)}`);
+    throw new TraceSerializationError(error instanceof Error ? error.message : String(error), error);
   }
 }
