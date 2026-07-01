@@ -1,0 +1,21 @@
+src/ds/structures/stack.test.ts
+  s_aee332f7638829::t_ecedfc7dfeb9ab 70
+src/ds/traces/builder.ts
+  s_aee332f7638829::t_c7742df0d19cbd 37,39-40,57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "c625580a2d18687f0972a87af6f786e3eb8a2532",
+  "prompts": {},
+  "sessions": {
+    "s_aee332f7638829": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f1fbf-234b-73e1-9512-0d02591dc1ce",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
