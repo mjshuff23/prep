@@ -1,0 +1,37 @@
+src/app/dashboard/layout.tsx
+  s_b18d0795e27422::t_4d6f11b7e50e26 42,44
+src/app/sign-in/page.tsx
+  s_b18d0795e27422::t_df727c1f27be55 14
+src/app/sign-up/page.tsx
+  s_b18d0795e27422::t_300980f9ac6ab7 14
+src/components/ui/GlobalNav.test.tsx
+  s_aee332f7638829::t_a63cfdb73e63ad 1,7-8,20-22,28-75
+src/components/ui/StatusBadge.tsx
+  s_b18d0795e27422::t_07aa6caf087302 6
+tests/smoke.spec.ts
+  s_b18d0795e27422::t_945cb82d6a2810 9,14,19,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "5b04d88ae27d2e340aa85be3330eff354a94a135",
+  "prompts": {},
+  "sessions": {
+    "s_aee332f7638829": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f1fbf-234b-73e1-9512-0d02591dc1ce",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    },
+    "s_b18d0795e27422": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5f30377a-f478-40ea-9902-afa2325df481",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
