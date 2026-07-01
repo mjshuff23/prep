@@ -1,0 +1,45 @@
+async.js
+  s_e9c5ffd284a111::t_dcb5f03529163e 1-8
+data-structures/arrays/array_list_template.js
+  s_5375e4be6e79a9::t_e1cc309dd0916c 1-85
+data-structures/linked-lists/linked_list.js
+  s_74ae8bb49b7e7f::t_49c1361edd72e7 1-69
+data-structures/stacks/stack.js
+  s_74ae8bb49b7e7f::t_9b347ee38470a5 1-44
+promises.js
+  s_e9c5ffd284a111::t_73357f5abe8ddf 1-6
+test.js
+  s_e9c5ffd284a111::t_a1a7831d06c648 1-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.5",
+  "base_commit_sha": "2f11ab7f882751cfd7db44fed7d8eaa8bc9ecd78",
+  "prompts": {},
+  "sessions": {
+    "s_5375e4be6e79a9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a8659891-c0af-4253-84f4-832dc868eaa4",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    },
+    "s_74ae8bb49b7e7f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f1e00-9f3f-7402-8c7d-89b1098673ba",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    },
+    "s_e9c5ffd284a111": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f18b8-f6a6-7051-b0ee-cd2918addd20",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
