@@ -13,9 +13,9 @@ const navItems = [
 
 export default function DashboardLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   const pathname = usePathname();
   return (
     <div className="flex-1 flex flex-col md:flex-row container mx-auto px-4 py-8 max-w-7xl">

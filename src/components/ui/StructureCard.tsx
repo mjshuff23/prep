@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./car
 import { Badge } from "./badge";
 import { StructureContent } from "@/lib/content/registry";
 
-export function StructureCard({ structure }: { structure: StructureContent }) {
+export function StructureCard({ structure }: Readonly<{ structure: StructureContent }>) {
   return (
     <Link href={`/structures/${structure.slug}`}>
       <Card className="h-full transition-colors hover:bg-muted/50 flex flex-col cursor-pointer">

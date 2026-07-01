@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return { title: `${structure.title} | DataStructs`, description: structure.summary };
 }
 
-export default async function StructureDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function StructureDetailPage({ params }: Readonly<{ params: Promise<{ slug: string }> }>) {
   const { slug } = await params;
   const structure = getStructureBySlug(slug);
 
@@ -62,8 +62,8 @@ export default async function StructureDetailPage({ params }: { params: Promise<
               </CardHeader>
               <CardContent>
                 <ul className="list-disc pl-6 space-y-2">
-                  {structure.realWorldUses.map((use, i) => (
-                    <li key={i}>{use}</li>
+                  {structure.realWorldUses.map((use) => (
+                    <li key={use}>{use}</li>
                   ))}
                 </ul>
               </CardContent>
@@ -74,8 +74,8 @@ export default async function StructureDetailPage({ params }: { params: Promise<
               </CardHeader>
               <CardContent>
                 <ul className="list-disc pl-6 space-y-2">
-                  {structure.commonMistakes.map((mistake, i) => (
-                    <li key={i}>{mistake}</li>
+                  {structure.commonMistakes.map((mistake) => (
+                    <li key={mistake}>{mistake}</li>
                   ))}
                 </ul>
               </CardContent>
@@ -90,8 +90,8 @@ export default async function StructureDetailPage({ params }: { params: Promise<
               </CardHeader>
               <CardContent>
                 <ul className="list-disc pl-6 space-y-4">
-                  {structure.invariants.map((inv, i) => (
-                    <li key={i} className="text-lg">{inv}</li>
+                  {structure.invariants.map((inv) => (
+                    <li key={inv} className="text-lg">{inv}</li>
                   ))}
                 </ul>
               </CardContent>
@@ -99,8 +99,8 @@ export default async function StructureDetailPage({ params }: { params: Promise<
           </TabsContent>
 
           <TabsContent value="operations" className="space-y-4">
-            {structure.operations.map((op, i) => (
-              <Card key={i}>
+            {structure.operations.map((op) => (
+              <Card key={op.name}>
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
                   <CardTitle className="text-xl">{op.name}</CardTitle>
                   <span className="font-mono bg-muted px-2 py-1 rounded text-sm">{op.complexity}</span>
