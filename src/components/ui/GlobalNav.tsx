@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { BookOpen, MonitorPlay, LayoutDashboard, UserCircle, Menu, X } from "lucide-react";
-import { Button } from "./button";
+import { Button, buttonVariants } from "./button";
 
 export function GlobalNav() {
   const [open, setOpen] = useState(false);
@@ -35,17 +35,16 @@ export function GlobalNav() {
 
         <div className="flex items-center gap-4">
           <nav className="hidden md:flex items-center gap-2">
-            <Link href="/dashboard">
-              <Button variant="ghost" size="sm" className="gap-2">
-                <LayoutDashboard className="h-4 w-4" />
-                Dashboard
-              </Button>
+            <Link href="/dashboard" className={buttonVariants({ variant: "ghost", size: "sm", className: "gap-2" })}>
+              <LayoutDashboard className="h-4 w-4" />
+              Dashboard
             </Link>
-            <Link href="/sign-in">
-              <Button variant="outline" size="sm" className="gap-2">
-                <UserCircle className="h-4 w-4" />
-                Sign In
-              </Button>
+            <Link href="/sign-in" className={buttonVariants({ variant: "ghost", size: "sm", className: "gap-2" })}>
+              <UserCircle className="h-4 w-4" />
+              Sign In
+            </Link>
+            <Link href="/sign-up" className={buttonVariants({ variant: "outline", size: "sm", className: "gap-2" })}>
+              Sign Up
             </Link>
           </nav>
           
@@ -97,6 +96,13 @@ export function GlobalNav() {
             >
               <UserCircle className="h-4 w-4" />
               Sign In
+            </Link>
+            <Link
+              href="/sign-up"
+              className="transition-colors hover:text-foreground/80 flex items-center gap-2"
+              onClick={() => setOpen(false)}
+            >
+              Sign Up
             </Link>
           </nav>
         </div>

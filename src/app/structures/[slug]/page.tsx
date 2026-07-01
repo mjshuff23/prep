@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PlayCircle } from "lucide-react";
 import { getStructureBySlug } from "@/lib/content/registry";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
@@ -28,22 +28,20 @@ export default async function StructureDetailPage({ params }: Readonly<{ params:
           <h1 className="text-3xl font-bold tracking-tight mb-2">{structure.title}</h1>
           <p className="text-muted-foreground max-w-3xl">{structure.summary}</p>
         </div>
-        <Link href={`/playground?structure=${structure.slug}`}>
-          <Button size="lg" className="gap-2 shrink-0">
-            <PlayCircle className="h-5 w-5" />
-            Open in Playground
-          </Button>
+        <Link href={`/playground?structure=${structure.slug}`} className={buttonVariants({ size: "lg", className: "gap-2 shrink-0" })}>
+          <PlayCircle className="h-5 w-5" />
+          Open in Playground
         </Link>
       </div>
 
       <Tabs defaultValue="overview" className="flex-1 flex flex-col">
         <TabsList className="w-full justify-start border-b rounded-none h-auto p-0 bg-transparent overflow-x-auto">
-          <TabsTrigger value="overview" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4 py-3">Overview</TabsTrigger>
-          <TabsTrigger value="invariants" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4 py-3">Invariants</TabsTrigger>
-          <TabsTrigger value="operations" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4 py-3">Operations</TabsTrigger>
-          <TabsTrigger value="complexity" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4 py-3">Complexity</TabsTrigger>
-          <TabsTrigger value="implementation" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4 py-3">Implementation</TabsTrigger>
-          <TabsTrigger value="exercises" className="data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-4 py-3">Exercises</TabsTrigger>
+          <TabsTrigger value="overview" className="data-active:border-b-2 data-active:border-primary rounded-none px-4 py-3">Overview</TabsTrigger>
+          <TabsTrigger value="invariants" className="data-active:border-b-2 data-active:border-primary rounded-none px-4 py-3">Invariants</TabsTrigger>
+          <TabsTrigger value="operations" className="data-active:border-b-2 data-active:border-primary rounded-none px-4 py-3">Operations</TabsTrigger>
+          <TabsTrigger value="complexity" className="data-active:border-b-2 data-active:border-primary rounded-none px-4 py-3">Complexity</TabsTrigger>
+          <TabsTrigger value="implementation" className="data-active:border-b-2 data-active:border-primary rounded-none px-4 py-3">Implementation</TabsTrigger>
+          <TabsTrigger value="exercises" className="data-active:border-b-2 data-active:border-primary rounded-none px-4 py-3">Exercises</TabsTrigger>
         </TabsList>
 
         <div className="mt-6 flex-1">

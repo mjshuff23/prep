@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export type StepState = 'idle' | 'active' | 'comparing' | 'visited' | 'inserted' | 'removed' | 'error';
 
-interface StatusBadgeProps extends BadgeProps {
+interface StatusBadgeProps extends Omit<BadgeProps, 'variant'> {
   state: StepState;
 }
 

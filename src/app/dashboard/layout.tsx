@@ -39,9 +39,9 @@ export default function DashboardLayout({
           })}
         </nav>
       </aside>
-      <main className="flex-1 md:pl-8">
+      <div className="flex-1 md:pl-8">
         {children}
-      </main>
+      </div>
     </div>
   );
 }

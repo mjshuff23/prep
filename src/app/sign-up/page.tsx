@@ -11,7 +11,7 @@ export default function SignUpPage() {
           <CardTitle className="text-2xl">Sign Up</CardTitle>
           <CardDescription>Create an account to save your playgrounds</CardDescription>
         </CardHeader>
-        <form>
+        <form action="#">
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <label className="text-sm font-medium" htmlFor="email">Email</label>

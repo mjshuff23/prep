@@ -11,7 +11,7 @@ export default function SignInPage() {
           <CardTitle className="text-2xl">Sign In</CardTitle>
           <CardDescription>Enter your email below to login to your account</CardDescription>
         </CardHeader>
-        <form>
+        <form action="#">
         <CardContent className="space-y-4">
           <div className="space-y-2">
             <label className="text-sm font-medium" htmlFor="email">Email</label>

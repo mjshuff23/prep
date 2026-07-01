@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Box, Code2, PlayCircle, Save } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -14,17 +14,13 @@ export default function Home() {
           Learn how algorithms work under the hood. Run playground operations, watch step-by-step traces, compare implementations across languages, and save your progress.
         </p>
         <div className="mx-auto mt-10 flex max-w-sm flex-col sm:flex-row sm:max-w-none sm:justify-center gap-4">
-          <Link href="/structures">
-            <Button size="lg" className="w-full sm:w-auto gap-2">
-              <Box className="h-5 w-5" />
-              Explore Structures
-            </Button>
+          <Link href="/structures" className={buttonVariants({ size: "lg", className: "w-full sm:w-auto gap-2" })}>
+            <Box className="h-5 w-5" />
+            Explore Structures
           </Link>
-          <Link href="/playground">
-            <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2">
-              <PlayCircle className="h-5 w-5" />
-              Try the Playground
-            </Button>
+          <Link href="/playground" className={buttonVariants({ variant: "outline", size: "lg", className: "w-full sm:w-auto gap-2" })}>
+            <PlayCircle className="h-5 w-5" />
+            Try the Playground
           </Link>
         </div>
       </div>

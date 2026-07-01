@@ -17,7 +17,7 @@ export default function PlaygroundPage() {
             <Save className="h-4 w-4" />
             Save State
           </Button>
-          <Button variant="ghost" size="icon">
+          <Button aria-label="Settings" variant="ghost" size="icon">
             <Settings className="h-5 w-5" />
           </Button>
         </div>
@@ -39,16 +39,16 @@ export default function PlaygroundPage() {
           <div className="p-4">
             <h2 className="text-sm font-semibold mb-4 text-muted-foreground uppercase tracking-wider">Trace Controls</h2>
             <div className="flex justify-center gap-2">
-              <Button variant="outline" size="icon"><RotateCcw className="h-4 w-4" /></Button>
-              <Button variant="outline" size="icon"><StepBack className="h-4 w-4" /></Button>
-              <Button variant="default" size="icon"><Play className="h-4 w-4" /></Button>
-              <Button variant="outline" size="icon"><StepForward className="h-4 w-4" /></Button>
+              <Button aria-label="Restart" variant="outline" size="icon"><RotateCcw className="h-4 w-4" /></Button>
+              <Button aria-label="Step back" variant="outline" size="icon"><StepBack className="h-4 w-4" /></Button>
+              <Button aria-label="Play" variant="default" size="icon"><Play className="h-4 w-4" /></Button>
+              <Button aria-label="Step forward" variant="outline" size="icon"><StepForward className="h-4 w-4" /></Button>
             </div>
           </div>
         </aside>
 
         {/* Center - Canvas */}
-        <main className="flex-1 min-h-[300px] md:min-h-0 bg-dot-pattern flex items-center justify-center relative">
+        <main className="flex-1 min-h-[300px] md:min-h-0 flex items-center justify-center relative">
           <div className="absolute inset-0 bg-background/50 pointer-events-none" />
           <div className="z-10 p-8 border-2 border-dashed rounded-xl bg-background/80 backdrop-blur-sm text-center max-w-sm">
             <p className="text-muted-foreground">Visualization Canvas Placeholder</p>
