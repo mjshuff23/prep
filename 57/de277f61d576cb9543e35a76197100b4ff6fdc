@@ -1,0 +1,19 @@
+src/ds/core/registry.test.ts
+  s_aee332f7638829::t_adbd2c09a983e0 4,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "57de277f61d576cb9543e35a76197100b4ff6fdc",
+  "prompts": {},
+  "sessions": {
+    "s_aee332f7638829": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f1fbf-234b-73e1-9512-0d02591dc1ce",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
