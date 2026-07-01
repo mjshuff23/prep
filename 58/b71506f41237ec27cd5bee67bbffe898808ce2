@@ -1,0 +1,49 @@
+docs/engine.md
+  s_b18d0795e27422::t_7c80ec54bba033 1-43
+package.json
+  s_b18d0795e27422::t_1880a9b04d0c97 29-30
+pnpm-lock.yaml
+  s_b18d0795e27422::t_5d604009e57a21 47-49
+src/ds/core/errors.ts
+  s_aee332f7638829::t_edc301ac1cd584 1-29
+src/ds/core/invariants.ts
+  s_b18d0795e27422::t_8b814bdb4d28ad 1-15
+src/ds/core/registry.test.ts
+  s_aee332f7638829::t_c5bfcbd69fe6dc 1-50
+src/ds/core/registry.ts
+  s_aee332f7638829::t_dd12a602773a82 1-46
+src/ds/core/serialize.ts
+  s_b18d0795e27422::t_c55720b1107731 1-17
+src/ds/core/types.ts
+  s_b18d0795e27422::t_0dabc1660d77a3 1-94
+src/ds/structures/queue.test.ts
+  s_aee332f7638829::t_afa2b4307d3cbf 1-108
+src/ds/structures/queue.ts
+  s_aee332f7638829::t_974d4967229872 1-136
+src/ds/structures/stack.ts
+  s_aee332f7638829::t_34b12b8fce9cc8 1-136
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "58b71506f41237ec27cd5bee67bbffe898808ce2",
+  "prompts": {},
+  "sessions": {
+    "s_aee332f7638829": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f1fbf-234b-73e1-9512-0d02591dc1ce",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    },
+    "s_b18d0795e27422": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5f30377a-f478-40ea-9902-afa2325df481",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
