@@ -5,7 +5,7 @@ test.describe("Authentication Flows", () => {
     await page.goto("/playground");
     // Should stay on playground, not redirect to sign in
     await expect(page).toHaveURL(/.*\/playground/);
-    await expect(page.locator("text=Sign In")).toBeVisible();
+    await expect(page.getByRole("link", { name: /sign in/i })).toBeVisible();
   });
 
   test("guest is redirected to sign-in from protected routes", async ({ page }) => {

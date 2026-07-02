@@ -11,14 +11,14 @@ type User = {
   image?: string | null;
 } | null;
 
-export function GlobalNav({ user, onLogout }: { user?: User, onLogout?: () => void }) {
+export function GlobalNav({ user, onLogout }: { user?: User, onLogout?: () => Promise<void> | void }) {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const handleLogout = () => {
     if (onLogout) {
-      startTransition(() => {
-        onLogout();
+      startTransition(async () => {
+        await onLogout();
       });
     }
   };
@@ -132,6 +132,7 @@ export function GlobalNav({ user, onLogout }: { user?: User, onLogout?: () => vo
                     Settings
                   </Link>
                   <button
+                    type="button"
                     className="transition-colors hover:text-foreground/80 flex items-center gap-2 text-destructive w-full text-left"
                     onClick={() => {
                       handleLogout();

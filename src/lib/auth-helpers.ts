@@ -16,6 +16,6 @@ export async function requireUser() {
 
 export function assertOwner(resourceUserId: string, currentUserId?: string) {
   if (!currentUserId || resourceUserId !== currentUserId) {
-    throw new Error("Unauthorized: You do not have permission to access this resource.");
+    redirect("/");
   }
 }

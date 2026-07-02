@@ -5,31 +5,38 @@ import bcrypt from "bcryptjs";
 import { redirect } from "next/navigation";
 
 export async function registerAction(formData: FormData) {
-  const email = formData.get("email") as string;
-  const password = formData.get("password") as string;
-  const name = formData.get("name") as string;
+  const emailVal = formData.get("email");
+  const passwordVal = formData.get("password");
+  const nameVal = formData.get("name");
 
-  if (!email || !password) {
+  if (typeof emailVal !== "string" || typeof passwordVal !== "string") {
     return { error: "Email and password are required." };
   }
 
-  const existingUser = await prisma.user.findUnique({
-    where: { email },
-  });
+  const email = emailVal.trim().toLowerCase();
+  const password = passwordVal;
+  const name = typeof nameVal === "string" ? nameVal : undefined;
 
-  if (existingUser) {
-    return { error: "User already exists with this email." };
+  if (password.length < 8) {
+    return { error: "Password must be at least 8 characters long." };
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  await prisma.user.create({
-    data: {
-      email,
-      password: hashedPassword,
-      name: name || undefined,
-    },
-  });
+  try {
+    await prisma.user.create({
+      data: {
+        email,
+        password: hashedPassword,
+        name,
+      },
+    });
+  } catch (error: unknown) {
+    if (error && typeof error === "object" && "code" in error && error.code === "P2002") {
+      return { error: "Unable to create account. Please try again or sign in." };
+    }
+    throw error;
+  }
 
   redirect("/sign-in?registered=true");
 }

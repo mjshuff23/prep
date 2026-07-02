@@ -1,13 +1,14 @@
 "use client";
 
-import { useActionState } from "react";
+import { Suspense, useActionState } from "react";
 import { loginAction } from "@/app/actions/auth";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { useSearchParams } from "next/navigation";
 
-export default function SignInPage() {
+function SignInForm() {
   const [state, action, isPending] = useActionState(
     async (prevState: unknown, formData: FormData) => {
       return await loginAction(formData);
@@ -22,6 +23,11 @@ export default function SignInPage() {
           <CardTitle className="text-2xl">Sign In</CardTitle>
           <CardDescription>Enter your email below to login to your account</CardDescription>
         </CardHeader>
+        {useSearchParams().get("registered") === "true" && (
+          <div className="bg-green-100/10 text-green-600 border border-green-600/20 p-3 mx-6 mb-4 rounded-md text-sm text-center">
+            Registration successful! Please sign in.
+          </div>
+        )}
         <form action={action}>
         <CardContent className="space-y-4">
           <div className="space-y-2">
@@ -50,5 +56,13 @@ export default function SignInPage() {
         </form>
       </Card>
     </div>
+  );
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={<div className="flex-1 flex items-center justify-center h-screen">Loading...</div>}>
+      <SignInForm />
+    </Suspense>
   );
 }

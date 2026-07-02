@@ -21,10 +21,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         if (!credentials?.email || !credentials?.password) return null;
         
         const user = await prisma.user.findUnique({
-          where: { email: credentials.email as string }
+          where: { email: (credentials.email as string).trim().toLowerCase() }
         });
         
-        if (!user || !user.password) return null;
+        if (!user || !user.password) {
+          await bcrypt.compare("", "$2a$10$abcdefghijklmnopqrstuv");
+          return null;
+        }
         
         const passwordsMatch = await bcrypt.compare(
           credentials.password as string,
@@ -32,7 +35,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         );
         
         if (passwordsMatch) {
-          return user;
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { password: _pw, ...safeUser } = user;
+          return safeUser;
         }
         return null;
       }
