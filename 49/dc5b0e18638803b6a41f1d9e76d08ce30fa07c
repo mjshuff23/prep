@@ -1,0 +1,21 @@
+src/features/visualizer/layout/linear.ts
+  s_b18d0795e27422::t_fa12af03f35b56 1-27
+src/features/visualizer/types.ts
+  s_b18d0795e27422::t_1fd8c3dfdd1ad1 1-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "49dc5b0e18638803b6a41f1d9e76d08ce30fa07c",
+  "prompts": {},
+  "sessions": {
+    "s_b18d0795e27422": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5f30377a-f478-40ea-9902-afa2325df481",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
