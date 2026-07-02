@@ -96,8 +96,8 @@ export async function updatePlayground(data: unknown) {
   return { 
     ...existing, 
     ...parsed, 
-    stateJson: stateStr !== undefined ? stateStr : existing.stateJson, 
-    traceJson: traceStr !== undefined ? traceStr : existing.traceJson 
+    stateJson: parsed.stateJson !== undefined ? parsed.stateJson : JSON.parse(existing.stateJson), 
+    traceJson: parsed.traceJson !== undefined ? parsed.traceJson : (existing.traceJson ? JSON.parse(existing.traceJson) : null)
   };
 }
 
@@ -198,7 +198,7 @@ export async function updateDataset(data: unknown) {
   return {
     ...existing,
     ...parsed,
-    valuesJson: valuesStr || existing.valuesJson
+    valuesJson: parsed.valuesJson !== undefined ? parsed.valuesJson : JSON.parse(existing.valuesJson)
   };
 }
 
