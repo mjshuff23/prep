@@ -166,6 +166,11 @@ export async function updateDataset(data: unknown) {
   const userId = await requireUser();
   const parsed = updateDatasetSchema.parse(data);
 
+  const existing = await prisma.dataset.findUnique({ where: { id: parsed.id } });
+  if (!existing || existing.userId !== userId) {
+    throw new Error('Not found or forbidden');
+  }
+
   if (parsed.valuesJson !== undefined && !Array.isArray(parsed.valuesJson)) {
     throw new Error('valuesJson must be an array');
   }
@@ -185,7 +190,11 @@ export async function updateDataset(data: unknown) {
   if (count === 0) throw new Error('Not found or forbidden');
 
   revalidatePath('/dashboard/datasets');
-  return { id: parsed.id, name: parsed.name };
+  return {
+    ...existing,
+    ...parsed,
+    valuesJson: valuesStr || existing.valuesJson
+  };
 }
 
 export async function listDatasetsForCurrentUser() {
