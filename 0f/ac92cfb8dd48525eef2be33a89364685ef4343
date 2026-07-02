@@ -1,0 +1,19 @@
+src/features/code-catalog/CodeTabs.tsx
+  s_6b8a1f5b7df5c1::t_281cb7969b212a 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "0fac92cfb8dd48525eef2be33a89364685ef4343",
+  "prompts": {},
+  "sessions": {
+    "s_6b8a1f5b7df5c1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f2032-4aa8-7041-b239-bcc08b2a6492",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
