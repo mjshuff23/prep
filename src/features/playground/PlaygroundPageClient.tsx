@@ -118,7 +118,7 @@ export function PlaygroundPageClient() {
         </main>
 
         {/* Right - Code & Trace */}
-        <aside className="w-full md:w-80 flex-none border-l bg-card flex flex-col">
+        <aside className="w-full md:w-[440px] flex-none border-l bg-card flex flex-col">
           <Tabs defaultValue="trace" className="flex-1 flex flex-col">
             <TabsList className="w-full justify-start rounded-none border-b bg-transparent px-2">
               <TabsTrigger value="trace">Trace</TabsTrigger>
