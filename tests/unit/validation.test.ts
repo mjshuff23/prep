@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { createPlaygroundSchema, createDatasetSchema } from '@/server/schemas';
+import { createPlaygroundSchema, createDatasetSchema, updatePlaygroundSchema, updateDatasetSchema } from '@/server/schemas';
 
 describe('Validation Schemas', () => {
   describe('createPlaygroundSchema', () => {
@@ -43,6 +43,44 @@ describe('Validation Schemas', () => {
       };
       const result = createDatasetSchema.safeParse(payload);
       expect(result.success).toBe(true);
+    });
+
+    it('rejects invalid structure kind', () => {
+      const payload = {
+        name: 'My Dataset',
+        structure: 'invalid-structure',
+        valuesJson: [1, 2, 3]
+      };
+      const result = createDatasetSchema.safeParse(payload);
+      expect(result.success).toBe(false);
+    });
+  });
+
+  describe('updatePlaygroundSchema', () => {
+    it('requires id and allows partial fields', () => {
+      const payload = { id: 'pg-1', name: 'New Name' };
+      const result = updatePlaygroundSchema.safeParse(payload);
+      expect(result.success).toBe(true);
+    });
+
+    it('fails without id', () => {
+      const payload = { name: 'New Name' };
+      const result = updatePlaygroundSchema.safeParse(payload);
+      expect(result.success).toBe(false);
+    });
+  });
+
+  describe('updateDatasetSchema', () => {
+    it('requires id and allows partial fields', () => {
+      const payload = { id: 'ds-1', name: 'New Name' };
+      const result = updateDatasetSchema.safeParse(payload);
+      expect(result.success).toBe(true);
+    });
+
+    it('fails without id', () => {
+      const payload = { name: 'New Name' };
+      const result = updateDatasetSchema.safeParse(payload);
+      expect(result.success).toBe(false);
     });
   });
 });

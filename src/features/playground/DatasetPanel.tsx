@@ -29,7 +29,7 @@ export function DatasetPanel({ onApplySeed, onResetEmpty, disabled }: DatasetPan
   const [datasets, setDatasets] = useState<Array<{ id: string; name: string; description: string | null; structure: string | null; valuesJson: unknown }>>([]);
   const [isLoadingDatasets, setIsLoadingDatasets] = useState(false);
 
-  const loadDatasets = async () => {
+  const loadDatasets = React.useCallback(async () => {
     setIsLoadingDatasets(true);
     try {
       const data = await listDatasetsForCurrentUser();
@@ -39,13 +39,13 @@ export function DatasetPanel({ onApplySeed, onResetEmpty, disabled }: DatasetPan
     } finally {
       setIsLoadingDatasets(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    if (session?.user) {
+    if (session?.user?.id) {
       loadDatasets();
     }
-  }, [session]);
+  }, [session?.user?.id, loadDatasets]);
 
   const parsedValues = seedInput.split(',')
     .map(s => s.trim())
@@ -76,6 +76,8 @@ export function DatasetPanel({ onApplySeed, onResetEmpty, disabled }: DatasetPan
         valuesJson: parsedValues,
       });
       setSaveModalOpen(false);
+      setDatasetName('My Dataset');
+      setDatasetDesc('');
       toast.success('Dataset saved');
       loadDatasets();
     } catch (e: unknown) {

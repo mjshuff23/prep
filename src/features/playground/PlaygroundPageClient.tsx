@@ -76,7 +76,7 @@ export function PlaygroundPageClient() {
   const [isLoadingPlaygrounds, setIsLoadingPlaygrounds] = useState(false);
 
   // Set dirty flag when state changes unless it was just saved/loaded
-  const skipDirtyRef = useRef(false);
+  const skipDirtyRef = useRef(true);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/set-state-in-effect
   useEffect(() => {

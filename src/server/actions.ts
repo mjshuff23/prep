@@ -47,7 +47,7 @@ export async function createPlayground(data: unknown) {
     }
   });
 
-  revalidatePath('/playgrounds'); // adjust path if needed
+  revalidatePath('/dashboard/playgrounds'); // adjust path if needed
   return playground;
 }
 
@@ -92,7 +92,7 @@ export async function updatePlayground(data: unknown) {
 
   if (count === 0) throw new Error('Not found or forbidden');
 
-  revalidatePath('/playgrounds');
+  revalidatePath('/dashboard/playgrounds');
   return { ...existing, ...parsed, stateJson: stateStr || existing.stateJson, traceJson: traceStr || existing.traceJson };
 }
 
@@ -115,7 +115,8 @@ export async function listPlaygroundsForCurrentUser() {
   const userId = await requireUser();
   const playgrounds = await prisma.playground.findMany({
     where: { userId },
-    orderBy: { updatedAt: 'desc' }
+    orderBy: { updatedAt: 'desc' },
+    take: 50
   });
 
   return playgrounds.map(p => ({
@@ -132,7 +133,7 @@ export async function deletePlayground(id: string) {
     throw new Error('Not found or forbidden');
   }
 
-  revalidatePath('/playgrounds');
+  revalidatePath('/dashboard/playgrounds');
 }
 
 // Datasets
@@ -157,7 +158,7 @@ export async function createDataset(data: unknown) {
     }
   });
 
-  revalidatePath('/datasets');
+  revalidatePath('/dashboard/datasets');
   return dataset;
 }
 
@@ -183,7 +184,7 @@ export async function updateDataset(data: unknown) {
 
   if (count === 0) throw new Error('Not found or forbidden');
 
-  revalidatePath('/datasets');
+  revalidatePath('/dashboard/datasets');
   return { id: parsed.id, name: parsed.name };
 }
 
@@ -191,7 +192,8 @@ export async function listDatasetsForCurrentUser() {
   const userId = await requireUser();
   const datasets = await prisma.dataset.findMany({
     where: { userId },
-    orderBy: { updatedAt: 'desc' }
+    orderBy: { updatedAt: 'desc' },
+    take: 50
   });
 
   return datasets.map(d => ({
@@ -207,5 +209,5 @@ export async function deleteDataset(id: string) {
     throw new Error('Not found or forbidden');
   }
 
-  revalidatePath('/datasets');
+  revalidatePath('/dashboard/datasets');
 }
