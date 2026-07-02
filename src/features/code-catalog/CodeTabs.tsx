@@ -51,7 +51,7 @@ export function CodeTabs({ structure }: CodeTabsProps) {
               <TabsTrigger 
                 key={lang}
                 value={lang}
-                className="data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none px-2 py-1 capitalize"
+                className="data-active:bg-transparent data-active:shadow-none data-active:border-b-2 data-active:border-primary rounded-none px-2 py-1 capitalize"
               >
                 {lang === 'javascript' ? 'JavaScript' : lang === 'typescript' ? 'TypeScript' : 'Python'}
               </TabsTrigger>
