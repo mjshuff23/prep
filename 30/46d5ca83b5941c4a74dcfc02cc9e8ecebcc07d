@@ -1,0 +1,19 @@
+src/features/playground/PlaygroundPageClient.tsx
+  s_6b8a1f5b7df5c1::t_c895105b14270d 121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "3046d5ca83b5941c4a74dcfc02cc9e8ecebcc07d",
+  "prompts": {},
+  "sessions": {
+    "s_6b8a1f5b7df5c1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f2032-4aa8-7041-b239-bcc08b2a6492",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
