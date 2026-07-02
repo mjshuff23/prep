@@ -22,12 +22,18 @@ describe('GlobalNav Component', () => {
     expect(screen.getAllByRole('link', { name: /Playground/i }).length).toBeGreaterThan(0);
   });
 
-  it('renders auth and dashboard links', () => {
+  it('renders auth links when not authenticated', () => {
     render(<GlobalNav />);
-    expect(screen.getByText('Dashboard')).toBeInTheDocument();
-    // 'Sign In' appears twice now (desktop and mobile), so we can query all by text or just check for one
+    expect(screen.queryByText('Dashboard')).not.toBeInTheDocument();
     expect(screen.getAllByText('Sign In').length).toBeGreaterThan(0);
     expect(screen.getAllByText('Sign Up').length).toBeGreaterThan(0);
+  });
+
+  it('renders dashboard and sign out when authenticated', () => {
+    render(<GlobalNav user={{ name: 'Test User' }} />);
+    expect(screen.getAllByText('Dashboard').length).toBeGreaterThan(0);
+    expect(screen.queryByText('Sign In')).not.toBeInTheDocument();
+    expect(screen.getAllByText('Sign Out').length).toBeGreaterThan(0);
   });
 
   describe('Mobile Menu', () => {
