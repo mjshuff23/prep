@@ -1,0 +1,31 @@
+prisma/schema.prisma
+  s_e06796e4a64013::t_24a60ec9d7c8e2 67-77,79,83-91,93
+src/features/playground/PlaygroundPageClient.tsx
+  s_e06796e4a64013::t_8c752ce1f9086b 3-4,8-12,29-30,39-40,44,50-51,65-171,180,184-188,190,205,293-356
+src/features/playground/usePlaygroundState.ts
+  s_e06796e4a64013::t_26c49a8aa92623 40-47,80
+src/server/actions.ts
+  s_e06796e4a64013::t_0e17970e04c3fe 1-209
+src/server/schemas.ts
+  s_e06796e4a64013::t_496225cc32fa92 1-27
+tests/unit/validation.test.ts
+  s_e06796e4a64013::t_b8cb6050ce5603 1-48
+update-playground-page.js
+  s_e06796e4a64013::t_1ef7b86747e3e2 1-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "94631cb9fb08d677e5b053a72cfc2f443420ebcd",
+  "prompts": {},
+  "sessions": {
+    "s_e06796e4a64013": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f234a-c485-7a83-9552-854de9b25875",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
