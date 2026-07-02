@@ -1,0 +1,19 @@
+src/features/dashboard/DatasetCard.tsx
+  s_e06796e4a64013::t_0476dfca9f6bf6 6-8,11,13,57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "b49d076eedd9c35d0616672c683e83a123fe2f3f",
+  "prompts": {},
+  "sessions": {
+    "s_e06796e4a64013": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f234a-c485-7a83-9552-854de9b25875",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
