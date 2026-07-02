@@ -1,0 +1,19 @@
+src/features/playground/OperationPanel.tsx
+  s_6b8a1f5b7df5c1::t_ae428b1b10c6e6 22,25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "8f6d91350d94fa9577b05288679246f002d9ffcc",
+  "prompts": {},
+  "sessions": {
+    "s_6b8a1f5b7df5c1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f2032-4aa8-7041-b239-bcc08b2a6492",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
