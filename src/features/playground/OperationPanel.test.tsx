@@ -44,7 +44,7 @@ describe('OperationPanel', () => {
     fireEvent.change(screen.getByPlaceholderText('Enter value...'), { target: { value: '42' } });
     fireEvent.click(screen.getByText('Run Operation'));
     
-    expect(handleRun).toHaveBeenCalledWith('push', 42);
+    expect(handleRun).toHaveBeenCalledWith('push', { item: 42 });
   });
 
   it('calls onRunOperation without payload for pop', () => {
@@ -54,7 +54,7 @@ describe('OperationPanel', () => {
     fireEvent.click(screen.getByText('pop'));
     fireEvent.click(screen.getByText('Run Operation'));
     
-    expect(handleRun).toHaveBeenCalledWith('pop', undefined);
+    expect(handleRun).toHaveBeenCalledWith('pop', {});
   });
 
   it('disables run button if input is empty for push', () => {

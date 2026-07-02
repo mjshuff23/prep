@@ -19,10 +19,10 @@ export function OperationPanel({ operations, onRunOperation, disabled }: Operati
   const handleRun = () => {
     if (!selectedOp) return;
     
-    let parsedPayload: unknown = undefined;
+    let parsedPayload: unknown = {};
     if (PAYLOAD_OPERATIONS.includes(selectedOp) && payloadStr.trim() !== '') {
       const num = Number(payloadStr);
-      parsedPayload = isNaN(num) ? payloadStr : num;
+      parsedPayload = { item: isNaN(num) ? payloadStr : num };
     }
     
     onRunOperation(selectedOp, parsedPayload);
