@@ -41,7 +41,7 @@ describe('Server Actions - Playgrounds', () => {
   });
 
   it('createPlayground fails if unauthenticated', async () => {
-    vi.mocked(auth).mockResolvedValueOnce(null);
+    vi.mocked(auth as any).mockResolvedValueOnce(null);
     await expect(createPlayground({
       name: 'Test',
       structure: 'stack',

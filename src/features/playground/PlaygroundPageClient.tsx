@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/set-state-in-effect, @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { Settings, Save, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -70,13 +70,20 @@ export function PlaygroundPageClient() {
   const [currentPlaygroundId, setCurrentPlaygroundId] = useState<string | null>(null);
   const [isDirty, setIsDirty] = useState(false);
 
-  const [playgrounds, setPlaygrounds] = useState<any[]>([]);
+  type PlaygroundItem = Awaited<ReturnType<typeof listPlaygroundsForCurrentUser>>[number];
+  const [playgrounds, setPlaygrounds] = useState<PlaygroundItem[]>([]);
   const [loadModalOpen, setLoadModalOpen] = useState(false);
   const [isLoadingPlaygrounds, setIsLoadingPlaygrounds] = useState(false);
 
   // Set dirty flag when state changes unless it was just saved/loaded
+  const skipDirtyRef = useRef(false);
+
   // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/set-state-in-effect
   useEffect(() => {
+    if (skipDirtyRef.current) {
+      skipDirtyRef.current = false;
+      return;
+    }
     setIsDirty(true);
   }, [structureState, trace]);
 
@@ -163,8 +170,8 @@ export function PlaygroundPageClient() {
       setPlaygroundDesc(pg.description || '');
       setLoadModalOpen(false);
       
-      // We set a small timeout so the useEffect for dirtiness runs first and then we clear it
-      setTimeout(() => setIsDirty(false), 0);
+      skipDirtyRef.current = true;
+      setIsDirty(false);
       toast.success('Playground loaded');
     } catch (e: unknown) {
       console.error(e);
@@ -343,11 +350,11 @@ export function PlaygroundPageClient() {
               <p className="text-sm text-muted-foreground">No saved playgrounds found.</p>
             ) : (
               playgrounds.map(pg => (
-                <div key={pg.id} className="flex flex-col p-3 border rounded-md hover:bg-muted/50 cursor-pointer" onClick={() => handleSelectPlayground(pg.id)}>
+                <button type="button" key={pg.id} className="flex flex-col text-left w-full p-3 border rounded-md hover:bg-muted/50 cursor-pointer" onClick={() => handleSelectPlayground(pg.id)}>
                   <span className="font-medium text-sm">{pg.name}</span>
                   {pg.description && <span className="text-xs text-muted-foreground">{pg.description}</span>}
                   <span className="text-xs text-muted-foreground mt-1">Structure: {pg.structure}</span>
-                </div>
+                </button>
               ))
             )}
           </div>

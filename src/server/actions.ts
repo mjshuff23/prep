@@ -55,18 +55,22 @@ export async function updatePlayground(data: unknown) {
   const userId = await requireUser();
   const parsed = updatePlaygroundSchema.parse(data);
 
-  // Check ownership
+  // We need existing to validate the structure if it changed
   const existing = await prisma.playground.findUnique({ where: { id: parsed.id } });
   if (!existing || existing.userId !== userId) {
     throw new Error('Not found or forbidden');
   }
 
   const structureToValidate = parsed.structure || existing.structure;
-  if (parsed.stateJson !== undefined) {
+  const stateToValidate = parsed.stateJson !== undefined 
+    ? parsed.stateJson 
+    : (parsed.structure && parsed.structure !== existing.structure ? JSON.parse(existing.stateJson) : undefined);
+    
+  if (stateToValidate !== undefined) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const definition = registry.getStructure(structureToValidate as any);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const invariantCheck = definition.validateState(parsed.stateJson as any);
+    const invariantCheck = definition.validateState(stateToValidate as any);
     if (!invariantCheck.valid) {
       throw new Error(`Invalid state for structure ${structureToValidate}: ${invariantCheck.errors.join(', ')}`);
     }
@@ -75,8 +79,8 @@ export async function updatePlayground(data: unknown) {
   const stateStr = parsed.stateJson !== undefined ? JSON.stringify(parsed.stateJson) : undefined;
   const traceStr = parsed.traceJson !== undefined ? (parsed.traceJson ? JSON.stringify(parsed.traceJson) : null) : undefined;
 
-  const playground = await prisma.playground.update({
-    where: { id: parsed.id },
+  const { count } = await prisma.playground.updateMany({
+    where: { id: parsed.id, userId },
     data: {
       name: parsed.name,
       description: parsed.description,
@@ -86,8 +90,10 @@ export async function updatePlayground(data: unknown) {
     }
   });
 
+  if (count === 0) throw new Error('Not found or forbidden');
+
   revalidatePath('/playgrounds');
-  return playground;
+  return { ...existing, ...parsed, stateJson: stateStr || existing.stateJson, traceJson: traceStr || existing.traceJson };
 }
 
 export async function getPlaygroundById(id: string) {
@@ -121,13 +127,11 @@ export async function listPlaygroundsForCurrentUser() {
 
 export async function deletePlayground(id: string) {
   const userId = await requireUser();
-  const existing = await prisma.playground.findUnique({ where: { id } });
-  
-  if (!existing || existing.userId !== userId) {
+  const { count } = await prisma.playground.deleteMany({ where: { id, userId } });
+  if (count === 0) {
     throw new Error('Not found or forbidden');
   }
 
-  await prisma.playground.delete({ where: { id } });
   revalidatePath('/playgrounds');
 }
 
@@ -161,19 +165,14 @@ export async function updateDataset(data: unknown) {
   const userId = await requireUser();
   const parsed = updateDatasetSchema.parse(data);
 
-  const existing = await prisma.dataset.findUnique({ where: { id: parsed.id } });
-  if (!existing || existing.userId !== userId) {
-    throw new Error('Not found or forbidden');
-  }
-
   if (parsed.valuesJson !== undefined && !Array.isArray(parsed.valuesJson)) {
     throw new Error('valuesJson must be an array');
   }
 
   const valuesStr = parsed.valuesJson !== undefined ? JSON.stringify(parsed.valuesJson) : undefined;
 
-  const dataset = await prisma.dataset.update({
-    where: { id: parsed.id },
+  const { count } = await prisma.dataset.updateMany({
+    where: { id: parsed.id, userId },
     data: {
       name: parsed.name,
       description: parsed.description,
@@ -182,8 +181,10 @@ export async function updateDataset(data: unknown) {
     }
   });
 
+  if (count === 0) throw new Error('Not found or forbidden');
+
   revalidatePath('/datasets');
-  return dataset;
+  return { id: parsed.id, name: parsed.name };
 }
 
 export async function listDatasetsForCurrentUser() {
@@ -201,12 +202,10 @@ export async function listDatasetsForCurrentUser() {
 
 export async function deleteDataset(id: string) {
   const userId = await requireUser();
-  const existing = await prisma.dataset.findUnique({ where: { id } });
-  
-  if (!existing || existing.userId !== userId) {
+  const { count } = await prisma.dataset.deleteMany({ where: { id, userId } });
+  if (count === 0) {
     throw new Error('Not found or forbidden');
   }
 
-  await prisma.dataset.delete({ where: { id } });
   revalidatePath('/datasets');
 }
