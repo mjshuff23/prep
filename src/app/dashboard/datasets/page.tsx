@@ -1,7 +1,9 @@
 import { listDatasetsForCurrentUser } from "@/server/actions";
 import { DashboardDatasetsClient } from "@/features/dashboard/DashboardDatasetsClient";
+import { requireUser } from "@/lib/auth-helpers";
 
 export default async function DatasetsPage() {
+  await requireUser();
   const datasets = await listDatasetsForCurrentUser();
   
   return (

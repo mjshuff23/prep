@@ -3,18 +3,14 @@ import { Database, Trash2, Download } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
-interface Dataset {
-  id: string;
-  name: string;
-  description: string | null;
-  valuesJson: unknown;
-  updatedAt: Date;
-}
+import { listDatasetsForCurrentUser } from '@/server/actions';
+
+export type DatasetItem = Awaited<ReturnType<typeof listDatasetsForCurrentUser>>[number];
 
 interface DatasetCardProps {
-  dataset: Dataset;
+  dataset: DatasetItem;
   onDelete: (id: string) => void;
-  onLoad: (dataset: Dataset) => void;
+  onLoad: (dataset: DatasetItem) => void;
 }
 
 export function DatasetCard({ dataset, onDelete, onLoad }: DatasetCardProps) {
@@ -58,6 +54,7 @@ export function DatasetCard({ dataset, onDelete, onLoad }: DatasetCardProps) {
           className="h-8 w-8 text-muted-foreground hover:text-destructive"
           onClick={() => onDelete(dataset.id)}
           title="Delete Dataset"
+          aria-label="Delete Dataset"
         >
           <Trash2 className="h-4 w-4" />
         </Button>

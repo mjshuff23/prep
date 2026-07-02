@@ -6,19 +6,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription } from '@/components/ui/dialog';
 import { toast } from 'sonner';
-import { DatasetCard } from './DatasetCard';
+import { DatasetCard, type DatasetItem } from './DatasetCard';
 import { deleteDataset } from '@/server/actions';
 
-interface Dataset {
-  id: string;
-  name: string;
-  description: string | null;
-  valuesJson: unknown;
-  updatedAt: Date;
-}
-
-export function DashboardDatasetsClient({ initialDatasets }: { initialDatasets: Dataset[] }) {
-  const [datasets, setDatasets] = useState<Dataset[]>(initialDatasets);
+export function DashboardDatasetsClient({ initialDatasets }: { initialDatasets: DatasetItem[] }) {
+  const [datasets, setDatasets] = useState<DatasetItem[]>(initialDatasets);
   const [search, setSearch] = useState('');
   
   // Modals state
@@ -34,20 +26,21 @@ export function DashboardDatasetsClient({ initialDatasets }: { initialDatasets: 
 
   const handleDelete = async () => {
     if (!deleteId) return;
+    const targetId = deleteId;
     setIsDeleting(true);
     try {
-      await deleteDataset(deleteId);
-      setDatasets(prev => prev.filter(d => d.id !== deleteId));
+      await deleteDataset(targetId);
+      setDatasets(prev => prev.filter(d => d.id !== targetId));
       toast.success('Dataset deleted successfully');
-    } catch (_err) {
+    } catch {
       toast.error('Failed to delete dataset');
     } finally {
       setIsDeleting(false);
-      setDeleteId(null);
+      setDeleteId(prev => prev === targetId ? null : prev);
     }
   };
 
-  const handleLoad = (dataset: Dataset) => {
+  const handleLoad = (dataset: DatasetItem) => {
     // Usually a dataset is loaded inside a playground. 
     // From the dashboard, this could open a modal to pick a playground, 
     // or navigate to a new playground seeded with this dataset.
@@ -100,7 +93,7 @@ export function DashboardDatasetsClient({ initialDatasets }: { initialDatasets: 
       )}
 
       {/* Delete Confirmation Modal */}
-      <Dialog open={!!deleteId} onOpenChange={(open) => !open && setDeleteId(null)}>
+      <Dialog open={!!deleteId} onOpenChange={(open) => !isDeleting && !open && setDeleteId(null)}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Delete Dataset</DialogTitle>

@@ -1,27 +1,25 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Dashboard interactions', () => {
-  // Use the setup script from the project if one exists, 
-  // or mock the auth state if we are testing dashboard rendering
-  test('signed-in user sees empty dashboard and can navigate to playground', async ({ page }) => {
-    // For MVP testing without complex auth scaffolding, we can just ensure 
-    // the layout mounts and prompts sign-in or shows the default view
-    
-    // In our app, /dashboard redirects to /login if not authenticated, 
-    // but assuming playwright setup handles auth (or we test the unauthenticated redirect):
+test.describe('Dashboard routing', () => {
+  test('unauthenticated user is redirected from dashboard to sign-in', async ({ page }) => {
+    // Attempt to access protected dashboard routes
     await page.goto('/dashboard');
     
-    // Wait for either the Dashboard title or the Login redirect
-    // If auth is mocked, we expect "Welcome back"
-    const heading = page.locator('h1');
-    await expect(heading).toBeVisible();
+    // Should redirect to sign-in page
+    await expect(page).toHaveURL(/.*\/sign-in.*/);
     
-    // Just a basic smoke test for the dashboard layout
-    const navLinks = page.locator('nav a');
-    if (await navLinks.count() > 0) {
-      await expect(page.getByText('Overview')).toBeVisible();
-      await expect(page.getByText('Saved Playgrounds')).toBeVisible();
-      await expect(page.getByText('Datasets')).toBeVisible();
-    }
+    // The sign-in page should display its heading
+    const heading = page.getByRole('heading', { name: /sign in/i });
+    await expect(heading).toBeVisible();
+  });
+
+  test('unauthenticated user is redirected from datasets to sign-in', async ({ page }) => {
+    await page.goto('/dashboard/datasets');
+    await expect(page).toHaveURL(/.*\/sign-in.*/);
+  });
+  
+  test('unauthenticated user is redirected from playgrounds to sign-in', async ({ page }) => {
+    await page.goto('/dashboard/playgrounds');
+    await expect(page).toHaveURL(/.*\/sign-in.*/);
   });
 });

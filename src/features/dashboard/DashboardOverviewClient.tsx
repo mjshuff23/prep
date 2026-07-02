@@ -10,44 +10,24 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
 
-import { PlaygroundCard } from './PlaygroundCard';
-import { DatasetCard } from './DatasetCard';
+import { PlaygroundCard, type PlaygroundItem } from './PlaygroundCard';
+import { DatasetCard, type DatasetItem } from './DatasetCard';
 import { deletePlayground, updatePlayground, deleteDataset } from '@/server/actions';
-
-interface Playground {
-  id: string;
-  name: string;
-  description: string | null;
-  structure: string;
-  stateJson: unknown;
-  traceJson: unknown[] | null;
-  isArchived: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-interface Dataset {
-  id: string;
-  name: string;
-  description: string | null;
-  valuesJson: unknown;
-  updatedAt: Date;
-}
 
 export function DashboardOverviewClient({ 
   initialPlaygrounds, 
   initialDatasets 
 }: { 
-  initialPlaygrounds: Playground[];
-  initialDatasets: Dataset[];
+  initialPlaygrounds: PlaygroundItem[];
+  initialDatasets: DatasetItem[];
 }) {
-  const [playgrounds, setPlaygrounds] = useState<Playground[]>(initialPlaygrounds.slice(0, 3));
-  const [datasets, setDatasets] = useState<Dataset[]>(initialDatasets.slice(0, 3));
+  const [playgrounds, setPlaygrounds] = useState<PlaygroundItem[]>(initialPlaygrounds.slice(0, 3));
+  const [datasets, setDatasets] = useState<DatasetItem[]>(initialDatasets.slice(0, 3));
   
   // Modals state for Playgrounds
   const [deletePgId, setDeletePgId] = useState<string | null>(null);
   const [isDeletingPg, setIsDeletingPg] = useState(false);
-  const [editPlayground, setEditPlayground] = useState<Playground | null>(null);
+  const [editPlayground, setEditPlayground] = useState<PlaygroundItem | null>(null);
   const [editName, setEditName] = useState('');
   const [editDesc, setEditDesc] = useState('');
   const [isSaving, setIsSaving] = useState(false);
@@ -63,7 +43,7 @@ export function DashboardOverviewClient({
       await deletePlayground(deletePgId);
       setPlaygrounds(prev => prev.filter(p => p.id !== deletePgId));
       toast.success('Playground deleted successfully');
-    } catch (_err) {
+    } catch {
       toast.error('Failed to delete playground');
     } finally {
       setIsDeletingPg(false);
@@ -84,7 +64,7 @@ export function DashboardOverviewClient({
       setPlaygrounds(prev => prev.map(p => p.id === editPlayground.id ? { ...p, ...updated } : p));
       toast.success('Playground updated successfully');
       setEditPlayground(null);
-    } catch (_err) {
+    } catch {
       toast.error('Failed to update playground');
     } finally {
       setIsSaving(false);
@@ -98,7 +78,7 @@ export function DashboardOverviewClient({
       await deleteDataset(deleteDsId);
       setDatasets(prev => prev.filter(d => d.id !== deleteDsId));
       toast.success('Dataset deleted successfully');
-    } catch (_err) {
+    } catch {
       toast.error('Failed to delete dataset');
     } finally {
       setIsDeletingDs(false);
@@ -106,7 +86,7 @@ export function DashboardOverviewClient({
     }
   };
 
-  const handleLoadDataset = (dataset: Dataset) => {
+  const handleLoadDataset = (dataset: DatasetItem) => {
     toast.info(`Dataset "${dataset.name}" can be loaded from within any Playground's Dataset Panel.`);
   };
 

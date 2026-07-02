@@ -18,8 +18,8 @@ interface Playground {
   name: string;
   description: string | null;
   structure: string;
-  stateJson: unknown;
-  traceJson: unknown[] | null;
+  
+  opCount: number;
   isArchived: boolean;
   createdAt: Date;
   updatedAt: Date;
@@ -50,16 +50,17 @@ export function DashboardPlaygroundsClient({ initialPlaygrounds }: { initialPlay
 
   const handleDelete = async () => {
     if (!deleteId) return;
+    const targetId = deleteId;
     setIsDeleting(true);
     try {
-      await deletePlayground(deleteId);
-      setPlaygrounds(prev => prev.filter(p => p.id !== deleteId));
+      await deletePlayground(targetId);
+      setPlaygrounds(prev => prev.filter(p => p.id !== targetId));
       toast.success('Playground deleted successfully');
-    } catch (_err) {
+    } catch {
       toast.error('Failed to delete playground');
     } finally {
       setIsDeleting(false);
-      setDeleteId(null);
+      setDeleteId(prev => prev === targetId ? null : prev);
     }
   };
 
@@ -87,7 +88,7 @@ export function DashboardPlaygroundsClient({ initialPlaygrounds }: { initialPlay
       setPlaygrounds(prev => prev.map(p => p.id === editPlayground.id ? { ...p, ...updated } : p));
       toast.success('Playground updated successfully');
       setEditPlayground(null);
-    } catch (_err) {
+    } catch {
       toast.error('Failed to update playground');
     } finally {
       setIsSaving(false);
@@ -157,7 +158,7 @@ export function DashboardPlaygroundsClient({ initialPlaygrounds }: { initialPlay
       )}
 
       {/* Delete Confirmation Modal */}
-      <Dialog open={!!deleteId} onOpenChange={(open) => !open && setDeleteId(null)}>
+      <Dialog open={!!deleteId} onOpenChange={(open) => !isDeleting && !open && setDeleteId(null)}>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Delete Playground</DialogTitle>

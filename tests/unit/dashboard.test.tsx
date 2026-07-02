@@ -22,8 +22,7 @@ const mockPlayground = {
   name: 'Test Playground',
   description: 'A test playground',
   structure: 'stack',
-  stateJson: {},
-  traceJson: [{}],
+  opCount: 1,
   isArchived: false,
   createdAt: new Date('2026-07-01T00:00:00Z'),
   updatedAt: new Date('2026-07-02T00:00:00Z')
@@ -34,6 +33,9 @@ const mockDataset = {
   name: 'Test Dataset',
   description: 'A test dataset',
   valuesJson: [1, 2, 3],
+  userId: 'user-1',
+  structure: null,
+  createdAt: new Date('2026-07-01T00:00:00Z'),
   updatedAt: new Date('2026-07-02T00:00:00Z')
 };
 

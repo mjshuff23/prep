@@ -4,8 +4,13 @@ import { DashboardOverviewClient } from "@/features/dashboard/DashboardOverviewC
 
 export default async function DashboardPage() {
   const user = await requireUser();
-  const playgrounds = await listPlaygroundsForCurrentUser();
-  const datasets = await listDatasetsForCurrentUser();
+  const [allPlaygrounds, allDatasets] = await Promise.all([
+    listPlaygroundsForCurrentUser(),
+    listDatasetsForCurrentUser()
+  ]);
+
+  const playgrounds = allPlaygrounds.slice(0, 3);
+  const datasets = allDatasets.slice(0, 3);
 
   return (
     <div>

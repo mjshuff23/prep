@@ -120,15 +120,41 @@ export async function listPlaygroundsForCurrentUser() {
   const userId = await requireUser();
   const playgrounds = await prisma.playground.findMany({
     where: { userId },
+    select: {
+      id: true,
+      name: true,
+      description: true,
+      structure: true,
+      isArchived: true,
+      createdAt: true,
+      updatedAt: true,
+      traceJson: true,
+    },
     orderBy: { updatedAt: 'desc' },
     take: 50
   });
 
-  return playgrounds.map(p => ({
-    ...p,
-    stateJson: JSON.parse(p.stateJson),
-    traceJson: p.traceJson ? JSON.parse(p.traceJson) : null,
-  }));
+  return playgrounds.map(p => {
+    let opCount = 0;
+    if (p.traceJson) {
+      try {
+        const parsed = JSON.parse(p.traceJson);
+        if (Array.isArray(parsed)) opCount = parsed.length;
+      } catch {
+        // ignore invalid json
+      }
+    }
+    return {
+      id: p.id,
+      name: p.name,
+      description: p.description,
+      structure: p.structure,
+      isArchived: p.isArchived,
+      createdAt: p.createdAt,
+      updatedAt: p.updatedAt,
+      opCount,
+    };
+  });
 }
 
 export async function deletePlayground(id: string) {

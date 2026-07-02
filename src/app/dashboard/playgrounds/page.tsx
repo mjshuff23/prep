@@ -1,7 +1,9 @@
 import { listPlaygroundsForCurrentUser } from "@/server/actions";
 import { DashboardPlaygroundsClient } from "@/features/dashboard/DashboardPlaygroundsClient";
+import { requireUser } from "@/lib/auth-helpers";
 
 export default async function SavedPlaygroundsPage() {
+  await requireUser();
   const playgrounds = await listPlaygroundsForCurrentUser();
 
   return (

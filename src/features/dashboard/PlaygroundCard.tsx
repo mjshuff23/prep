@@ -5,23 +5,18 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-interface Playground {
-  id: string;
-  name: string;
-  description: string | null;
-  structure: string;
-  traceJson: unknown[] | null;
-  updatedAt: Date;
-}
+import { listPlaygroundsForCurrentUser } from '@/server/actions';
+
+export type PlaygroundItem = Awaited<ReturnType<typeof listPlaygroundsForCurrentUser>>[number];
 
 interface PlaygroundCardProps {
-  playground: Playground;
+  playground: PlaygroundItem;
   onDelete: (id: string) => void;
   onEdit: (id: string) => void;
 }
 
 export function PlaygroundCard({ playground, onDelete, onEdit }: PlaygroundCardProps) {
-  const opCount = Array.isArray(playground.traceJson) ? playground.traceJson.length : 0;
+  const opCount = playground.opCount;
   
   return (
     <Card className="flex flex-col h-full group hover:shadow-md transition-shadow">
@@ -64,6 +59,7 @@ export function PlaygroundCard({ playground, onDelete, onEdit }: PlaygroundCardP
             className="h-8 w-8 text-muted-foreground hover:text-foreground"
             onClick={() => onEdit(playground.id)}
             title="Edit Details"
+            aria-label="Edit Details"
           >
             <Edit className="h-4 w-4" />
           </Button>
@@ -73,6 +69,7 @@ export function PlaygroundCard({ playground, onDelete, onEdit }: PlaygroundCardP
             className="h-8 w-8 text-muted-foreground hover:text-destructive"
             onClick={() => onDelete(playground.id)}
             title="Delete Playground"
+            aria-label="Delete Playground"
           >
             <Trash2 className="h-4 w-4" />
           </Button>
