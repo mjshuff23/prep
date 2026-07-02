@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { TraceStep } from '../../ds/core/types';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -10,6 +10,14 @@ export interface TraceTimelineProps {
 }
 
 export function TraceTimeline({ steps, currentIndex, onSelectStep, disabled }: TraceTimelineProps) {
+  const activeStepRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (activeStepRef.current) {
+      activeStepRef.current.scrollIntoView({ block: 'nearest' });
+    }
+  }, [currentIndex]);
+
   if (steps.length === 0) {
     return (
       <div className="p-4 text-center text-sm text-muted-foreground border rounded-md bg-muted/10">
@@ -26,6 +34,8 @@ export function TraceTimeline({ steps, currentIndex, onSelectStep, disabled }: T
           return (
             <button
               key={step.id || index}
+              ref={isActive ? activeStepRef : undefined}
+              aria-current={isActive ? 'step' : undefined}
               onClick={() => onSelectStep(index)}
               disabled={disabled}
               className={`w-full text-left px-3 py-2 rounded-sm text-sm transition-colors ${

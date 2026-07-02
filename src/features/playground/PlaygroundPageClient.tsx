@@ -49,7 +49,7 @@ export function PlaygroundPageClient() {
   const hasError = status === 'error';
 
   return (
-    <div className="flex flex-col h-[calc(100vh-3.5rem)] overflow-hidden bg-background">
+    <div className="flex flex-col h-[calc(100vh-3.5rem)] bg-background overflow-y-auto md:overflow-hidden">
       {/* Playground Toolbar */}
       <header className="flex-none h-14 border-b flex items-center justify-between px-4">
         <div className="flex items-center gap-4">

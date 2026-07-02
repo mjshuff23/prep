@@ -5,7 +5,7 @@ export function useTracePlayback(trace: OperationTrace | null) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [speed, setSpeed] = useState(1); // 1x, 2x, etc. or ms interval
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const steps = trace?.steps || [];
   const maxIndex = Math.max(0, steps.length - 1);

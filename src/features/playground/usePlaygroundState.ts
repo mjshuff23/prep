@@ -41,26 +41,29 @@ export function usePlaygroundState(initialStructure: StructureKind = 'stack') {
     setStatus('running-operation');
     setError(null);
 
-    try {
-      const command: OperationCommand<unknown> = {
-        structure: structureKind,
-        operation: operation as OperationCommand<unknown>['operation'],
-        payload
-      };
+    setTimeout(() => {
+      try {
+        const command: OperationCommand<unknown> = {
+          structure: structureKind,
+          operation: operation as OperationCommand<unknown>['operation'],
+          payload
+        };
 
-      const resultTrace = registry.executeCommand(structureState, command);
-      
-      setStructureState(resultTrace.finalState);
-      setTrace(resultTrace);
-      setStatus('trace-ready');
-    } catch (err) {
-      setStatus('error');
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError(String(err));
+        const resultTrace = registry.executeCommand(structureState, command);
+        
+        setStructureState(resultTrace.finalState);
+        setTrace(resultTrace);
+        setStatus('trace-ready');
+      } catch (err) {
+        setStatus('error');
+        setTrace(null);
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError(String(err));
+        }
       }
-    }
+    }, 0);
   }, [structureKind, structureState]);
 
   return {

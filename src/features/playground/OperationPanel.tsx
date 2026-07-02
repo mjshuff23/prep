@@ -45,6 +45,7 @@ export function OperationPanel({ operations, onRunOperation, disabled }: Operati
             disabled={disabled}
             className="w-full justify-start text-xs h-8 px-2"
             title={op.description}
+            aria-pressed={selectedOp === op.operation}
           >
             {op.operation}
           </Button>
