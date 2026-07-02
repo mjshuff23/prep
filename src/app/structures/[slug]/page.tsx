@@ -5,6 +5,8 @@ import { getStructureBySlug } from "@/lib/content/registry";
 import { buttonVariants } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { CodeTabs } from "@/features/code-catalog/CodeTabs";
+import type { StructureKind } from "@/features/code-catalog/types";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -154,9 +156,7 @@ export default async function StructureDetailPage({ params }: Readonly<{ params:
           </TabsContent>
 
           <TabsContent value="implementation">
-            <div className="flex items-center justify-center h-64 border rounded-lg bg-muted/20 border-dashed">
-              <p className="text-muted-foreground">Code implementations coming soon.</p>
-            </div>
+            <CodeTabs structure={structure.slug as StructureKind} />
           </TabsContent>
 
           <TabsContent value="exercises">
