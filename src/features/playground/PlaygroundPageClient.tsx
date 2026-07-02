@@ -188,14 +188,14 @@ export function PlaygroundPageClient() {
   };
 
   useEffect(() => {
-    if (initialId && !currentPlaygroundId) {
+    if (initialId && initialId !== currentPlaygroundId) {
       const timer = setTimeout(() => {
         void handleSelectPlayground(initialId);
       }, 0);
       return () => clearTimeout(timer);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialId]);
+  }, [initialId, currentPlaygroundId]);
 
   const isExecuting = status === 'running-operation';
   const hasError = status === 'error';

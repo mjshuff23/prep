@@ -16,10 +16,14 @@ test.describe('Dashboard routing', () => {
   test('unauthenticated user is redirected from datasets to sign-in', async ({ page }) => {
     await page.goto('/dashboard/datasets');
     await expect(page).toHaveURL(/.*\/sign-in.*/);
+    const heading = page.getByRole('heading', { name: /sign in/i });
+    await expect(heading).toBeVisible();
   });
   
   test('unauthenticated user is redirected from playgrounds to sign-in', async ({ page }) => {
     await page.goto('/dashboard/playgrounds');
     await expect(page).toHaveURL(/.*\/sign-in.*/);
+    const heading = page.getByRole('heading', { name: /sign in/i });
+    await expect(heading).toBeVisible();
   });
 });
