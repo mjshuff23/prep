@@ -16,6 +16,7 @@ export async function requireUser() {
 
 export function assertOwner(resourceUserId: string, currentUserId?: string) {
   if (!currentUserId || resourceUserId !== currentUserId) {
+    console.warn(`Unauthorized access attempt: resourceUserId=${resourceUserId}, currentUserId=${currentUserId}`);
     redirect("/");
   }
 }

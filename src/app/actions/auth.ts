@@ -6,17 +6,27 @@ import { AuthError } from "next-auth";
 const failedAttempts = new Map<string, { count: number; timestamp: number }>();
 
 export async function loginAction(formData: FormData) {
-  const email = formData.get("email") as string;
+  const rawEmail = formData.get("email");
+  const email = typeof rawEmail === "string" ? rawEmail.trim().toLowerCase() : "";
   
+  const now = Date.now();
+  for (const [key, attempt] of failedAttempts.entries()) {
+    if (now - attempt.timestamp > 15 * 60 * 1000) {
+      failedAttempts.delete(key);
+    }
+  }
+
   if (email) {
     const attempt = failedAttempts.get(email);
-    if (attempt && attempt.count >= 5 && Date.now() - attempt.timestamp < 15 * 60 * 1000) {
+    if (attempt && attempt.count >= 5 && now - attempt.timestamp < 15 * 60 * 1000) {
       return { error: "Too many failed attempts. Please try again later." };
     }
   }
 
   try {
-    await signIn("credentials", Object.fromEntries(formData));
+    const credentials = Object.fromEntries(formData);
+    if (email) credentials.email = email;
+    await signIn("credentials", credentials);
     if (email) failedAttempts.delete(email);
   } catch (error) {
     if (error instanceof AuthError) {

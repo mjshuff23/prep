@@ -17,6 +17,10 @@ export async function registerAction(formData: FormData) {
   const password = passwordVal;
   const name = typeof nameVal === "string" ? nameVal : undefined;
 
+  if (!email) {
+    return { error: "Email is required." };
+  }
+
   if (password.length < 8) {
     return { error: "Password must be at least 8 characters long." };
   }

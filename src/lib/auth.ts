@@ -19,19 +19,27 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) return null;
+        if (
+          !credentials?.email || 
+          !credentials?.password || 
+          typeof credentials.email !== "string" || 
+          typeof credentials.password !== "string"
+        ) {
+          return null;
+        }
         
         const user = await prisma.user.findUnique({
-          where: { email: (credentials.email as string).trim().toLowerCase() }
+          where: { email: credentials.email.trim().toLowerCase() }
         });
         
         if (!user || !user.password) {
-          await bcrypt.compare("", "$2a$10$abcdefghijklmnopqrstuv");
+          // Compare against a valid 60-character bcrypt hash to maintain timing
+          await bcrypt.compare("", "$2a$10$CwTycUXWue0Thq9StjUM0u1KLRt1XhVp6vQzVzX8bZ3X9P4M2qL22");
           return null;
         }
         
         const passwordsMatch = await bcrypt.compare(
-          credentials.password as string,
+          credentials.password,
           user.password
         );
         
