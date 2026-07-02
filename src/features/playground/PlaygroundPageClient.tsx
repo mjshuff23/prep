@@ -18,8 +18,15 @@ import { PlaybackControls } from './PlaybackControls';
 import { VisualizationCanvas } from '../visualizer/VisualizationCanvas';
 import { stackAdapter } from '../visualizer/adapters/stack';
 import { queueAdapter } from '../visualizer/adapters/queue';
-import { CodeTabs } from '../code-catalog/CodeTabs';
+import dynamic from 'next/dynamic';
 import type { StructureKind } from '../code-catalog/types';
+
+const CodeTabs = dynamic(
+  () => import('../code-catalog/CodeTabs').then((mod) => mod.CodeTabs),
+  { 
+    loading: () => <div className="flex items-center justify-center h-full text-sm text-muted-foreground p-8">Loading code viewer...</div> 
+  }
+);
 
 export function PlaygroundPageClient() {
   const {
