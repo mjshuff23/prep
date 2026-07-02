@@ -37,8 +37,12 @@ const CodeTabs = dynamic(
   }
 );
 
+import { useSearchParams } from 'next/navigation';
+
 export function PlaygroundPageClient() {
   const { data: session } = useSession();
+  const searchParams = useSearchParams();
+  const initialId = searchParams.get('id');
   
   const {
     structureKind,
@@ -182,6 +186,16 @@ export function PlaygroundPageClient() {
       toast.error(e instanceof Error ? e.message : 'Failed to load playground');
     }
   };
+
+  useEffect(() => {
+    if (initialId && initialId !== currentPlaygroundId) {
+      const timer = setTimeout(() => {
+        void handleSelectPlayground(initialId);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialId, currentPlaygroundId]);
 
   const isExecuting = status === 'running-operation';
   const hasError = status === 'error';
