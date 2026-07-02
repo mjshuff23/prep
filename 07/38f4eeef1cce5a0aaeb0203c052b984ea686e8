@@ -1,0 +1,27 @@
+src/features/code-catalog/CodeTabs.test.tsx
+  s_6b8a1f5b7df5c1::t_b4dd98f3fae056 1-54
+src/features/code-catalog/CodeTabs.tsx
+  s_6b8a1f5b7df5c1::t_46d24105336368 1-118
+src/features/code-catalog/ComplexityTable.test.tsx
+  s_6b8a1f5b7df5c1::t_7d003c02457cda 1-34
+src/features/code-catalog/ComplexityTable.tsx
+  s_6b8a1f5b7df5c1::t_89fd0d3300b31c 1-42
+src/features/code-catalog/registry.test.ts
+  s_6b8a1f5b7df5c1::t_6d4f34f42f7f27 1-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "0738f4eeef1cce5a0aaeb0203c052b984ea686e8",
+  "prompts": {},
+  "sessions": {
+    "s_6b8a1f5b7df5c1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f2032-4aa8-7041-b239-bcc08b2a6492",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
