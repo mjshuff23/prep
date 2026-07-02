@@ -37,6 +37,15 @@ export function usePlaygroundState(initialStructure: StructureKind = 'stack') {
     setError(null);
   }, []);
 
+  const loadState = useCallback((newKind: StructureKind, state: StructureState, traceData: OperationTrace | null, newSeed?: unknown[]) => {
+    setStructureKind(newKind);
+    setStructureState(state);
+    setSeed(newSeed);
+    setTrace(traceData);
+    setStatus(traceData ? 'trace-ready' : 'idle');
+    setError(null);
+  }, []);
+
   const runOperation = useCallback((operation: string, payload?: unknown) => {
     setStatus('running-operation');
     setError(null);
@@ -69,6 +78,7 @@ export function usePlaygroundState(initialStructure: StructureKind = 'stack') {
   return {
     structureKind,
     changeStructure,
+    loadState,
     structureState,
     seed,
     resetState,
