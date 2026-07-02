@@ -25,7 +25,7 @@ import { VisualizationCanvas } from '../visualizer/VisualizationCanvas';
 import { stackAdapter } from '../visualizer/adapters/stack';
 import { queueAdapter } from '../visualizer/adapters/queue';
 import dynamic from 'next/dynamic';
-import type { StructureKind } from '../code-catalog/types';
+import { STRUCTURE_KINDS, type StructureKind } from '../../ds/core/types';
 
 import { createPlayground, updatePlayground, listPlaygroundsForCurrentUser, getPlaygroundById } from '@/server/actions';
 
@@ -164,7 +164,11 @@ export function PlaygroundPageClient() {
   const handleSelectPlayground = async (id: string) => {
     try {
       const pg = await getPlaygroundById(id);
-      loadState(pg.structure as any, pg.stateJson, pg.traceJson);
+      if (!STRUCTURE_KINDS.includes(pg.structure as any)) {
+        toast.error(`Unknown structure: ${pg.structure}`);
+        return;
+      }
+      loadState(pg.structure as StructureKind, pg.stateJson, pg.traceJson);
       setCurrentPlaygroundId(pg.id);
       setPlaygroundName(pg.name);
       setPlaygroundDesc(pg.description || '');

@@ -77,7 +77,7 @@ export async function updatePlayground(data: unknown) {
   }
 
   const stateStr = parsed.stateJson !== undefined ? JSON.stringify(parsed.stateJson) : undefined;
-  const traceStr = parsed.traceJson !== undefined ? (parsed.traceJson ? JSON.stringify(parsed.traceJson) : null) : undefined;
+  const traceStr = parsed.traceJson !== undefined ? (parsed.traceJson !== null ? JSON.stringify(parsed.traceJson) : null) : undefined;
 
   const { count } = await prisma.playground.updateMany({
     where: { id: parsed.id, userId },
@@ -93,7 +93,12 @@ export async function updatePlayground(data: unknown) {
   if (count === 0) throw new Error('Not found or forbidden');
 
   revalidatePath('/dashboard/playgrounds');
-  return { ...existing, ...parsed, stateJson: stateStr || existing.stateJson, traceJson: traceStr || existing.traceJson };
+  return { 
+    ...existing, 
+    ...parsed, 
+    stateJson: stateStr !== undefined ? stateStr : existing.stateJson, 
+    traceJson: traceStr !== undefined ? traceStr : existing.traceJson 
+  };
 }
 
 export async function getPlaygroundById(id: string) {

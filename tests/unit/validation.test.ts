@@ -24,7 +24,7 @@ describe('Validation Schemas', () => {
       expect(result.success).toBe(false);
     });
 
-    it('rejects missing name', () => {
+    it('rejects empty name', () => {
       const payload = {
         name: '',
         structure: 'stack',
