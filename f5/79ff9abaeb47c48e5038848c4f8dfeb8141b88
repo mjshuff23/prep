@@ -1,0 +1,31 @@
+src/app/dashboard/datasets/page.tsx
+  s_e06796e4a64013::t_134a46333fa31a 1-6,12
+src/app/dashboard/playgrounds/page.tsx
+  s_e06796e4a64013::t_b1bcbaaed6ed92 1-6,12
+src/features/dashboard/DashboardDatasetsClient.tsx
+  s_e06796e4a64013::t_7c93d29aaa9783 1-121
+src/features/dashboard/DashboardOverviewClient.tsx
+  s_e06796e4a64013::t_ec548c01fc755e 1-308
+src/features/dashboard/DashboardPlaygroundsClient.tsx
+  s_e06796e4a64013::t_f73fb11be4ec93 1-213
+src/features/dashboard/DatasetCard.tsx
+  s_e06796e4a64013::t_79b5d2b4c6e9d2 1-74
+tests/unit/dashboard.test.tsx
+  s_e06796e4a64013::t_d12b42784d4ef0 1-70
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "f579ff9abaeb47c48e5038848c4f8dfeb8141b88",
+  "prompts": {},
+  "sessions": {
+    "s_e06796e4a64013": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f234a-c485-7a83-9552-854de9b25875",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
