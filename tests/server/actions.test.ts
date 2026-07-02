@@ -141,7 +141,7 @@ describe('Server Actions - Datasets', () => {
 
   it('updateDataset enforces ownership', async () => {
     vi.mocked(auth).mockResolvedValueOnce({ user: { id: 'user-1' }, expires: '' } as any);
-    vi.mocked(prisma.dataset.updateMany).mockResolvedValueOnce({ count: 0 } as any);
+    vi.mocked(prisma.dataset.findUnique).mockResolvedValueOnce({ id: 'ds-1', userId: 'other-user', name: 'Old' } as any);
 
     const { updateDataset } = await import('@/server/actions');
     await expect(updateDataset({ id: 'ds-1', name: 'New Name' })).rejects.toThrow('Not found or forbidden');

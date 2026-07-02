@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/set-state-in-effect, @typescript-eslint/no-explicit-any */
+// 
 "use client";
 
 import React, { useMemo, useState, useEffect, useRef } from 'react';
@@ -26,6 +26,7 @@ import { stackAdapter } from '../visualizer/adapters/stack';
 import { queueAdapter } from '../visualizer/adapters/queue';
 import dynamic from 'next/dynamic';
 import { STRUCTURE_KINDS, type StructureKind } from '../../ds/core/types';
+import type { StructureKind as CatalogStructureKind } from '../code-catalog/types';
 
 import { createPlayground, updatePlayground, listPlaygroundsForCurrentUser, getPlaygroundById } from '@/server/actions';
 
@@ -78,7 +79,6 @@ export function PlaygroundPageClient() {
   // Set dirty flag when state changes unless it was just saved/loaded
   const skipDirtyRef = useRef(true);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/set-state-in-effect
   useEffect(() => {
     if (skipDirtyRef.current) {
       skipDirtyRef.current = false;
@@ -164,7 +164,7 @@ export function PlaygroundPageClient() {
   const handleSelectPlayground = async (id: string) => {
     try {
       const pg = await getPlaygroundById(id);
-      if (!STRUCTURE_KINDS.includes(pg.structure as any)) {
+      if (!STRUCTURE_KINDS.includes(pg.structure as unknown as StructureKind)) {
         toast.error(`Unknown structure: ${pg.structure}`);
         return;
       }
@@ -297,7 +297,7 @@ export function PlaygroundPageClient() {
               </TabsContent>
 
               <TabsContent value="code" className="p-0 m-0 border-none flex-1 flex flex-col h-full overflow-y-auto">
-                <CodeTabs structure={structureKind as StructureKind} />
+                <CodeTabs structure={structureKind as unknown as CatalogStructureKind} />
               </TabsContent>
             </div>
           </Tabs>
