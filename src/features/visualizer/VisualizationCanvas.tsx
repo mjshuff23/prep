@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useMemo } from 'react';
 import {
   ReactFlow,
@@ -43,7 +45,8 @@ export function VisualizationCanvas<TState>({
       return { ...result, error: null };
     } catch (e) {
       console.error("Adapter failed to parse state:", e);
-      return { nodes: [], edges: [], error: e as Error };
+      const err = e instanceof Error ? e : new Error(String(e));
+      return { nodes: [], edges: [], error: err };
     }
   }, [step, adapter, viewportMode]);
 

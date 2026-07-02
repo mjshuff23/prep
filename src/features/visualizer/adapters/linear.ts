@@ -20,6 +20,7 @@ export function createLinearNodes(
     if (highlight) {
       if (highlight.color === 'danger') status = 'danger';
       else if (highlight.color === 'success') status = 'success';
+      else if (highlight.color === 'warning') status = 'warning';
       else status = 'active'; // Default active state for uncolored highlights
     }
 
