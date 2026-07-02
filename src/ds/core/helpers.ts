@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const emptySchema = z.strictObject({}).or(z.undefined().transform(() => ({})));
+export const emptySchema = z.strictObject({}).default({});
 
 export function createLinearInitialState(seed?: unknown): { items: unknown[] } {
   if (Array.isArray(seed)) {

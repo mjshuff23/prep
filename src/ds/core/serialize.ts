@@ -14,12 +14,17 @@ export const invariantCheckSchema = z.object({
   errors: z.array(z.string()),
 });
 
+export const structureStateSchema = z.union([
+  z.record(z.string(), z.unknown()),
+  z.array(z.unknown()),
+]);
+
 export const traceStepSchema = z.object({
   id: z.string(),
   index: z.number(),
   title: z.string(),
   description: z.string(),
-  state: z.unknown(),
+  state: structureStateSchema,
   highlights: z.array(highlightSchema).optional(),
   invariantCheck: invariantCheckSchema.optional(),
 });
@@ -29,8 +34,8 @@ export const operationTraceSchema = z.object({
   structure: z.enum(STRUCTURE_KINDS),
   operation: z.enum(OPERATION_KINDS),
   input: z.unknown(),
-  initialState: z.unknown(),
-  finalState: z.unknown(),
+  initialState: structureStateSchema,
+  finalState: structureStateSchema,
   steps: z.array(traceStepSchema),
   complexity: z.object({
     time: z.string(),
@@ -49,8 +54,8 @@ export function serializeTrace(trace: OperationTrace): string {
 
 /**
  * Deserializes a JSON string into an OperationTrace.
- * Note: `input`, `initialState`, and `finalState` are intentionally left unvalidated 
- * (as `z.unknown()`) in the schema because their shapes are structure-specific.
+ * Note: `input` is intentionally left loosely validated because its shape is operation-specific.
+ * `initialState` and `finalState` are validated strictly to be objects or arrays.
  */
 export function deserializeTrace(json: string): OperationTrace {
   try {

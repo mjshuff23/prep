@@ -26,7 +26,7 @@ To add a new data structure, follow these steps:
 ### Example (Pseudocode)
 
 ```typescript
-import { registry } from '@src/ds/core/registry';
+import { registry } from '@/ds/core/registry';
 // The registry is pre-loaded with core structures (stack, queue)
 
 

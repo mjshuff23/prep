@@ -1,8 +1,8 @@
 import { OperationCommand, StructureKind } from './types';
 
 export class DataStructureError extends Error {
-  constructor(message: string) {
-    super(message);
+  constructor(message: string, options?: ErrorOptions) {
+    super(message, options);
     this.name = 'DataStructureError';
   }
 }
@@ -30,7 +30,7 @@ export class StructureNotFoundError extends DataStructureError {
 
 export class TraceSerializationError extends DataStructureError {
   constructor(message: string, public readonly originalError?: unknown) {
-    super(`Serialization Error: ${message}`);
+    super(`Serialization Error: ${message}`, { cause: originalError });
     this.name = 'TraceSerializationError';
   }
 }
