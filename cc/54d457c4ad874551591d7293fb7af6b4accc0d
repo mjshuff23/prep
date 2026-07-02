@@ -1,0 +1,57 @@
+.gitignore
+  s_6b8a1f5b7df5c1::t_2fd60177529fc6 42-43
+.npmrc
+  s_6b8a1f5b7df5c1::t_554c39d61e8fdf 1
+package.json
+  s_6b8a1f5b7df5c1::t_6b05a6c2ebad1b 40,49,53-58
+pnpm-lock.yaml
+  s_6b8a1f5b7df5c1::t_964447c0d2e515 72-74,99-101,343-356,437-442,638-640,749-864,1103-1106,1515-1518,1539-1545,1577-1584,1616-1623,1670-1672,1820-1823,1852-1858,1867-1869,1906-1908,1918-1921,1942-1945,2161-2167,2235-2238,2274-2276,2297-2299,2319-2322,2350-2355,2401-2403,2571-2573,2831-2833,2845-2848,2932-2939,3040-3042,3145-3147,3163-3165,3196-3199,3216-3228,3236-3238,3247-3249,3265-3267,3283-3286,3303-3305,3329-3332,3388-3390,3470-3473,3487-3489,3742-3749,3922-3924,4243-4252,4350-4353,4490-4491,4589-4721,4897-4900,5320-5321,5332-5335,5381-5395,5426-5433,5477-5478,5603-5604,5630-5633,5638-5639,5670-5674,5681-5682,5699-5700,6110-6115,6191-6195,6230-6233,6255-6256,6279-6280,6302-6305,6350-6351,6488-6489,6719-6720,6731-6732,6793-6808,6911-6912,7024-7025,7034-7039,7071-7072,7087-7103,7115-7120,7128-7129,7146-7150,7162-7163,7197-7198,7221-7222,7309-7310,7467-7468,7477-7478,7769-7772,7910-7914
+pnpm-workspace.yaml
+  s_6b8a1f5b7df5c1::t_a890b351c2abf8 4-5
+prisma.config.ts
+  s_6b8a1f5b7df5c1::t_d431f02500aa3e 1-14
+prisma/schema.prisma
+  s_6b8a1f5b7df5c1::t_3084be7a87119c 1-78
+src/app/actions/auth.ts
+  s_6b8a1f5b7df5c1::t_d55e85e5b535de 1-24
+src/app/actions/register.ts
+  s_6b8a1f5b7df5c1::t_6442d46ae58e67 1-35
+src/app/dashboard/page.tsx
+  s_6b8a1f5b7df5c1::t_d8656cb73fb3f1 1-5,9
+src/app/settings/page.tsx
+  s_6b8a1f5b7df5c1::t_fd31d9b1dfb638 1-4
+src/app/sign-in/page.tsx
+  s_6b8a1f5b7df5c1::t_c7e5b99d99e6b4 1-4,11-17,19,25,29,35,37-39,42-44,47
+src/app/sign-up/page.tsx
+  s_6b8a1f5b7df5c1::t_1dccdb36e9efdf 1-4,11-17,19,25,27-30,33,37,39-41,44-46,49
+src/components/ui/GlobalNav.test.tsx
+  s_6b8a1f5b7df5c1::t_d89debee3c0878 25,27,32-38
+src/components/ui/GlobalNav.tsx
+  s_6b8a1f5b7df5c1::t_6232fb0ec79d63 4-5,8-14,16-24,53-78,114-165
+src/lib/auth.ts
+  s_6b8a1f5b7df5c1::t_9a15c90469e582 1-55
+src/lib/prisma.ts
+  s_6b8a1f5b7df5c1::t_8ebf0d72962a4e 1-7
+src/types/next-auth.d.ts
+  s_6b8a1f5b7df5c1::t_cca7d734dd5da9 1-9
+tests/e2e/auth.spec.ts
+  s_6b8a1f5b7df5c1::t_3021520d0a6a48 1-21
+tests/unit/auth.test.ts
+  s_6b8a1f5b7df5c1::t_994cdbd2a9d9d3 1-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "cc54d457c4ad874551591d7293fb7af6b4accc0d",
+  "prompts": {},
+  "sessions": {
+    "s_6b8a1f5b7df5c1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f2032-4aa8-7041-b239-bcc08b2a6492",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
