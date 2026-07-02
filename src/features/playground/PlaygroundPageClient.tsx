@@ -18,6 +18,15 @@ import { PlaybackControls } from './PlaybackControls';
 import { VisualizationCanvas } from '../visualizer/VisualizationCanvas';
 import { stackAdapter } from '../visualizer/adapters/stack';
 import { queueAdapter } from '../visualizer/adapters/queue';
+import dynamic from 'next/dynamic';
+import type { StructureKind } from '../code-catalog/types';
+
+const CodeTabs = dynamic(
+  () => import('../code-catalog/CodeTabs').then((mod) => mod.CodeTabs),
+  { 
+    loading: () => <div className="flex items-center justify-center h-full text-sm text-muted-foreground p-8">Loading code viewer...</div> 
+  }
+);
 
 export function PlaygroundPageClient() {
   const {
@@ -116,15 +125,15 @@ export function PlaygroundPageClient() {
         </main>
 
         {/* Right - Code & Trace */}
-        <aside className="w-full md:w-80 flex-none border-l bg-card flex flex-col">
+        <aside className="w-full md:w-[440px] flex-none border-l bg-card flex flex-col">
           <Tabs defaultValue="trace" className="flex-1 flex flex-col">
             <TabsList className="w-full justify-start rounded-none border-b bg-transparent px-2">
               <TabsTrigger value="trace">Trace</TabsTrigger>
-              <TabsTrigger value="code" disabled>Code</TabsTrigger>
+              <TabsTrigger value="code">Code</TabsTrigger>
             </TabsList>
             
             <div className="flex-1 overflow-y-auto flex flex-col">
-              <TabsContent value="trace" className="p-0 m-0 border-none flex-1 flex flex-col h-full">
+              <TabsContent value="trace" className="p-0 m-0 border-none flex-1 flex flex-col h-full overflow-y-auto">
                 <div className="p-4 border-b">
                   <h3 className="font-medium mb-4">Playback Controls</h3>
                   <PlaybackControls
@@ -156,6 +165,10 @@ export function PlaygroundPageClient() {
                     </div>
                   )}
                 </div>
+              </TabsContent>
+
+              <TabsContent value="code" className="p-0 m-0 border-none flex-1 flex flex-col h-full overflow-y-auto">
+                <CodeTabs structure={structureKind as StructureKind} />
               </TabsContent>
             </div>
           </Tabs>
