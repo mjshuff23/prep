@@ -1,0 +1,37 @@
+src/server/schemas.ts
+  s_e06796e4a64013::t_496225cc32fa92 1-27
+src/features/playground/PlaygroundPageClient.tsx
+  s_e06796e4a64013::t_8c752ce1f9086b 4-5,9-13,30-31,40-41,45,51-52,66-173,182,186-190,192,207,295-358
+  s_e06796e4a64013::t_68ed10f2f84e73 1
+src/server/actions.ts
+  s_e06796e4a64013::t_0e17970e04c3fe 1-212
+tests/server/actions.test.ts
+  s_e06796e4a64013::t_36769d1de0ec9f 1-99
+prisma/schema.prisma
+  s_e06796e4a64013::t_24a60ec9d7c8e2 67-77,79,83-91,93
+src/features/playground/usePlaygroundState.ts
+  s_e06796e4a64013::t_26c49a8aa92623 40-47,80
+src/features/playground/DatasetPanel.tsx
+  s_e06796e4a64013::t_a648a066767dd6 2-4,7-12,21,23-56,59-76,78-94,106,110-166
+  s_e06796e4a64013::t_278f28d98b95a9 1
+tests/unit/validation.test.ts
+  s_e06796e4a64013::t_b8cb6050ce5603 1-48
+tests/e2e/persistence.spec.ts
+  s_e06796e4a64013::t_eba996b0973eb3 1-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "258d8981cbfff93115196d2f3f85a07175a36f99",
+  "prompts": {},
+  "sessions": {
+    "s_e06796e4a64013": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f234a-c485-7a83-9552-854de9b25875",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
