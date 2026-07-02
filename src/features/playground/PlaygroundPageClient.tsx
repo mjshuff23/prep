@@ -1,10 +1,16 @@
+/* eslint-disable react-hooks/set-state-in-effect, @typescript-eslint/no-explicit-any */
 "use client";
 
-import React, { useMemo } from 'react';
-import { Settings, Save } from "lucide-react";
+import React, { useMemo, useState, useEffect } from 'react';
+import { Settings, Save, FolderOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { StatusBadge } from "@/components/ui/StatusBadge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { toast } from "sonner";
+import { useSession, signIn } from "next-auth/react";
 
 import { usePlaygroundState } from './usePlaygroundState';
 import { useTracePlayback } from './useTracePlayback';
@@ -21,6 +27,8 @@ import { queueAdapter } from '../visualizer/adapters/queue';
 import dynamic from 'next/dynamic';
 import type { StructureKind } from '../code-catalog/types';
 
+import { createPlayground, updatePlayground, listPlaygroundsForCurrentUser, getPlaygroundById } from '@/server/actions';
+
 const CodeTabs = dynamic(
   () => import('../code-catalog/CodeTabs').then((mod) => mod.CodeTabs),
   { 
@@ -29,15 +37,19 @@ const CodeTabs = dynamic(
 );
 
 export function PlaygroundPageClient() {
+  const { data: session } = useSession();
+  
   const {
     structureKind,
     changeStructure,
+    loadState,
     resetState,
     status,
     error,
     trace,
     runOperation,
-    definition
+    definition,
+    structureState
   } = usePlaygroundState('stack');
 
   const playback = useTracePlayback(trace);
@@ -51,24 +63,133 @@ export function PlaygroundPageClient() {
     }
   }, [structureKind]);
 
-  const handleApplySeed = (seed: unknown[]) => resetState(seed);
-  const handleResetEmpty = () => resetState();
+  const [isSaving, setIsSaving] = useState(false);
+  const [saveModalOpen, setSaveModalOpen] = useState(false);
+  const [playgroundName, setPlaygroundName] = useState('My Playground');
+  const [playgroundDesc, setPlaygroundDesc] = useState('');
+  const [currentPlaygroundId, setCurrentPlaygroundId] = useState<string | null>(null);
+  const [isDirty, setIsDirty] = useState(false);
+
+  const [playgrounds, setPlaygrounds] = useState<any[]>([]);
+  const [loadModalOpen, setLoadModalOpen] = useState(false);
+  const [isLoadingPlaygrounds, setIsLoadingPlaygrounds] = useState(false);
+
+  // Set dirty flag when state changes unless it was just saved/loaded
+  // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/set-state-in-effect
+  useEffect(() => {
+    setIsDirty(true);
+  }, [structureState, trace]);
+
+  const handleApplySeed = (seed: unknown[]) => { resetState(seed); setCurrentPlaygroundId(null); setIsDirty(true); };
+  const handleResetEmpty = () => { resetState(); setCurrentPlaygroundId(null); setIsDirty(true); };
+
+  const handleSaveClick = () => {
+    if (!session?.user) {
+      signIn();
+      return;
+    }
+    
+    if (currentPlaygroundId) {
+      handleUpdatePlayground();
+    } else {
+      setSaveModalOpen(true);
+    }
+  };
+
+  const handleCreatePlayground = async () => {
+    setIsSaving(true);
+    try {
+      const res = await createPlayground({
+        name: playgroundName,
+        description: playgroundDesc,
+        structure: structureKind,
+        stateJson: structureState,
+        traceJson: trace,
+      });
+      setCurrentPlaygroundId(res.id);
+      setIsDirty(false);
+      setSaveModalOpen(false);
+      toast.success('Playground saved');
+    } catch (e: unknown) {
+      toast.error(e instanceof Error ? e.message : 'Failed to save playground');
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleUpdatePlayground = async () => {
+    if (!currentPlaygroundId) return;
+    setIsSaving(true);
+    try {
+      await updatePlayground({
+        id: currentPlaygroundId,
+        structure: structureKind,
+        stateJson: structureState,
+        traceJson: trace,
+      });
+      setIsDirty(false);
+      toast.success('Playground updated');
+    } catch (e: unknown) {
+      toast.error(e instanceof Error ? e.message : 'Failed to update playground');
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleLoadClick = async () => {
+    if (!session?.user) {
+      signIn();
+      return;
+    }
+    setLoadModalOpen(true);
+    setIsLoadingPlaygrounds(true);
+    try {
+      const data = await listPlaygroundsForCurrentUser();
+      setPlaygrounds(data);
+    } catch (e) {
+      console.error(e);
+      toast.error('Failed to list playgrounds');
+    } finally {
+      setIsLoadingPlaygrounds(false);
+    }
+  };
+
+  const handleSelectPlayground = async (id: string) => {
+    try {
+      const pg = await getPlaygroundById(id);
+      loadState(pg.structure as any, pg.stateJson, pg.traceJson);
+      setCurrentPlaygroundId(pg.id);
+      setPlaygroundName(pg.name);
+      setPlaygroundDesc(pg.description || '');
+      setLoadModalOpen(false);
+      
+      // We set a small timeout so the useEffect for dirtiness runs first and then we clear it
+      setTimeout(() => setIsDirty(false), 0);
+      toast.success('Playground loaded');
+    } catch (e: unknown) {
+      console.error(e);
+      toast.error(e instanceof Error ? e.message : 'Failed to load playground');
+    }
+  };
 
   const isExecuting = status === 'running-operation';
   const hasError = status === 'error';
 
   return (
     <div className="flex flex-col h-[calc(100vh-3.5rem)] bg-background overflow-y-auto md:overflow-hidden">
-      {/* Playground Toolbar */}
       <header className="flex-none h-14 border-b flex items-center justify-between px-4">
         <div className="flex items-center gap-4">
-          <h1 className="font-semibold text-lg">Playground</h1>
+          <h1 className="font-semibold text-lg">Playground {isDirty && <span className="text-muted-foreground text-sm font-normal">(Unsaved)</span>}</h1>
           <StatusBadge state={status === 'error' ? 'error' : status === 'trace-ready' ? 'active' : 'idle'} />
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" className="gap-2" disabled>
+          <Button variant="outline" size="sm" className="gap-2" onClick={handleLoadClick} disabled={isExecuting}>
+            <FolderOpen className="h-4 w-4" />
+            Load
+          </Button>
+          <Button variant="outline" size="sm" className="gap-2" onClick={handleSaveClick} disabled={isSaving || isExecuting}>
             <Save className="h-4 w-4" />
-            Save State
+            {isSaving ? 'Saving...' : 'Save State'}
           </Button>
           <Button aria-label="Settings" variant="ghost" size="icon" disabled>
             <Settings className="h-5 w-5" />
@@ -77,14 +198,13 @@ export function PlaygroundPageClient() {
       </header>
 
       <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
-        {/* Left Sidebar - Controls */}
         <aside className="w-full md:w-72 flex-none border-r bg-muted/20 overflow-y-auto flex flex-col">
           <div className="p-4 border-b space-y-4">
             <div>
               <h2 className="text-sm font-semibold mb-2 text-muted-foreground uppercase tracking-wider">Structure</h2>
               <StructureSelector 
                 value={structureKind} 
-                onChange={changeStructure} 
+                onChange={(v) => { changeStructure(v); setCurrentPlaygroundId(null); setIsDirty(true); }} 
                 disabled={isExecuting || playback.isPlaying} 
               />
             </div>
@@ -115,7 +235,6 @@ export function PlaygroundPageClient() {
           </div>
         </aside>
 
-        {/* Center - Canvas */}
         <main className="flex-1 min-h-[300px] md:min-h-0 flex flex-col relative">
           <VisualizationCanvas
             step={playback.currentStep}
@@ -124,7 +243,6 @@ export function PlaygroundPageClient() {
           />
         </main>
 
-        {/* Right - Code & Trace */}
         <aside className="w-full md:w-[440px] flex-none border-l bg-card flex flex-col">
           <Tabs defaultValue="trace" className="flex-1 flex flex-col">
             <TabsList className="w-full justify-start rounded-none border-b bg-transparent px-2">
@@ -174,6 +292,70 @@ export function PlaygroundPageClient() {
           </Tabs>
         </aside>
       </div>
+
+      <Dialog open={saveModalOpen} onOpenChange={setSaveModalOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Save Playground</DialogTitle>
+            <DialogDescription>
+              Name your playground so you can return to it later.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 py-4">
+            <div className="space-y-2">
+              <Label htmlFor="name">Name</Label>
+              <Input 
+                id="name" 
+                value={playgroundName} 
+                onChange={(e) => setPlaygroundName(e.target.value)} 
+                placeholder="My Playground" 
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="description">Description (optional)</Label>
+              <Input 
+                id="description" 
+                value={playgroundDesc} 
+                onChange={(e) => setPlaygroundDesc(e.target.value)} 
+                placeholder="A brief description..." 
+              />
+            </div>
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setSaveModalOpen(false)}>Cancel</Button>
+            <Button onClick={handleCreatePlayground} disabled={isSaving || !playgroundName}>Save</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+      
+      <Dialog open={loadModalOpen} onOpenChange={setLoadModalOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Load Playground</DialogTitle>
+            <DialogDescription>
+              Select a saved playground to load.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="py-4 max-h-[300px] overflow-y-auto space-y-2">
+            {isLoadingPlaygrounds ? (
+              <p className="text-sm text-muted-foreground">Loading...</p>
+            ) : playgrounds.length === 0 ? (
+              <p className="text-sm text-muted-foreground">No saved playgrounds found.</p>
+            ) : (
+              playgrounds.map(pg => (
+                <div key={pg.id} className="flex flex-col p-3 border rounded-md hover:bg-muted/50 cursor-pointer" onClick={() => handleSelectPlayground(pg.id)}>
+                  <span className="font-medium text-sm">{pg.name}</span>
+                  {pg.description && <span className="text-xs text-muted-foreground">{pg.description}</span>}
+                  <span className="text-xs text-muted-foreground mt-1">Structure: {pg.structure}</span>
+                </div>
+              ))
+            )}
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setLoadModalOpen(false)}>Close</Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
