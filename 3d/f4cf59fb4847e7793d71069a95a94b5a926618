@@ -1,0 +1,21 @@
+tests/unit/auth.test.ts
+  s_ba6e3bd56d50d9::t_2997dc62e7aa18 1-14,24,28
+vitest.config.ts
+  s_ba6e3bd56d50d9::t_91fb7b66f5625c 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "3df4cf59fb4847e7793d71069a95a94b5a926618",
+  "prompts": {},
+  "sessions": {
+    "s_ba6e3bd56d50d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "32aef82b-1441-48ad-929d-1072c373cc12",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
