@@ -1,6 +1,6 @@
 # Part 3.1 - Frames and windows
 
-Files: `playground.html` (popup/postMessage + clickjacking demo)
+Files: `playground.html` · `playground.js` · `playground.ts` (popup/postMessage + clickjacking demo)
 
 ## Popups and window methods
 

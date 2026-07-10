@@ -1,6 +1,6 @@
 # Part 3.5 - Animation
 
-Files: `playground.html` (CSS transitions, Bezier/easing, requestAnimationFrame)
+Files: `playground.html` · `playground.js` · `playground.ts` (CSS transitions, Bezier/easing, requestAnimationFrame)
 
 ## Bezier curves and easing
 

@@ -41,68 +41,6 @@
     <output id="rafOut"></output>
   </section>
 
-  <script>
-    const cssOut = document.getElementById("cssOut");
-    const rafOut = document.getElementById("rafOut");
-    const log = (el, line) => {
-      el.textContent += line + "\n";
-      el.scrollTop = el.scrollHeight;
-    };
-
-    const box = document.getElementById("box");
-    document.querySelectorAll("[data-ease]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const easing = button.dataset.ease;
-        box.style.setProperty("--ease", easing);
-        log(cssOut, `transition-timing-function = ${easing}`);
-      });
-    });
-
-    document.getElementById("toggleBox").addEventListener("click", () => {
-      box.classList.toggle("moved");
-      log(cssOut, "class changed; CSS owns the interpolation");
-    });
-
-    box.addEventListener("transitionend", (event) => {
-      log(cssOut, `transitionend for ${event.propertyName}`);
-    });
-
-    const ball = document.getElementById("ball");
-    let rafId = 0;
-
-    const easings = {
-      linear: (t) => t,
-      easeOut: (t) => 1 - Math.pow(1 - t, 3),
-    };
-
-    function animateBall(easeName) {
-      cancelAnimationFrame(rafId);
-      const ease = easings[easeName];
-      const start = performance.now();
-      const duration = 900;
-      const distance = 300;
-      log(rafOut, `start ${easeName}; position is time-based`);
-
-      function frame(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = ease(progress);
-        ball.style.transform = `translateX(${Math.round(eased * distance)}px)`;
-        if (progress < 1) {
-          rafId = requestAnimationFrame(frame);
-        } else {
-          log(rafOut, `done in ${Math.round(now - start)}ms`);
-        }
-      }
-
-      rafId = requestAnimationFrame(frame);
-    }
-
-    document.getElementById("runLinear").addEventListener("click", () => animateBall("linear"));
-    document.getElementById("runEaseOut").addEventListener("click", () => animateBall("easeOut"));
-    document.getElementById("cancelAnimation").addEventListener("click", () => {
-      cancelAnimationFrame(rafId);
-      log(rafOut, "canceled current rAF loop");
-    });
-  </script>
+  <script src="./playground.js"></script>
 </body>
 </html>

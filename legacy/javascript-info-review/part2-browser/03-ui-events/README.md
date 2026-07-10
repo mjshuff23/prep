@@ -1,6 +1,6 @@
 # Part 2.3 — UI Events
 
-Files: `playground.html` (5 interactive sections; no separate .ts — event typing was covered in 2.2's `events.ts`)
+Files: `playground.html` · `playground.js` · `playground.ts` (5 interactive sections)
 
 ## Mouse events
 

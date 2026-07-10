@@ -1,6 +1,6 @@
 # Part 3.4 - Storing data in the browser
 
-Files: `playground.html` (cookies, Web Storage, IndexedDB)
+Files: `playground.html` · `playground.js` · `playground.ts` (cookies, Web Storage, IndexedDB)
 
 ## Cookies
 

@@ -50,65 +50,6 @@
     <output id="customOut"></output>
   </section>
 
-<script>
-  const log = (el, ...a) => { el.textContent += a.join(" ") + "\n"; el.scrollTop = 1e9; };
-
-  // 1 ── Both phases on all three boxes: capture runs root→target, bubble target→root
-  for (const id of ["outer", "middle", "inner"]) {
-    const el = document.getElementById(id);
-    el.addEventListener("click", (e) => {
-      log(phaseOut, `capturing: ${id} (target=${e.target.id}, currentTarget=${e.currentTarget.id})`);
-    }, { capture: true }); // 3rd arg {capture:true} — capture listeners are rare but exist
-    el.addEventListener("click", (e) => {
-      log(phaseOut, `bubbling:  ${id}`);
-      if (id === "middle" && stopProp.checked) {
-        e.stopPropagation();     // outer's bubble listener won't run
-        log(phaseOut, "  ✋ stopped at middle");
-      }
-    });
-  }
-  // Expected click on inner: capturing outer→middle→inner, then bubbling inner→middle→outer.
-
-  // 2 ── Delegation: one listener on the container, closest() finds the real target
-  menu.addEventListener("click", (e) => {
-    const btn = e.target.closest("button[data-action]"); // survives nested spans/icons
-    if (!btn || !menu.contains(btn)) return;
-    log(delegateOut, `action: ${btn.dataset.action}`);
-    // New buttons added later Just Work — no listener wiring:
-    if (btn.dataset.action === "save") {
-      const extra = document.createElement("button");
-      extra.dataset.action = `dynamic-${Date.now() % 100}`;
-      extra.textContent = extra.dataset.action;
-      menu.append(extra);
-    }
-  });
-
-  // 3 ── preventDefault: the browser's built-in behavior is optional
-  link.addEventListener("click", (e) => {
-    if (!allowDefault.checked) {
-      e.preventDefault();        // stop navigation; propagation continues regardless!
-      log(defaultOut, "navigation prevented (e.defaultPrevented =", e.defaultPrevented + ")");
-    } else {
-      log(defaultOut, "navigating away…");
-    }
-  });
-  // passive:true tells the browser you WON'T preventDefault (smooth scroll on touch/wheel):
-  document.addEventListener("wheel", () => {}, { passive: true });
-
-  // 4 ── CustomEvent: your own event type + detail payload, through the same pipeline
-  document.addEventListener("user:login", (e) => {
-    log(customOut, `caught user:login for "${e.detail.name}" (bubbled to document)`);
-  });
-  fireBtn.addEventListener("user:login", (e) => log(customOut, "also seen on the button itself"));
-  fireBtn.onclick = () => {
-    const ok = fireBtn.dispatchEvent(new CustomEvent("user:login", {
-      bubbles: true,                     // default is false — non-bubbling customs are common bug #1
-      cancelable: true,                  // allows preventDefault by listeners
-      detail: { name: "Ann" },           // the payload convention
-    }));
-    log(customOut, "dispatchEvent returned", ok, "(false would mean a listener called preventDefault)");
-    // Note: dispatchEvent runs listeners SYNCHRONOUSLY, unlike real user events.
-  };
-</script>
+<script src="./playground.js"></script>
 </body>
 </html>
