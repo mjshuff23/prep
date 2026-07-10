@@ -1,0 +1,25 @@
+pnpm-workspace.yaml
+  s_ca99aa2b0251f7::t_d8ee67dc066d0a 6-7
+package.json
+  s_ca99aa2b0251f7::t_d8ee67dc066d0a 10
+tsconfig.json
+  s_ca99aa2b0251f7::t_d8ee67dc066d0a 33
+legacy/javascript-info-review/tsconfig.json
+  s_ca99aa2b0251f7::t_307f69a470e6a4 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "03ef0facf7941d2c8a747ada9731b7b348c89938",
+  "prompts": {},
+  "sessions": {
+    "s_ca99aa2b0251f7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f49e9-61ed-75e1-ae98-2e32a94c9ab4",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
