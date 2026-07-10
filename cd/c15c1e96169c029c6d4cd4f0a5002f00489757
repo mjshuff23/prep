@@ -1,0 +1,1764 @@
+legacy/javascript-info-review/part2-browser/01-document/README.md
+  s_8833aa79b61240::t_aad06cc59184ec 1-81
+legacy/javascript-info-review/part3-extras/07-regex/lookaround-methods.js
+  s_8833aa79b61240::t_87dea03075847a 1-53,55-61
+  s_8833aa79b61240::t_511d7e33f17763 54
+legacy/javascript-info-review/part2-browser/02-events/playground.html
+  s_8833aa79b61240::t_4d71681e1bf0b6 1-114
+legacy/javascript-outlier-prep/array-methods.md
+  s_0e5ee203bc3bc0::t_d6ab936a56a440 1-434
+legacy/javascript-info-review/part2-browser/04-forms/playground.html
+  s_8833aa79b61240::t_202e9f88600f27 1-111
+legacy/javascript-info-review/part1-language/04-objects-basics/object-to-primitive.ts
+  s_8833aa79b61240::t_776545917529c8 1-48
+legacy/javascript-info-review/part1-language/06-advanced-functions/scheduling.ts
+  s_8833aa79b61240::t_acde5f035f41a3 1-58
+legacy/javascript-info-review/part1-language/08-prototypes/prototypal-inheritance.js
+  s_8833aa79b61240::t_9857244b2a86bf 1-37,39-68
+  s_8833aa79b61240::t_c709e6b618a857 38
+legacy/javascript-info-review/part1-language/07-property-config/property-flags-descriptors.js
+  s_8833aa79b61240::t_39e5d61d7da6c7 1-44,50-64
+  s_8833aa79b61240::t_d1f7b67acd1026 45-49
+legacy/javascript-info-review/part1-language/09-classes/private-mixins.js
+  s_8833aa79b61240::t_b0f7e50cc298f6 1-103
+legacy/javascript-info-review/part1-language/11-promises-async/promise-errors.js
+  s_8833aa79b61240::t_8433a402095bc8 1-58
+legacy/javascript-info-review/part1-language/06-advanced-functions/rest-spread-recursion.js
+  s_8833aa79b61240::t_9a3adb0e841480 1-75
+legacy/javascript-info-review/part1-language/12-generators-iteration/README.md
+  s_8833aa79b61240::t_710c0186fc6f88 1-83
+legacy/javascript-info-review/part1-language/05-data-types/README.md
+  s_8833aa79b61240::t_086006df173751 129-130
+  s_8833aa79b61240::t_31e777b2d2345f 1-128,131-139
+legacy/javascript-info-review/part1-language/11-promises-async/README.md
+  s_8833aa79b61240::t_d06f88a134fc37 1-119
+legacy/javascript-info-review/part1-language/04-objects-basics/this.ts
+  s_8833aa79b61240::t_3eb16ad0842ec4 1-60
+legacy/javascript-info-review/part1-language/04-objects-basics/optional-chaining.ts
+  s_8833aa79b61240::t_785680f2e24173 49
+  s_8833aa79b61240::t_c96bc9e9f37e00 1-48,50
+legacy/javascript-outlier-prep/basic-tech-trivia.md
+  s_0e5ee203bc3bc0::t_d6ab936a56a440 1-376
+legacy/javascript-info-review/part1-language/05-data-types/numbers.js
+  s_8833aa79b61240::t_6c5372eb1e50f5 1-48
+legacy/javascript-info-review/part1-language/14-misc/misc-oddities.js
+  s_8833aa79b61240::t_a443c3a54f2122 1-74
+legacy/javascript-info-review/part1-language/10-error-handling/try-catch.js
+  s_8833aa79b61240::t_327604bd2e2a7e 1-85
+legacy/javascript-info-review/part1-language/04-objects-basics/object-references.ts
+  s_8833aa79b61240::t_dbeec23dc18a18 1-46
+legacy/javascript-info-review/part3-extras/03-network/fetch-advanced.js
+  s_8833aa79b61240::t_57b31645d33d5d 1-97
+legacy/javascript-info-review/part1-language/13-modules/lib/math.js
+  s_8833aa79b61240::t_d5d19199f8e9a3 1-21
+legacy/javascript-outlier-prep/README.md
+  s_0e5ee203bc3bc0::t_d6ab936a56a440 1-32
+legacy/javascript-info-review/tsconfig.json
+  s_8833aa79b61240::t_3777c825a94a7d 1-8,10-17
+  s_8833aa79b61240::t_b9a55a296e5e82 9
+legacy/javascript-info-review/part3-extras/03-network/README.md
+  s_8833aa79b61240::t_a2675707004dc0 1-94
+legacy/javascript-info-review/part3-extras/02-binary-data/README.md
+  s_8833aa79b61240::t_9c95277fcd8929 1-79
+legacy/javascript-info-review/part1-language/06-advanced-functions/closures.ts
+  s_8833aa79b61240::t_2bbf130e9878b2 1-75
+legacy/javascript-info-review/part1-language/08-prototypes/prototype-methods.js
+  s_8833aa79b61240::t_5779e1ba458d5c 1-31,35-57
+  s_8833aa79b61240::t_1e2c6a8fcaa0b8 32-34
+legacy/javascript-info-review/part1-language/06-advanced-functions/bind-arrows.ts
+  s_8833aa79b61240::t_52f396086cb5cd 1-63
+legacy/javascript-info-review/package.json
+  s_8833aa79b61240::t_145b232f7d5596 12
+  s_8833aa79b61240::t_77341b6201495d 1-3,7,10-11,13-16
+  s_8833aa79b61240::t_bcd056a508e8c8 4-6,8-9
+legacy/javascript-info-review/part2-browser/03-ui-events/README.md
+  s_8833aa79b61240::t_5e4e958ab37381 1-72
+legacy/javascript-info-review/part3-extras/07-regex/regex.ts
+  s_8833aa79b61240::t_f29bd225b49392 1-55
+legacy/javascript-info-review/part1-language/12-generators-iteration/async-iteration.js
+  s_8833aa79b61240::t_da603a2e04f247 1-78
+legacy/javascript-outlier-prep/outlier-speed-drills.md
+  s_0e5ee203bc3bc0::t_d6ab936a56a440 1-393
+legacy/javascript-info-review/part1-language/13-modules/modules.ts
+  s_8833aa79b61240::t_c126426ac68422 1-37
+legacy/javascript-info-review/part1-language/07-property-config/README.md
+  s_8833aa79b61240::t_4b374f37502934 1-101
+legacy/javascript-info-review/part1-language/08-prototypes/native-prototypes.js
+  s_8833aa79b61240::t_1f9494d9384f89 1-55
+legacy/javascript-info-review/part1-language/09-classes/class-basics.js
+  s_8833aa79b61240::t_6ec81a89b9eb9b 1-82
+legacy/javascript-info-review/part1-language/07-property-config/property-flags-descriptors.ts
+  s_8833aa79b61240::t_128339ad7ed39b 1-52
+legacy/javascript-info-review/part2-browser/02-events/events.ts
+  s_8833aa79b61240::t_df06c525b35a56 1-71
+legacy/javascript-info-review/part1-language/09-classes/classes.ts
+  s_8833aa79b61240::t_71b563a6aff0d6 1-21,24-113
+  s_8833aa79b61240::t_2b7fbcd3d66962 22-23
+legacy/javascript-info-review/part1-language/05-data-types/iterables.js
+  s_8833aa79b61240::t_da3d9f13996892 1-61
+legacy/javascript-info-review/part2-browser/01-document/playground.html
+  s_8833aa79b61240::t_32a65174127161 1-113
+legacy/javascript-info-review/part1-language/04-objects-basics/object-to-primitive.js
+  s_8833aa79b61240::t_8518eec77af187 1-54
+legacy/javascript-info-review/part1-language/09-classes/README.md
+  s_8833aa79b61240::t_19f71509843f7d 1-107
+legacy/javascript-info-review/part1-language/10-error-handling/custom-errors.js
+  s_8833aa79b61240::t_d6591241db75af 1-79
+legacy/javascript-info-review/part1-language/05-data-types/date-json.js
+  s_8833aa79b61240::t_b4d2bce1b7ae90 1-12,16-54,57-68
+  s_8833aa79b61240::t_c22c57ff6db218 55-56
+  s_8833aa79b61240::t_e0efeaaf0f20e9 13-15
+legacy/javascript-info-review/part1-language/11-promises-async/promise-basics.js
+  s_8833aa79b61240::t_9049dc10b21f0d 1-77
+legacy/javascript-info-review/part2-browser/05-resource-loading/playground.html
+  s_8833aa79b61240::t_47a18d232a3961 1-87
+legacy/javascript-info-review/part1-language/06-advanced-functions/rest-spread-recursion.ts
+  s_8833aa79b61240::t_ca56fad0d7ab93 1-70
+legacy/javascript-info-review/part1-language/11-promises-async/promise-api.js
+  s_8833aa79b61240::t_62cedf47908577 1-58
+legacy/javascript-info-review/part1-language/06-advanced-functions/decorators-call-apply.js
+  s_8833aa79b61240::t_48c26d3295e703 1-63
+legacy/javascript-info-review/part1-language/13-modules/lib/user-service.ts
+  s_8833aa79b61240::t_8793a4b402e920 1-16
+legacy/javascript-info-review/part1-language/13-modules/README.md
+  s_8833aa79b61240::t_092f2e92cba916 1-79
+legacy/javascript-info-review/part1-language/05-data-types/arrays.js
+  s_8833aa79b61240::t_0c237f532565ce 1-66
+legacy/javascript-info-review/part1-language/10-error-handling/README.md
+  s_8833aa79b61240::t_110a1f41980c3a 1-107
+legacy/javascript-info-review/part1-language/13-modules/lib/counter.js
+  s_8833aa79b61240::t_963e7982e647d2 1-11
+legacy/javascript-info-review/part1-language/05-data-types/primitives-strings.js
+  s_8833aa79b61240::t_de013f184ddced 1,3-5,13-19,25,27-29,34-37,39-46
+  s_8833aa79b61240::t_977e1fc0b0c91b 2,6-12,20-24,26,30-33,38,47-51
+legacy/javascript-info-review/part3-extras/07-regex/quantifiers-groups.js
+  s_8833aa79b61240::t_359a116155a4a5 1-52
+legacy/javascript-info-review/part1-language/06-advanced-functions/function-objects.js
+  s_8833aa79b61240::t_ac9f9a0f6be76d 1-60
+legacy/javascript-info-review/part1-language/13-modules/export-import.js
+  s_8833aa79b61240::t_56502777e08cab 1-50
+legacy/javascript-info-review/part2-browser/01-document/dom.ts
+  s_8833aa79b61240::t_20c634ec31c0bb 1-56
+legacy/javascript-info-review/part1-language/05-data-types/numbers.ts
+  s_8833aa79b61240::t_1fff82e134c829 1-49
+legacy/javascript-info-review/part1-language/05-data-types/map-set.js
+  s_8833aa79b61240::t_2660b2d24d0c5d 1-63
+legacy/javascript-info-review/part1-language/09-classes/class-inheritance.js
+  s_8833aa79b61240::t_d085869faf6b23 1-103
+legacy/javascript-info-review/part1-language/11-promises-async/microtasks-async-await.js
+  s_8833aa79b61240::t_68572d1d92ab79 1-77,89-90
+  s_8833aa79b61240::t_1a256e094d8e01 78-88
+legacy/javascript-info-review/part1-language/05-data-types/primitives-strings.ts
+  s_8833aa79b61240::t_8414153f7589dc 1-50
+legacy/javascript-info-review/part1-language/08-prototypes/prototypes.ts
+  s_8833aa79b61240::t_bdad96d2ab6bea 1-62
+legacy/javascript-info-review/part1-language/13-modules/dynamic-imports.js
+  s_8833aa79b61240::t_f646cde8c90909 1-41
+legacy/javascript-info-review/part1-language/04-objects-basics/object-references.js
+  s_8833aa79b61240::t_774cfb298e0125 1-46
+legacy/javascript-info-review/part1-language/04-objects-basics/symbols.js
+  s_8833aa79b61240::t_9cc0904900ec16 1-60
+legacy/javascript-info-review/part1-language/12-generators-iteration/generators.js
+  s_8833aa79b61240::t_d3e2cb58268c1e 1-81
+legacy/javascript-info-review/AGENTS.md
+  s_8833aa79b61240::t_dd4a4c818d9e26 98
+  s_8833aa79b61240::t_e78583f1ca925c 91
+  s_8833aa79b61240::t_1a25f9678f7a24 99
+  s_8833aa79b61240::t_c4586725489f32 96
+  s_8833aa79b61240::t_07610eb472a869 85-86
+  s_8833aa79b61240::t_a8c623c060fa2d 90
+  s_8833aa79b61240::t_7ca110eaf96bd8 93
+  s_8833aa79b61240::t_d7a25819f2e92f 94
+  s_8833aa79b61240::t_5aa59d3e3a8479 95
+  s_8833aa79b61240::t_2a0586a8404053 100-123
+  s_8833aa79b61240::t_4768969868b9e8 97
+  s_8833aa79b61240::t_0c3c9c92d1d2e6 92
+  s_8833aa79b61240::t_359f963aa6d20a 87
+  s_8833aa79b61240::t_9ddd6ea50a1dad 89
+  s_8833aa79b61240::t_60a2236c7fe362 1-84
+  s_8833aa79b61240::t_1a5a9e7cc8df02 88
+legacy/javascript-info-review/part2-browser/04-forms/README.md
+  s_8833aa79b61240::t_6c38e6edaa6d79 1-67
+legacy/javascript-info-review/part1-language/05-data-types/date-json.ts
+  s_8833aa79b61240::t_907b0ddb59c3fb 1-35,37-55
+  s_8833aa79b61240::t_d11062222a81fe 36
+legacy/javascript-info-review/part1-language/07-property-config/getters-setters.js
+  s_8833aa79b61240::t_6ff72e81ecc05b 1-79
+legacy/javascript-info-review/part1-language/05-data-types/map-set.ts
+  s_8833aa79b61240::t_297c4273962602 1-60
+legacy/javascript-info-review/part1-language/05-data-types/object-keys-destructuring.js
+  s_8833aa79b61240::t_bb6f9eccb5b73e 1-64
+legacy/javascript-info-review/part1-language/05-data-types/iterables.ts
+  s_8833aa79b61240::t_72f3f3b1cedd53 1-53
+legacy/javascript-outlier-prep/array-methods.js
+  s_0e5ee203bc3bc0::t_dc78533acde67a 1-14,17-21,23-29,31-34,36-41,43-46,48-53,55-58,63-71,82-185
+  s_0e5ee203bc3bc0::t_76ddd0b2480508 15-16
+  s_0e5ee203bc3bc0::t_5ff37a77884535 22
+  s_0e5ee203bc3bc0::t_ad626be49bbe22 30
+  s_0e5ee203bc3bc0::t_5482d94bc343d8 35
+  s_0e5ee203bc3bc0::t_965b0c07925088 42
+  s_0e5ee203bc3bc0::t_b7ff044cacec50 47
+  s_0e5ee203bc3bc0::t_626d0d405aaf8a 54
+  s_0e5ee203bc3bc0::t_c579a938b47069 59-62
+  s_0e5ee203bc3bc0::t_85318796dcca1f 72-74,79-81
+legacy/javascript-info-review/part3-extras/02-binary-data/binary.js
+  s_8833aa79b61240::t_ff399a6d84472b 55
+  s_8833aa79b61240::t_e3549c6a87a55c 1-54,56-72
+legacy/javascript-info-review/part1-language/04-objects-basics/optional-chaining.js
+  s_8833aa79b61240::t_4b62c3d75a7a24 1-46
+legacy/javascript-info-review/part1-language/04-objects-basics/README.md
+  s_8833aa79b61240::t_8df0f3d79f19da 1-130,134-142
+  s_8833aa79b61240::t_40b656f4d2087f 131-133
+legacy/javascript-info-review/part3-extras/07-regex/README.md
+  s_8833aa79b61240::t_ac8ae7e8901ae0 1-95
+legacy/javascript-info-review/part3-extras/03-network/network.ts
+  s_8833aa79b61240::t_8930bb30ee92ac 1-68,71-72
+  s_8833aa79b61240::t_1692cadbe77921 69-70
+legacy/javascript-info-review/part3-extras/02-binary-data/binary.ts
+  s_8833aa79b61240::t_71aee8c89315ed 1-72
+legacy/javascript-info-review/part2-browser/03-ui-events/playground.html
+  s_8833aa79b61240::t_44d054f21c9f1a 1-118
+legacy/javascript-info-review/part1-language/14-misc/proxy-reflect.js
+  s_8833aa79b61240::t_a9c753752794a5 1-97
+legacy/javascript-info-review/part1-language/06-advanced-functions/scheduling.js
+  s_8833aa79b61240::t_07686d2f3b7746 61
+  s_8833aa79b61240::t_f9cd16fabe40cc 39-40
+  s_8833aa79b61240::t_2032d7bfbb828a 1-38,41-60
+legacy/javascript-info-review/part1-language/05-data-types/arrays.ts
+  s_8833aa79b61240::t_6883b3cb8249be 1-52
+legacy/javascript-outlier-prep/basic-tech-trivia.js
+  s_0e5ee203bc3bc0::t_dc78533acde67a 1-179
+legacy/javascript-info-review/part1-language/04-objects-basics/constructors-new.js
+  s_8833aa79b61240::t_01a5504765afe4 1-54
+legacy/javascript-info-review/part1-language/04-objects-basics/symbols.ts
+  s_8833aa79b61240::t_2fa9b457224180 1-54
+legacy/javascript-info-review/part3-extras/07-regex/regex-basics.js
+  s_8833aa79b61240::t_3a717931e3dfe2 1-57
+legacy/javascript-info-review/part1-language/07-property-config/getters-setters.ts
+  s_8833aa79b61240::t_8a257b6d3fa8f0 1-71
+legacy/javascript-info-review/part1-language/11-promises-async/promises.ts
+  s_8833aa79b61240::t_b1f5224de4f430 1-74
+legacy/javascript-info-review/part1-language/06-advanced-functions/decorators-call-apply.ts
+  s_8833aa79b61240::t_f7b08949c41a3c 1-47,52-53,55-63
+  s_8833aa79b61240::t_3d4bce261691c1 48-51,54
+legacy/javascript-info-review/part1-language/06-advanced-functions/function-objects.ts
+  s_8833aa79b61240::t_32e326877c94fb 1-68
+legacy/javascript-info-review/part1-language/08-prototypes/README.md
+  s_8833aa79b61240::t_9bfc26747b6053 1-119
+legacy/javascript-info-review/part1-language/06-advanced-functions/closures.js
+  s_8833aa79b61240::t_6122326a19cd4d 1-86
+legacy/javascript-info-review/part1-language/14-misc/currying.js
+  s_8833aa79b61240::t_5dac27e52c6b63 1-47
+legacy/javascript-outlier-prep/outlier-speed-drills.js
+  s_0e5ee203bc3bc0::t_dc78533acde67a 1-173
+legacy/javascript-info-review/part1-language/14-misc/README.md
+  s_8833aa79b61240::t_48a2fe8a4b9d5e 1-90
+legacy/javascript-info-review/part1-language/05-data-types/object-keys-destructuring.ts
+  s_8833aa79b61240::t_e2f0a69cba96c0 1-54
+legacy/javascript-info-review/part1-language/12-generators-iteration/generators.ts
+  s_8833aa79b61240::t_b0498fcd4b9575 1-58
+legacy/javascript-info-review/part2-browser/02-events/README.md
+  s_8833aa79b61240::t_678b80dc07488c 1-79
+legacy/javascript-info-review/part1-language/10-error-handling/errors.ts
+  s_8833aa79b61240::t_3f981f1557ed17 1-90
+legacy/javascript-info-review/part1-language/04-objects-basics/constructors-new.ts
+  s_8833aa79b61240::t_ea802dbed49361 1-60
+legacy/javascript-info-review/part1-language/06-advanced-functions/README.md
+  s_8833aa79b61240::t_d7fe7c0f48fbdb 1-139
+legacy/javascript-info-review/README.md
+  s_8833aa79b61240::t_00dce04d059f68 1-71
+legacy/javascript-info-review/part3-extras/03-network/fetch-basics.js
+  s_8833aa79b61240::t_f0e3a3235fbfea 1-75
+legacy/javascript-info-review/part1-language/06-advanced-functions/bind-arrows.js
+  s_8833aa79b61240::t_f320866ac57ded 1-74
+legacy/javascript-info-review/part1-language/14-misc/misc.ts
+  s_8833aa79b61240::t_1a24ace5e8547f 1-60
+legacy/javascript-info-review/node_modules/.bin/esbuild
+  s_8833aa79b61240::t_67cddc287517d7 1
+legacy/javascript-info-review/node_modules/.bin/tsc
+  s_8833aa79b61240::t_3a43a86d83524b 1
+legacy/javascript-info-review/node_modules/.bin/tsx
+  s_8833aa79b61240::t_f3f1f98ef80f74 1
+legacy/javascript-info-review/node_modules/.package-lock.json
+  s_8833aa79b61240::t_b6aed5bee60cb8 1-155
+legacy/javascript-info-review/node_modules/@esbuild/linux-x64/README.md
+  s_8833aa79b61240::t_bf504428d7bbed 1-3
+legacy/javascript-info-review/node_modules/@esbuild/linux-x64/package.json
+  s_8833aa79b61240::t_f697af8e8f1386 1-20
+legacy/javascript-info-review/node_modules/@types/node/LICENSE
+  s_8833aa79b61240::t_6436be4135bd0c 1-21
+legacy/javascript-info-review/node_modules/@types/node/README.md
+  s_8833aa79b61240::t_c1fb40ab635795 1-15
+legacy/javascript-info-review/node_modules/@types/node/assert.d.ts
+  s_8833aa79b61240::t_8853b3907a1ef5 1-1077
+legacy/javascript-info-review/node_modules/@types/node/assert/strict.d.ts
+  s_8833aa79b61240::t_5f968ca478ca25 1-68
+legacy/javascript-info-review/node_modules/@types/node/async_hooks.d.ts
+  s_8833aa79b61240::t_c58da8aa7fc4ac 1-711
+legacy/javascript-info-review/node_modules/@types/node/buffer.buffer.d.ts
+  s_8833aa79b61240::t_62491819a21efb 1-466
+legacy/javascript-info-review/node_modules/@types/node/buffer.d.ts
+  s_8833aa79b61240::t_ba4f54bd0c585a 1-1799
+legacy/javascript-info-review/node_modules/@types/node/child_process.d.ts
+  s_8833aa79b61240::t_d33006232a6258 1-1362
+legacy/javascript-info-review/node_modules/@types/node/cluster.d.ts
+  s_8833aa79b61240::t_001b5b6cf781f6 1-432
+legacy/javascript-info-review/node_modules/@types/node/console.d.ts
+  s_8833aa79b61240::t_b4222a1ca56028 1-93
+legacy/javascript-info-review/node_modules/@types/node/constants.d.ts
+  s_8833aa79b61240::t_35d8fa0d195fb0 1-14
+legacy/javascript-info-review/node_modules/@types/node/crypto.d.ts
+  s_8833aa79b61240::t_fb198044d2eb87 1-3954
+legacy/javascript-info-review/node_modules/@types/node/dgram.d.ts
+  s_8833aa79b61240::t_fcf0a8186a095c 1-537
+legacy/javascript-info-review/node_modules/@types/node/diagnostics_channel.d.ts
+  s_8833aa79b61240::t_9412dd8073c600 1-794
+legacy/javascript-info-review/node_modules/@types/node/dns.d.ts
+  s_8833aa79b61240::t_17d2f3080a18b1 1-876
+legacy/javascript-info-review/node_modules/@types/node/dns/promises.d.ts
+  s_8833aa79b61240::t_b9197f29529577 1-497
+legacy/javascript-info-review/node_modules/@types/node/domain.d.ts
+  s_8833aa79b61240::t_e34e65cbaf4d32 1-150
+legacy/javascript-info-review/node_modules/@types/node/events.d.ts
+  s_8833aa79b61240::t_51871439bee213 1-1008
+legacy/javascript-info-review/node_modules/@types/node/ffi.d.ts
+  s_8833aa79b61240::t_ae3c74b0351af6 1-486
+legacy/javascript-info-review/node_modules/@types/node/fs.d.ts
+  s_8833aa79b61240::t_9112557aacdfb9 1-4786
+legacy/javascript-info-review/node_modules/@types/node/fs/promises.d.ts
+  s_8833aa79b61240::t_46d347e99a70e3 1-1481
+legacy/javascript-info-review/node_modules/@types/node/globals.d.ts
+  s_8833aa79b61240::t_e3b4856bcecb53 1-150
+legacy/javascript-info-review/node_modules/@types/node/globals.typedarray.d.ts
+  s_8833aa79b61240::t_55a4f3b9ad3331 1-101
+legacy/javascript-info-review/node_modules/@types/node/http.d.ts
+  s_8833aa79b61240::t_368b41caf03079 1-2172
+legacy/javascript-info-review/node_modules/@types/node/http2.d.ts
+  s_8833aa79b61240::t_d55628218409b8 1-2489
+legacy/javascript-info-review/node_modules/@types/node/https.d.ts
+  s_8833aa79b61240::t_2b84ae760e97c1 1-400
+legacy/javascript-info-review/node_modules/@types/node/index.d.ts
+  s_8833aa79b61240::t_955969e5f5a2fe 1-115
+legacy/javascript-info-review/node_modules/@types/node/inspector.d.ts
+  s_8833aa79b61240::t_39dd05a91aacf1 1-264
+legacy/javascript-info-review/node_modules/@types/node/inspector.generated.d.ts
+  s_8833aa79b61240::t_e3c7e8c21202d9 1-4406
+legacy/javascript-info-review/node_modules/@types/node/inspector/promises.d.ts
+  s_8833aa79b61240::t_b046e2a13654f9 1-35
+legacy/javascript-info-review/node_modules/@types/node/module.d.ts
+  s_8833aa79b61240::t_78e45120741054 1-726
+legacy/javascript-info-review/node_modules/@types/node/net.d.ts
+  s_8833aa79b61240::t_12591fd908888d 1-970
+legacy/javascript-info-review/node_modules/@types/node/os.d.ts
+  s_8833aa79b61240::t_c1b40656d75112 1-498
+legacy/javascript-info-review/node_modules/@types/node/package.json
+  s_8833aa79b61240::t_e675fec550816f 1-155
+legacy/javascript-info-review/node_modules/@types/node/path.d.ts
+  s_8833aa79b61240::t_0c4bdc33d1e4ab 1-178
+legacy/javascript-info-review/node_modules/@types/node/path/posix.d.ts
+  s_8833aa79b61240::t_39295751a6116b 1-8
+legacy/javascript-info-review/node_modules/@types/node/path/win32.d.ts
+  s_8833aa79b61240::t_062ec5ff918861 1-8
+legacy/javascript-info-review/node_modules/@types/node/perf_hooks.d.ts
+  s_8833aa79b61240::t_cc61443f195a0e 1-604
+legacy/javascript-info-review/node_modules/@types/node/process.d.ts
+  s_8833aa79b61240::t_b853ca094bf5a7 1-2217
+legacy/javascript-info-review/node_modules/@types/node/punycode.d.ts
+  s_8833aa79b61240::t_54658371414b6a 1-89
+legacy/javascript-info-review/node_modules/@types/node/querystring.d.ts
+  s_8833aa79b61240::t_218d742d47406f 1-139
+legacy/javascript-info-review/node_modules/@types/node/quic.d.ts
+  s_8833aa79b61240::t_3d0ec10c91f633 1-978
+legacy/javascript-info-review/node_modules/@types/node/readline.d.ts
+  s_8833aa79b61240::t_93032bdffd830d 1-508
+legacy/javascript-info-review/node_modules/@types/node/readline/promises.d.ts
+  s_8833aa79b61240::t_2b74a58619972d 1-158
+legacy/javascript-info-review/node_modules/@types/node/repl.d.ts
+  s_8833aa79b61240::t_7e9455c93d711a 1-420
+legacy/javascript-info-review/node_modules/@types/node/sea.d.ts
+  s_8833aa79b61240::t_995ff45bbd7939 1-47
+legacy/javascript-info-review/node_modules/@types/node/sqlite.d.ts
+  s_8833aa79b61240::t_0af2bc603a2bf1 1-1123
+legacy/javascript-info-review/node_modules/@types/node/stream.d.ts
+  s_8833aa79b61240::t_e62fb11809d4c9 1-1806
+legacy/javascript-info-review/node_modules/@types/node/stream/consumers.d.ts
+  s_8833aa79b61240::t_b36c2289835a36 1-114
+legacy/javascript-info-review/node_modules/@types/node/stream/iter.d.ts
+  s_8833aa79b61240::t_63219648e96ecd 1-451
+legacy/javascript-info-review/node_modules/@types/node/stream/promises.d.ts
+  s_8833aa79b61240::t_2118f645ecf09b 1-211
+legacy/javascript-info-review/node_modules/@types/node/stream/web.d.ts
+  s_8833aa79b61240::t_50aaa373bd4fea 1-300
+legacy/javascript-info-review/node_modules/@types/node/string_decoder.d.ts
+  s_8833aa79b61240::t_3e2d82fe2761e3 1-27
+legacy/javascript-info-review/node_modules/@types/node/test.d.ts
+  s_8833aa79b61240::t_393597b746d10d 1-2389
+legacy/javascript-info-review/node_modules/@types/node/test/reporters.d.ts
+  s_8833aa79b61240::t_03bff63d13b836 1-59
+legacy/javascript-info-review/node_modules/@types/node/timers.d.ts
+  s_8833aa79b61240::t_22fc772b775851 1-149
+legacy/javascript-info-review/node_modules/@types/node/timers/promises.d.ts
+  s_8833aa79b61240::t_461b576f103c40 1-93
+legacy/javascript-info-review/node_modules/@types/node/tls.d.ts
+  s_8833aa79b61240::t_881d14b5107561 1-1193
+legacy/javascript-info-review/node_modules/@types/node/trace_events.d.ts
+  s_8833aa79b61240::t_a6395e2760c1e4 1-103
+legacy/javascript-info-review/node_modules/@types/node/ts5.6/buffer.buffer.d.ts
+  s_8833aa79b61240::t_060bc946c711b0 1-462
+legacy/javascript-info-review/node_modules/@types/node/ts5.6/compatibility/float16array.d.ts
+  s_8833aa79b61240::t_993af93bf2d788 1-71
+legacy/javascript-info-review/node_modules/@types/node/ts5.6/globals.typedarray.d.ts
+  s_8833aa79b61240::t_5fb4f38ee5fd26 1-36
+legacy/javascript-info-review/node_modules/@types/node/ts5.6/index.d.ts
+  s_8833aa79b61240::t_31509b3f0dd229 1-117
+legacy/javascript-info-review/node_modules/@types/node/ts5.7/compatibility/float16array.d.ts
+  s_8833aa79b61240::t_155bb6bdaa9d3b 1-72
+legacy/javascript-info-review/node_modules/@types/node/ts5.7/index.d.ts
+  s_8833aa79b61240::t_dc24ea7a14af44 1-117
+legacy/javascript-info-review/node_modules/@types/node/tty.d.ts
+  s_8833aa79b61240::t_1bf2c2f477c8ea 1-225
+legacy/javascript-info-review/node_modules/@types/node/url.d.ts
+  s_8833aa79b61240::t_61e441b8e40f25 1-556
+legacy/javascript-info-review/node_modules/@types/node/util.d.ts
+  s_8833aa79b61240::t_e346c1c11047a1 1-1677
+legacy/javascript-info-review/node_modules/@types/node/util/types.d.ts
+  s_8833aa79b61240::t_c92345985b81e9 1-558
+legacy/javascript-info-review/node_modules/@types/node/v8.d.ts
+  s_8833aa79b61240::t_8622f8911ad702 1-1062
+legacy/javascript-info-review/node_modules/@types/node/vm.d.ts
+  s_8833aa79b61240::t_e8a95c7a71bc5e 1-1136
+legacy/javascript-info-review/node_modules/@types/node/wasi.d.ts
+  s_8833aa79b61240::t_6c740a536f010b 1-131
+legacy/javascript-info-review/node_modules/@types/node/web-globals/abortcontroller.d.ts
+  s_8833aa79b61240::t_1cf089e8506b65 1-59
+legacy/javascript-info-review/node_modules/@types/node/web-globals/blob.d.ts
+  s_8833aa79b61240::t_fb9405f12542ba 1-23
+legacy/javascript-info-review/node_modules/@types/node/web-globals/console.d.ts
+  s_8833aa79b61240::t_57dd65d3255d7f 1-9
+legacy/javascript-info-review/node_modules/@types/node/web-globals/crypto.d.ts
+  s_8833aa79b61240::t_3e0b360c009350 1-39
+legacy/javascript-info-review/node_modules/@types/node/web-globals/domexception.d.ts
+  s_8833aa79b61240::t_3be8cc0b8eb16e 1-83
+legacy/javascript-info-review/node_modules/@types/node/web-globals/encoding.d.ts
+  s_8833aa79b61240::t_e9030765c02b48 1-11
+legacy/javascript-info-review/node_modules/@types/node/web-globals/events.d.ts
+  s_8833aa79b61240::t_f782e71491b318 1-106
+legacy/javascript-info-review/node_modules/@types/node/web-globals/fetch.d.ts
+  s_8833aa79b61240::t_7a252d5d08720d 1-69
+legacy/javascript-info-review/node_modules/@types/node/web-globals/importmeta.d.ts
+  s_8833aa79b61240::t_3a5d2404c8557d 1-13
+legacy/javascript-info-review/node_modules/@types/node/web-globals/messaging.d.ts
+  s_8833aa79b61240::t_25192a4ec4522f 1-23
+legacy/javascript-info-review/node_modules/@types/node/web-globals/navigator.d.ts
+  s_8833aa79b61240::t_eff5c2a80ac0f0 1-25
+legacy/javascript-info-review/node_modules/@types/node/web-globals/performance.d.ts
+  s_8833aa79b61240::t_ca298a40b9b233 1-45
+legacy/javascript-info-review/node_modules/@types/node/web-globals/storage.d.ts
+  s_8833aa79b61240::t_e77d5541489839 1-24
+legacy/javascript-info-review/node_modules/@types/node/web-globals/streams.d.ts
+  s_8833aa79b61240::t_fc40502cc94b08 1-115
+legacy/javascript-info-review/node_modules/@types/node/web-globals/timers.d.ts
+  s_8833aa79b61240::t_de2bf1f92a8689 1-44
+legacy/javascript-info-review/node_modules/@types/node/web-globals/url.d.ts
+  s_8833aa79b61240::t_0632991be7395e 1-24
+legacy/javascript-info-review/node_modules/@types/node/worker_threads.d.ts
+  s_8833aa79b61240::t_31f6db18317422 1-669
+legacy/javascript-info-review/node_modules/@types/node/zlib.d.ts
+  s_8833aa79b61240::t_7158be03b36617 1-589
+legacy/javascript-info-review/node_modules/@types/node/zlib/iter.d.ts
+  s_8833aa79b61240::t_1849094ffb242f 1-131
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/LICENSE
+  s_8833aa79b61240::t_7e9e586369a8b5 1-55
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/NOTICE.txt
+  s_8833aa79b61240::t_3c46a88db1138f 1-436
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/README.md
+  s_8833aa79b61240::t_4dc6b70769f6f3 1-3
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.d.ts
+  s_8833aa79b61240::t_c32bf22e8da5e0 1-20
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.decorators.d.ts
+  s_8833aa79b61240::t_5941425b06cb69 1-382
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.decorators.legacy.d.ts
+  s_8833aa79b61240::t_b905de05d63ecd 1-20
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.dom.asynciterable.d.ts
+  s_8833aa79b61240::t_5c711e8d895df6 1-18
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.dom.d.ts
+  s_8833aa79b61240::t_de1332310485d9 1-45125
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.dom.iterable.d.ts
+  s_8833aa79b61240::t_d90c5117c31d66 1-18
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2015.collection.d.ts
+  s_8833aa79b61240::t_d3864caf8a2be2 1-159
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2015.core.d.ts
+  s_8833aa79b61240::t_d245b3b3d2fce3 1-595
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2015.d.ts
+  s_8833aa79b61240::t_ba04f81a9650ef 1-26
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2015.generator.d.ts
+  s_8833aa79b61240::t_396af837c97812 1-75
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2015.iterable.d.ts
+  s_8833aa79b61240::t_3caf9e44ec5e0b 1-603
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2015.promise.d.ts
+  s_8833aa79b61240::t_5b9f4d7e7d072b 1-79
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2015.proxy.d.ts
+  s_8833aa79b61240::t_eba4b6496e272b 1-126
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2015.reflect.d.ts
+  s_8833aa79b61240::t_2b7f0a616e9950 1-142
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2015.symbol.d.ts
+  s_8833aa79b61240::t_f38174e2dad75f 1-44
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2015.symbol.wellknown.d.ts
+  s_8833aa79b61240::t_f4ecab8a034437 1-324
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2016.array.include.d.ts
+  s_8833aa79b61240::t_4306bd4cfc6489 1-114
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2016.d.ts
+  s_8833aa79b61240::t_8bbb1128e638e5 1-19
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2016.full.d.ts
+  s_8833aa79b61240::t_176e2fa781b882 1-21
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2016.intl.d.ts
+  s_8833aa79b61240::t_9f0a0f3ac95b9f 1-29
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2017.arraybuffer.d.ts
+  s_8833aa79b61240::t_2180beefd4c2d1 1-19
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2017.d.ts
+  s_8833aa79b61240::t_c27a0c168368a1 1-24
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2017.date.d.ts
+  s_8833aa79b61240::t_4eaa4870c8d09b 1-29
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2017.full.d.ts
+  s_8833aa79b61240::t_fbbec77ebcb662 1-21
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2017.intl.d.ts
+  s_8833aa79b61240::t_b2962963cd852d 1-42
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2017.object.d.ts
+  s_8833aa79b61240::t_f17a81cbf1692b 1-47
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2017.sharedmemory.d.ts
+  s_8833aa79b61240::t_7d4264b159d5e6 1-133
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2017.string.d.ts
+  s_8833aa79b61240::t_445c884f65dd5e 1-47
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2017.typedarrays.d.ts
+  s_8833aa79b61240::t_d05efd8c8642c2 1-51
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2018.asyncgenerator.d.ts
+  s_8833aa79b61240::t_6aa5bdd91ad621 1-75
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2018.asynciterable.d.ts
+  s_8833aa79b61240::t_9d61f1227958ad 1-51
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2018.d.ts
+  s_8833aa79b61240::t_1b83d796cb36fd 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2018.full.d.ts
+  s_8833aa79b61240::t_9b93867e067751 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2018.intl.d.ts
+  s_8833aa79b61240::t_0bd08997ede331 1-81
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2018.promise.d.ts
+  s_8833aa79b61240::t_07a4bf4332e462 1-28
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2018.regexp.d.ts
+  s_8833aa79b61240::t_d8639d07ad7995 1-35
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2019.array.d.ts
+  s_8833aa79b61240::t_4924c023c9d302 1-77
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2019.d.ts
+  s_8833aa79b61240::t_aad89f12169ce0 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2019.full.d.ts
+  s_8833aa79b61240::t_bac3c165df38e1 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2019.intl.d.ts
+  s_8833aa79b61240::t_44b251daea5714 1-21
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2019.object.d.ts
+  s_8833aa79b61240::t_5f1e74c8398655 1-31
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2019.string.d.ts
+  s_8833aa79b61240::t_fa3029cb5b8c32 1-35
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2019.symbol.d.ts
+  s_8833aa79b61240::t_0a3575bd5f6dfd 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2020.bigint.d.ts
+  s_8833aa79b61240::t_65a5a336dbb0dd 1-763
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2020.d.ts
+  s_8833aa79b61240::t_4cc32651b68aed 1-25
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2020.date.d.ts
+  s_8833aa79b61240::t_d0d374558d8ed2 1-40
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2020.full.d.ts
+  s_8833aa79b61240::t_e02a3bf6d1b0f9 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2020.intl.d.ts
+  s_8833aa79b61240::t_83fbe49f42096e 1-472
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2020.number.d.ts
+  s_8833aa79b61240::t_96c906f7311933 1-26
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2020.promise.d.ts
+  s_8833aa79b61240::t_e4a50e99748be0 1-45
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2020.sharedmemory.d.ts
+  s_8833aa79b61240::t_b1f8bf956dca27 1-97
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2020.string.d.ts
+  s_8833aa79b61240::t_311fea5107d946 1-42
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2020.symbol.wellknown.d.ts
+  s_8833aa79b61240::t_485c393f1acd5c 1-39
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2021.d.ts
+  s_8833aa79b61240::t_ba959e34112d02 1-21
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2021.full.d.ts
+  s_8833aa79b61240::t_04d51b10a9efda 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2021.intl.d.ts
+  s_8833aa79b61240::t_7230e22a5954f3 1-164
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2021.promise.d.ts
+  s_8833aa79b61240::t_7e4b0055032875 1-46
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2021.string.d.ts
+  s_8833aa79b61240::t_801becb989acb4 1-31
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2021.weakref.d.ts
+  s_8833aa79b61240::t_7d721b7c5e3ef8 1-76
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2022.array.d.ts
+  s_8833aa79b61240::t_37537ff1f63be9 1-119
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2022.d.ts
+  s_8833aa79b61240::t_a1634513b60411 1-23
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2022.error.d.ts
+  s_8833aa79b61240::t_0219c6f8f1a3f0 1-73
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2022.full.d.ts
+  s_8833aa79b61240::t_32003c05d97a72 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2022.intl.d.ts
+  s_8833aa79b61240::t_d9979d7e7144e0 1-143
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2022.object.d.ts
+  s_8833aa79b61240::t_1713dbeda73614 1-24
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2022.regexp.d.ts
+  s_8833aa79b61240::t_9704d040167db0 1-37
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2022.string.d.ts
+  s_8833aa79b61240::t_ff33eb4d0ba591 1-23
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2023.array.d.ts
+  s_8833aa79b61240::t_63e94cf2a2b138 1-922
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2023.collection.d.ts
+  s_8833aa79b61240::t_889d1c1acf67c6 1-19
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2023.d.ts
+  s_8833aa79b61240::t_46625098f9930b 1-20
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2023.full.d.ts
+  s_8833aa79b61240::t_21539a3bcf9605 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2023.intl.d.ts
+  s_8833aa79b61240::t_28adb195b38563 1-62
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2024.arraybuffer.d.ts
+  s_8833aa79b61240::t_63e8344af3be30 1-63
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2024.collection.d.ts
+  s_8833aa79b61240::t_0df6461822f024 1-27
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2024.d.ts
+  s_8833aa79b61240::t_d3fd0180cf5822 1-24
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2024.full.d.ts
+  s_8833aa79b61240::t_feadcef6933b11 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2024.object.d.ts
+  s_8833aa79b61240::t_f72130b58ba78e 1-27
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2024.promise.d.ts
+  s_8833aa79b61240::t_414e5d6a191cee 1-33
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2024.regexp.d.ts
+  s_8833aa79b61240::t_33547fea0e8dd7 1-23
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2024.sharedmemory.d.ts
+  s_8833aa79b61240::t_61c7c2e23feaec 1-66
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2024.string.d.ts
+  s_8833aa79b61240::t_784a22d1811f18 1-27
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2025.collection.d.ts
+  s_8833aa79b61240::t_a10417555a636b 1-94
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2025.d.ts
+  s_8833aa79b61240::t_41bb3ead19cb56 1-23
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2025.float16.d.ts
+  s_8833aa79b61240::t_1a632894a4ad14 1-443
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2025.full.d.ts
+  s_8833aa79b61240::t_194ef7798813b3 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2025.intl.d.ts
+  s_8833aa79b61240::t_baa85b54c180e5 1-200
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2025.iterator.d.ts
+  s_8833aa79b61240::t_9d28a20b633ed2 1-146
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2025.promise.d.ts
+  s_8833aa79b61240::t_1279cb6b387b5c 1-32
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es2025.regexp.d.ts
+  s_8833aa79b61240::t_5e5e3f28d23626 1-30
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es5.d.ts
+  s_8833aa79b61240::t_c9caa167aa4401 1-4599
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.es6.d.ts
+  s_8833aa79b61240::t_8c4c04efcb373d 1-21
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.array.d.ts
+  s_8833aa79b61240::t_79e4700643e3ce 1-33
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.collection.d.ts
+  s_8833aa79b61240::t_5b54d355fbaeb9 1-47
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.d.ts
+  s_8833aa79b61240::t_7382fdf4e1aeac 1-27
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.date.d.ts
+  s_8833aa79b61240::t_08ae52eb7c83c1 1-21
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.decorators.d.ts
+  s_8833aa79b61240::t_4f538fd3872869 1-26
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.disposable.d.ts
+  s_8833aa79b61240::t_65c3c6dbc7563e 1-191
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.error.d.ts
+  s_8833aa79b61240::t_b64ce666709ca1 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.full.d.ts
+  s_8833aa79b61240::t_8b3818ac1d71c5 1-22
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.intl.d.ts
+  s_8833aa79b61240::t_a052c98b55dda3 1-107
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.sharedmemory.d.ts
+  s_8833aa79b61240::t_1a6483288f6f3d 1-23
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.temporal.d.ts
+  s_8833aa79b61240::t_b3b697700c62f5 1-485
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.esnext.typedarrays.d.ts
+  s_8833aa79b61240::t_55dd5d14775b18 1-90
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.scripthost.d.ts
+  s_8833aa79b61240::t_4f604da276adf6 1-320
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.webworker.asynciterable.d.ts
+  s_8833aa79b61240::t_9ad99f5c7414a5 1-18
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.webworker.d.ts
+  s_8833aa79b61240::t_29301480a112d3 1-15606
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.webworker.importscripts.d.ts
+  s_8833aa79b61240::t_889ffe428141fe 1-21
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/lib.webworker.iterable.d.ts
+  s_8833aa79b61240::t_ffdf0a588a1940 1-18
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/lib/tsc.sig
+  s_8833aa79b61240::t_9849ff9833517e 1-11
+legacy/javascript-info-review/node_modules/@typescript/typescript-linux-x64/package.json
+  s_8833aa79b61240::t_5e5534e9625f6f 1-45
+legacy/javascript-info-review/node_modules/esbuild/LICENSE.md
+  s_8833aa79b61240::t_e01a803f85c5c2 1-21
+legacy/javascript-info-review/node_modules/esbuild/README.md
+  s_8833aa79b61240::t_11f9a185712cb3 1-3
+legacy/javascript-info-review/node_modules/esbuild/install.js
+  s_8833aa79b61240::t_db8eab00410d7d 1-300
+legacy/javascript-info-review/node_modules/esbuild/lib/main.d.ts
+  s_8833aa79b61240::t_bac7eb759e9759 1-716
+legacy/javascript-info-review/node_modules/esbuild/lib/main.js
+  s_8833aa79b61240::t_bd9719fdb4a073 1-2532
+legacy/javascript-info-review/node_modules/esbuild/package.json
+  s_8833aa79b61240::t_5c0204de93f38f 1-74
+legacy/javascript-info-review/node_modules/tsx/LICENSE
+  s_8833aa79b61240::t_246682a8ece28d 1-21
+legacy/javascript-info-review/node_modules/tsx/README.md
+  s_8833aa79b61240::t_faf7984ee4929a 1-32
+legacy/javascript-info-review/node_modules/tsx/dist/cjs/api/index.cjs
+  s_8833aa79b61240::t_bea80672aacb45 1
+legacy/javascript-info-review/node_modules/tsx/dist/cjs/api/index.d.cts
+  s_8833aa79b61240::t_3f33b2a7defc87 1-35
+legacy/javascript-info-review/node_modules/tsx/dist/cjs/api/index.d.mts
+  s_8833aa79b61240::t_1558bdf0feb5fb 1-35
+legacy/javascript-info-review/node_modules/tsx/dist/cjs/api/index.mjs
+  s_8833aa79b61240::t_86a2bc89fbea62 1
+legacy/javascript-info-review/node_modules/tsx/dist/cjs/index.cjs
+  s_8833aa79b61240::t_47e624b4be929c 1
+legacy/javascript-info-review/node_modules/tsx/dist/cjs/index.mjs
+  s_8833aa79b61240::t_db85bd6d8f074e 1
+legacy/javascript-info-review/node_modules/tsx/dist/cli.cjs
+  s_8833aa79b61240::t_85cf1c24eb2eed 1-54
+legacy/javascript-info-review/node_modules/tsx/dist/cli.mjs
+  s_8833aa79b61240::t_a888a2b6293c4b 1-55
+legacy/javascript-info-review/node_modules/tsx/dist/client-D3mGB526.cjs
+  s_8833aa79b61240::t_fc840dff07ef4c 1
+legacy/javascript-info-review/node_modules/tsx/dist/client-D_mPDF5S.mjs
+  s_8833aa79b61240::t_928751242e06a0 1
+legacy/javascript-info-review/node_modules/tsx/dist/esm/api/index.cjs
+  s_8833aa79b61240::t_9179354ae96c33 1
+legacy/javascript-info-review/node_modules/tsx/dist/esm/api/index.d.cts
+  s_8833aa79b61240::t_c561851c183f08 1-35
+legacy/javascript-info-review/node_modules/tsx/dist/esm/api/index.d.mts
+  s_8833aa79b61240::t_3dee423ecb343e 1-35
+legacy/javascript-info-review/node_modules/tsx/dist/esm/api/index.mjs
+  s_8833aa79b61240::t_903cbfdd8fc8c2 1
+legacy/javascript-info-review/node_modules/tsx/dist/esm/index.cjs
+  s_8833aa79b61240::t_971ecac9bafbb7 1
+legacy/javascript-info-review/node_modules/tsx/dist/esm/index.mjs
+  s_8833aa79b61240::t_4902eabbe3bac0 1
+legacy/javascript-info-review/node_modules/tsx/dist/get-pipe-path-D4YM6rQt.cjs
+  s_8833aa79b61240::t_ca66a4198cd87f 1
+legacy/javascript-info-review/node_modules/tsx/dist/get-pipe-path-_tAJyU_v.mjs
+  s_8833aa79b61240::t_01aac588b53ed0 1
+legacy/javascript-info-review/node_modules/tsx/dist/index-BWFBUo6r.cjs
+  s_8833aa79b61240::t_38ca37f46faab3 1
+legacy/javascript-info-review/node_modules/tsx/dist/index-D9F1FXzN.cjs
+  s_8833aa79b61240::t_4bb51405ec6168 1-14
+legacy/javascript-info-review/node_modules/tsx/dist/index-XurvG3JN.mjs
+  s_8833aa79b61240::t_581c7b40a7e87c 1-14
+legacy/javascript-info-review/node_modules/tsx/dist/index-gbaejti9.mjs
+  s_8833aa79b61240::t_7bf02c7ac0cbec 1
+legacy/javascript-info-review/node_modules/tsx/dist/lexer-DQCqS3nf.mjs
+  s_8833aa79b61240::t_5302c1a01447b7 1-3
+legacy/javascript-info-review/node_modules/tsx/dist/lexer-DgIbo0BU.cjs
+  s_8833aa79b61240::t_2d033fad0e4162 1-3
+legacy/javascript-info-review/node_modules/tsx/dist/loader.cjs
+  s_8833aa79b61240::t_6821a05557c334 1
+legacy/javascript-info-review/node_modules/tsx/dist/loader.mjs
+  s_8833aa79b61240::t_a4b978a5a158d0 1
+legacy/javascript-info-review/node_modules/tsx/dist/node-features-B9BBLzwu.mjs
+  s_8833aa79b61240::t_e9f39feee96a66 1
+legacy/javascript-info-review/node_modules/tsx/dist/node-features-CQLdkVE6.cjs
+  s_8833aa79b61240::t_48bcf3d72f26be 1
+legacy/javascript-info-review/node_modules/tsx/dist/package-BgaOhdqD.mjs
+  s_8833aa79b61240::t_9d0683498fd291 1
+legacy/javascript-info-review/node_modules/tsx/dist/package-BqwdNe35.cjs
+  s_8833aa79b61240::t_f8a6f03c5dac40 1
+legacy/javascript-info-review/node_modules/tsx/dist/patch-repl.cjs
+  s_8833aa79b61240::t_b744f329b9d4c6 1
+legacy/javascript-info-review/node_modules/tsx/dist/patch-repl.mjs
+  s_8833aa79b61240::t_467eda68a0c666 1
+legacy/javascript-info-review/node_modules/tsx/dist/preflight.cjs
+  s_8833aa79b61240::t_d699fc568c751d 1
+legacy/javascript-info-review/node_modules/tsx/dist/preflight.mjs
+  s_8833aa79b61240::t_c6cebb52d7c9c5 1
+legacy/javascript-info-review/node_modules/tsx/dist/register-BLKDwPDF.mjs
+  s_8833aa79b61240::t_c9439aacd64f6b 1-10
+legacy/javascript-info-review/node_modules/tsx/dist/register-BLUABhh3.cjs
+  s_8833aa79b61240::t_5fc24745871d70 1-10
+legacy/javascript-info-review/node_modules/tsx/dist/register-CN6UEFH9.cjs
+  s_8833aa79b61240::t_317ec45395fd8a 1-2
+legacy/javascript-info-review/node_modules/tsx/dist/register-D5KIhaFJ.mjs
+  s_8833aa79b61240::t_236511cb1673fd 1-2
+legacy/javascript-info-review/node_modules/tsx/dist/repl.cjs
+  s_8833aa79b61240::t_7544d52c690134 1-3
+legacy/javascript-info-review/node_modules/tsx/dist/repl.mjs
+  s_8833aa79b61240::t_932ceb3ec49870 1-3
+legacy/javascript-info-review/node_modules/tsx/dist/require-DVoFfmDN.cjs
+  s_8833aa79b61240::t_ecfa3f73fe9a77 1
+legacy/javascript-info-review/node_modules/tsx/dist/require-l-oOTCoT.mjs
+  s_8833aa79b61240::t_9d5e571735d11f 1
+legacy/javascript-info-review/node_modules/tsx/dist/suppress-warnings.cjs
+  s_8833aa79b61240::t_71218350741ab6 1
+legacy/javascript-info-review/node_modules/tsx/dist/suppress-warnings.mjs
+  s_8833aa79b61240::t_a197aac7aa54f0 1
+legacy/javascript-info-review/node_modules/tsx/dist/temporary-directory-B83uKxJF.cjs
+  s_8833aa79b61240::t_2222bdc0262a9d 1
+legacy/javascript-info-review/node_modules/tsx/dist/temporary-directory-BDDVQOvU.mjs
+  s_8833aa79b61240::t_16cd64f2ae9e23 1
+legacy/javascript-info-review/node_modules/tsx/dist/types-Cxp8y2TL.d.ts
+  s_8833aa79b61240::t_a5bd48dc8755d9 1-5
+legacy/javascript-info-review/node_modules/tsx/package.json
+  s_8833aa79b61240::t_b58d3768073ca2 1-67
+legacy/javascript-info-review/node_modules/typescript/LICENSE
+  s_8833aa79b61240::t_86dd2d12cfb254 1-55
+legacy/javascript-info-review/node_modules/typescript/NOTICE.txt
+  s_8833aa79b61240::t_bdd989c96e777b 1-436
+legacy/javascript-info-review/node_modules/typescript/README.md
+  s_8833aa79b61240::t_cc7347735c8014 1-49
+legacy/javascript-info-review/node_modules/typescript/bin/tsc
+  s_8833aa79b61240::t_ba733e4c629e51 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/api.d.ts
+  s_8833aa79b61240::t_7e1a0d4df0b085 1-529
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/api.d.ts.map
+  s_8833aa79b61240::t_74aa2e2791d0bf 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/api.js
+  s_8833aa79b61240::t_b9cfcb844169b5 1-1657
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/api.js.map
+  s_8833aa79b61240::t_defa7bc1ab30b6 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/client.d.ts
+  s_8833aa79b61240::t_ca3823ee173e56 1-39
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/client.d.ts.map
+  s_8833aa79b61240::t_605457350c9141 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/client.js
+  s_8833aa79b61240::t_56bcd3b4a88176 1-211
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/client.js.map
+  s_8833aa79b61240::t_18c662b454637a 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/types.d.ts
+  s_8833aa79b61240::t_940ee5a34af483 1-310
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/types.d.ts.map
+  s_8833aa79b61240::t_d97f382639dc3c 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/types.js
+  s_8833aa79b61240::t_4802ed7cdb62d2 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/api/async/types.js.map
+  s_8833aa79b61240::t_22badd35d80560 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/compilerOptions.d.ts
+  s_8833aa79b61240::t_587b1392dafd53 1-109
+legacy/javascript-info-review/node_modules/typescript/dist/api/compilerOptions.d.ts.map
+  s_8833aa79b61240::t_84a78b6297cdbc 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/compilerOptions.js
+  s_8833aa79b61240::t_0ba8417630e964 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/api/compilerOptions.js.map
+  s_8833aa79b61240::t_4e775d818dd22a 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/fs.d.ts
+  s_8833aa79b61240::t_b471c12798c772 1-23
+legacy/javascript-info-review/node_modules/typescript/dist/api/fs.d.ts.map
+  s_8833aa79b61240::t_f8deaa1471f612 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/fs.js
+  s_8833aa79b61240::t_19b53bca594d87 1-109
+legacy/javascript-info-review/node_modules/typescript/dist/api/fs.js.map
+  s_8833aa79b61240::t_62c12cbbdccc3b 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/encoder.d.ts
+  s_8833aa79b61240::t_5e981483ba9db8 1-15
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/encoder.d.ts.map
+  s_8833aa79b61240::t_12da1273d83d95 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/encoder.generated.d.ts
+  s_8833aa79b61240::t_05615b398d8976 1-5
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/encoder.generated.d.ts.map
+  s_8833aa79b61240::t_62babe8960371a 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/encoder.generated.js
+  s_8833aa79b61240::t_042f9cf7e7770c 1-74
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/encoder.generated.js.map
+  s_8833aa79b61240::t_a0e17daa414985 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/encoder.js
+  s_8833aa79b61240::t_811c3319bc89e9 1-287
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/encoder.js.map
+  s_8833aa79b61240::t_da2d99582cd525 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/msgpack.d.ts
+  s_8833aa79b61240::t_9686ac81e0fa49 1-32
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/msgpack.d.ts.map
+  s_8833aa79b61240::t_67c9758d27b770 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/msgpack.js
+  s_8833aa79b61240::t_245dc83cc53810 1-213
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/msgpack.js.map
+  s_8833aa79b61240::t_094ac7d2d54d1c 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.d.ts
+  s_8833aa79b61240::t_adb716409189c3 1-76
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.d.ts.map
+  s_8833aa79b61240::t_c8612fda41bd73 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.generated.d.ts
+  s_8833aa79b61240::t_f00f9f72ea4de3 1-182
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.generated.d.ts.map
+  s_8833aa79b61240::t_b2ecf60a3f66f8 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.generated.js
+  s_8833aa79b61240::t_cd96424b8ccbe7 1-835
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.generated.js.map
+  s_8833aa79b61240::t_962bb9ebc88fc1 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.infrastructure.d.ts
+  s_8833aa79b61240::t_d00d528fdcede8 1-62
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.infrastructure.d.ts.map
+  s_8833aa79b61240::t_69401b5a0d7415 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.infrastructure.js
+  s_8833aa79b61240::t_998d9bf7c3c73c 1-122
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.infrastructure.js.map
+  s_8833aa79b61240::t_11b39273d7ab72 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.js
+  s_8833aa79b61240::t_e7f1b7996573ef 1-298
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/node.js.map
+  s_8833aa79b61240::t_500d06b496b7d9 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/protocol.d.ts
+  s_8833aa79b61240::t_f2f4956d16884a 1-29
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/protocol.d.ts.map
+  s_8833aa79b61240::t_df30877cee3c29 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/protocol.generated.d.ts
+  s_8833aa79b61240::t_6a90fc3e881634 1-4
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/protocol.generated.d.ts.map
+  s_8833aa79b61240::t_35e12569b90cb9 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/protocol.generated.js
+  s_8833aa79b61240::t_598444d6552c18 1-241
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/protocol.generated.js.map
+  s_8833aa79b61240::t_971872edc74d97 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/protocol.js
+  s_8833aa79b61240::t_ba108e55bc50dd 1-30
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/protocol.js.map
+  s_8833aa79b61240::t_de06b6f65e6363 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/wtf8.d.ts
+  s_8833aa79b61240::t_f9314aeb9dbbb7 1-6
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/wtf8.d.ts.map
+  s_8833aa79b61240::t_fb4ccf1552344b 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/wtf8.js
+  s_8833aa79b61240::t_24a085dd22be2b 1-61
+legacy/javascript-info-review/node_modules/typescript/dist/api/node/wtf8.js.map
+  s_8833aa79b61240::t_b68a5aaec48c68 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/options.d.ts
+  s_8833aa79b61240::t_989600b0711cd2 1-32
+legacy/javascript-info-review/node_modules/typescript/dist/api/options.d.ts.map
+  s_8833aa79b61240::t_fddab0a0f7df28 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/options.js
+  s_8833aa79b61240::t_a243bfadc42872 1-11
+legacy/javascript-info-review/node_modules/typescript/dist/api/options.js.map
+  s_8833aa79b61240::t_0a0c55bbae0bc4 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/path.d.ts
+  s_8833aa79b61240::t_181079eabca504 1-110
+legacy/javascript-info-review/node_modules/typescript/dist/api/path.d.ts.map
+  s_8833aa79b61240::t_bc72876aebd999 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/path.js
+  s_8833aa79b61240::t_d1ba0732ad72d3 1-508
+legacy/javascript-info-review/node_modules/typescript/dist/api/path.js.map
+  s_8833aa79b61240::t_d9476d5e3bb0bc 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/proto.d.ts
+  s_8833aa79b61240::t_6c70c6081cc4d0 1-239
+legacy/javascript-info-review/node_modules/typescript/dist/api/proto.d.ts.map
+  s_8833aa79b61240::t_77c6ac8bab9bda 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/proto.js
+  s_8833aa79b61240::t_893bad293e92d4 1-37
+legacy/javascript-info-review/node_modules/typescript/dist/api/proto.js.map
+  s_8833aa79b61240::t_a87c930e6aa72c 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/sourceFileCache.d.ts
+  s_8833aa79b61240::t_8ea97cb5c1f3fa 1-79
+legacy/javascript-info-review/node_modules/typescript/dist/api/sourceFileCache.d.ts.map
+  s_8833aa79b61240::t_ba6c6e4fde3b6c 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/sourceFileCache.js
+  s_8833aa79b61240::t_52d4e4be6d683c 1-169
+legacy/javascript-info-review/node_modules/typescript/dist/api/sourceFileCache.js.map
+  s_8833aa79b61240::t_4554f1356ea6bd 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/api.d.ts
+  s_8833aa79b61240::t_7c50c559d9387c 1-529
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/api.d.ts.map
+  s_8833aa79b61240::t_93b57afe505792 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/api.js
+  s_8833aa79b61240::t_50550f57ef60e8 1-1665
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/api.js.map
+  s_8833aa79b61240::t_e048f3978e7138 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/client.d.ts
+  s_8833aa79b61240::t_5a5ee7edc01b0c 1-30
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/client.d.ts.map
+  s_8833aa79b61240::t_6662b88082487f 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/client.js
+  s_8833aa79b61240::t_09e6fbe36c61d2 1-124
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/client.js.map
+  s_8833aa79b61240::t_0e87deb537a1ee 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/types.d.ts
+  s_8833aa79b61240::t_7cef8ffedbd97c 1-310
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/types.d.ts.map
+  s_8833aa79b61240::t_f45ee332a6aaf2 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/types.js
+  s_8833aa79b61240::t_f483eeb57df6df 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/api/sync/types.js.map
+  s_8833aa79b61240::t_8630459aad38fe 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/syncChannel.d.ts
+  s_8833aa79b61240::t_9bd2d44e4485d2 1-114
+legacy/javascript-info-review/node_modules/typescript/dist/api/syncChannel.d.ts.map
+  s_8833aa79b61240::t_7ce6a9c211cb62 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/syncChannel.js
+  s_8833aa79b61240::t_5a0a429628968a 1-508
+legacy/javascript-info-review/node_modules/typescript/dist/api/syncChannel.js.map
+  s_8833aa79b61240::t_647eb1bd359c6d 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/timing.d.ts
+  s_8833aa79b61240::t_42ed6230206958 1-175
+legacy/javascript-info-review/node_modules/typescript/dist/api/timing.d.ts.map
+  s_8833aa79b61240::t_24c3ff607616ad 1
+legacy/javascript-info-review/node_modules/typescript/dist/api/timing.js
+  s_8833aa79b61240::t_a01d7570addd2e 1-149
+legacy/javascript-info-review/node_modules/typescript/dist/api/timing.js.map
+  s_8833aa79b61240::t_4844eaa70a626c 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/ast.d.ts
+  s_8833aa79b61240::t_e2de5f98d14eea 1-100
+legacy/javascript-info-review/node_modules/typescript/dist/ast/ast.d.ts.map
+  s_8833aa79b61240::t_ab2eebdb8dd9cc 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/ast.generated.d.ts
+  s_8833aa79b61240::t_1a5c0b9b63db96 1-1161
+legacy/javascript-info-review/node_modules/typescript/dist/ast/ast.generated.d.ts.map
+  s_8833aa79b61240::t_a5dbbb64f59c61 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/ast.generated.js
+  s_8833aa79b61240::t_074410f4271631 1-4
+legacy/javascript-info-review/node_modules/typescript/dist/ast/ast.generated.js.map
+  s_8833aa79b61240::t_5e58d5af107be4 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/ast.js
+  s_8833aa79b61240::t_a183bc279bee54 1-7
+legacy/javascript-info-review/node_modules/typescript/dist/ast/ast.js.map
+  s_8833aa79b61240::t_33a544a049268f 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/astnav.d.ts
+  s_8833aa79b61240::t_39bb12b43de5a9 1-19
+legacy/javascript-info-review/node_modules/typescript/dist/ast/astnav.d.ts.map
+  s_8833aa79b61240::t_779282b948deed 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/astnav.js
+  s_8833aa79b61240::t_ba7a9bf8718eff 1-596
+legacy/javascript-info-review/node_modules/typescript/dist/ast/astnav.js.map
+  s_8833aa79b61240::t_07da753d98d92e 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/clone.d.ts
+  s_8833aa79b61240::t_fc6338c2aec052 1-16
+legacy/javascript-info-review/node_modules/typescript/dist/ast/clone.d.ts.map
+  s_8833aa79b61240::t_7e753daba6adb9 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/clone.js
+  s_8833aa79b61240::t_231e407d2948a6 1-104
+legacy/javascript-info-review/node_modules/typescript/dist/ast/clone.js.map
+  s_8833aa79b61240::t_83ff95f986a2ba 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/factory.generated.d.ts
+  s_8833aa79b61240::t_1e203147f7a4d1 1-520
+legacy/javascript-info-review/node_modules/typescript/dist/ast/factory.generated.d.ts.map
+  s_8833aa79b61240::t_ffd7e6f0e90ba6 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/factory.generated.js
+  s_8833aa79b61240::t_9b143a7b61a6d7 1-3057
+legacy/javascript-info-review/node_modules/typescript/dist/ast/factory.generated.js.map
+  s_8833aa79b61240::t_f09279f81cd3de 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/index.d.ts
+  s_8833aa79b61240::t_22e4a10d427e8a 1-20
+legacy/javascript-info-review/node_modules/typescript/dist/ast/index.d.ts.map
+  s_8833aa79b61240::t_cfe796f7fd0553 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/index.js
+  s_8833aa79b61240::t_09dfd20eeed5aa 1-20
+legacy/javascript-info-review/node_modules/typescript/dist/ast/index.js.map
+  s_8833aa79b61240::t_0eb732f1413ac9 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/is.d.ts
+  s_8833aa79b61240::t_474a8565712dd2 1-35
+legacy/javascript-info-review/node_modules/typescript/dist/ast/is.d.ts.map
+  s_8833aa79b61240::t_241a2c004cdc8e 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/is.generated.d.ts
+  s_8833aa79b61240::t_16aed0d20c1b8c 1-329
+legacy/javascript-info-review/node_modules/typescript/dist/ast/is.generated.d.ts.map
+  s_8833aa79b61240::t_c0705d1c7a1b95 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/is.generated.js
+  s_8833aa79b61240::t_ba3edc756d64f8 1-1103
+legacy/javascript-info-review/node_modules/typescript/dist/ast/is.generated.js.map
+  s_8833aa79b61240::t_812b9e13206685 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/is.js
+  s_8833aa79b61240::t_f2a4e6b09aeca1 1-233
+legacy/javascript-info-review/node_modules/typescript/dist/ast/is.js.map
+  s_8833aa79b61240::t_ef07d555ce4511 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/jsdoc.d.ts
+  s_8833aa79b61240::t_5d422379fc95b7 1-11
+legacy/javascript-info-review/node_modules/typescript/dist/ast/jsdoc.d.ts.map
+  s_8833aa79b61240::t_93d0b1a785e7aa 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/jsdoc.js
+  s_8833aa79b61240::t_d16de32abfcfb9 1-202
+legacy/javascript-info-review/node_modules/typescript/dist/ast/jsdoc.js.map
+  s_8833aa79b61240::t_3f31498af7225b 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/scanner.d.ts
+  s_8833aa79b61240::t_438f7dc7cc9ebb 1-97
+legacy/javascript-info-review/node_modules/typescript/dist/ast/scanner.d.ts.map
+  s_8833aa79b61240::t_b651d63fdd28e9 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/scanner.js
+  s_8833aa79b61240::t_4892a47d70de10 1-2230
+legacy/javascript-info-review/node_modules/typescript/dist/ast/scanner.js.map
+  s_8833aa79b61240::t_919174ac71295e 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/utils.d.ts
+  s_8833aa79b61240::t_a9d038263bf572 1-17
+legacy/javascript-info-review/node_modules/typescript/dist/ast/utils.d.ts.map
+  s_8833aa79b61240::t_fefe25c329ffda 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/utils.js
+  s_8833aa79b61240::t_ea0002e26ae3ec 1-67
+legacy/javascript-info-review/node_modules/typescript/dist/ast/utils.js.map
+  s_8833aa79b61240::t_69984bd460d523 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/visitor.d.ts
+  s_8833aa79b61240::t_9ae1fd853ac649 1-14
+legacy/javascript-info-review/node_modules/typescript/dist/ast/visitor.d.ts.map
+  s_8833aa79b61240::t_d27bfa35e4ec3d 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/visitor.generated.d.ts
+  s_8833aa79b61240::t_ff75a81c79518d 1-50
+legacy/javascript-info-review/node_modules/typescript/dist/ast/visitor.generated.d.ts.map
+  s_8833aa79b61240::t_8e170db3ecc72f 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/visitor.generated.js
+  s_8833aa79b61240::t_4dfebf2cbc9b20 1-978
+legacy/javascript-info-review/node_modules/typescript/dist/ast/visitor.generated.js.map
+  s_8833aa79b61240::t_954bddc2a0d3c5 1
+legacy/javascript-info-review/node_modules/typescript/dist/ast/visitor.js
+  s_8833aa79b61240::t_433437006e6049 1-47
+legacy/javascript-info-review/node_modules/typescript/dist/ast/visitor.js.map
+  s_8833aa79b61240::t_69da21e389e9f2 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/characterCodes.d.ts
+  s_8833aa79b61240::t_02714631aa1985 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/characterCodes.d.ts.map
+  s_8833aa79b61240::t_bd4cedd467d6af 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/characterCodes.enum.d.ts
+  s_8833aa79b61240::t_d7c290f96a20fe 1-129
+legacy/javascript-info-review/node_modules/typescript/dist/enums/characterCodes.enum.d.ts.map
+  s_8833aa79b61240::t_db4362acdf34e3 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/characterCodes.enum.js
+  s_8833aa79b61240::t_c79e9fd24d2a34 1-132
+legacy/javascript-info-review/node_modules/typescript/dist/enums/characterCodes.enum.js.map
+  s_8833aa79b61240::t_6bb82f049da241 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/characterCodes.js
+  s_8833aa79b61240::t_4ada43fc7f3117 1-130
+legacy/javascript-info-review/node_modules/typescript/dist/enums/characterCodes.js.map
+  s_8833aa79b61240::t_9ceb36f265c813 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/commentDirectiveType.d.ts
+  s_8833aa79b61240::t_c77c8d2cc2b71c 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/commentDirectiveType.d.ts.map
+  s_8833aa79b61240::t_a92f3288fcb622 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/commentDirectiveType.enum.d.ts
+  s_8833aa79b61240::t_aaeade925b97dd 1-5
+legacy/javascript-info-review/node_modules/typescript/dist/enums/commentDirectiveType.enum.d.ts.map
+  s_8833aa79b61240::t_c83bbe16561f66 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/commentDirectiveType.enum.js
+  s_8833aa79b61240::t_d45d87ad3177f9 1-6
+legacy/javascript-info-review/node_modules/typescript/dist/enums/commentDirectiveType.enum.js.map
+  s_8833aa79b61240::t_d415aa68bf2745 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/commentDirectiveType.js
+  s_8833aa79b61240::t_d062af9ed27fea 1-6
+legacy/javascript-info-review/node_modules/typescript/dist/enums/commentDirectiveType.js.map
+  s_8833aa79b61240::t_349c6e33f0e513 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/completionItemKind.d.ts
+  s_8833aa79b61240::t_dcb983b7abcefe 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/completionItemKind.d.ts.map
+  s_8833aa79b61240::t_eccb70c308c14e 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/completionItemKind.enum.d.ts
+  s_8833aa79b61240::t_1e971ee87baaa0 1-28
+legacy/javascript-info-review/node_modules/typescript/dist/enums/completionItemKind.enum.d.ts.map
+  s_8833aa79b61240::t_8dc9314404e0f9 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/completionItemKind.enum.js
+  s_8833aa79b61240::t_4caba7451ac9e8 1-30
+legacy/javascript-info-review/node_modules/typescript/dist/enums/completionItemKind.enum.js.map
+  s_8833aa79b61240::t_f2799c91475639 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/completionItemKind.js
+  s_8833aa79b61240::t_11470a09d6a7c3 1-30
+legacy/javascript-info-review/node_modules/typescript/dist/enums/completionItemKind.js.map
+  s_8833aa79b61240::t_b4576426183198 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/diagnosticCategory.d.ts
+  s_8833aa79b61240::t_68c6bfa023fdf1 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/diagnosticCategory.d.ts.map
+  s_8833aa79b61240::t_a3b62daca1e3f6 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/diagnosticCategory.enum.d.ts
+  s_8833aa79b61240::t_d4784ba7479872 1-7
+legacy/javascript-info-review/node_modules/typescript/dist/enums/diagnosticCategory.enum.d.ts.map
+  s_8833aa79b61240::t_4a86ddaf2e3e40 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/diagnosticCategory.enum.js
+  s_8833aa79b61240::t_21cd011027b258 1-9
+legacy/javascript-info-review/node_modules/typescript/dist/enums/diagnosticCategory.enum.js.map
+  s_8833aa79b61240::t_06e12128da5225 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/diagnosticCategory.js
+  s_8833aa79b61240::t_f811480deaf46e 1-9
+legacy/javascript-info-review/node_modules/typescript/dist/enums/diagnosticCategory.js.map
+  s_8833aa79b61240::t_52e56e25614efc 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/elementFlags.d.ts
+  s_8833aa79b61240::t_a5e7c92f0a8bed 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/elementFlags.d.ts.map
+  s_8833aa79b61240::t_6cb9b0c02a5215 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/elementFlags.enum.d.ts
+  s_8833aa79b61240::t_b37c96a72e90c2 1-12
+legacy/javascript-info-review/node_modules/typescript/dist/enums/elementFlags.enum.d.ts.map
+  s_8833aa79b61240::t_750d00251a6f85 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/elementFlags.enum.js
+  s_8833aa79b61240::t_49627a554355b7 1-14
+legacy/javascript-info-review/node_modules/typescript/dist/enums/elementFlags.enum.js.map
+  s_8833aa79b61240::t_4ca5e36f107a81 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/elementFlags.js
+  s_8833aa79b61240::t_b9a5c584ccf81c 1-14
+legacy/javascript-info-review/node_modules/typescript/dist/enums/elementFlags.js.map
+  s_8833aa79b61240::t_4334eec6fc2f5e 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/internalSymbolName.d.ts
+  s_8833aa79b61240::t_45953e52e644a0 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/internalSymbolName.d.ts.map
+  s_8833aa79b61240::t_11358c164018f4 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/internalSymbolName.enum.d.ts
+  s_8833aa79b61240::t_5bbcf3a46d8de7 1-23
+legacy/javascript-info-review/node_modules/typescript/dist/enums/internalSymbolName.enum.d.ts.map
+  s_8833aa79b61240::t_8f13aab9f069a9 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/internalSymbolName.enum.js
+  s_8833aa79b61240::t_ea8fd204357b2b 1-25
+legacy/javascript-info-review/node_modules/typescript/dist/enums/internalSymbolName.enum.js.map
+  s_8833aa79b61240::t_9d90e7e1ed86da 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/internalSymbolName.js
+  s_8833aa79b61240::t_00147b78799cf2 1-25
+legacy/javascript-info-review/node_modules/typescript/dist/enums/internalSymbolName.js.map
+  s_8833aa79b61240::t_a78f3ec78ce122 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/jsxEmit.d.ts
+  s_8833aa79b61240::t_7c3ed0ece9861b 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/jsxEmit.d.ts.map
+  s_8833aa79b61240::t_23da9da4435022 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/jsxEmit.enum.d.ts
+  s_8833aa79b61240::t_3f079ed6a94fdd 1-9
+legacy/javascript-info-review/node_modules/typescript/dist/enums/jsxEmit.enum.d.ts.map
+  s_8833aa79b61240::t_2c288d920175de 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/jsxEmit.enum.js
+  s_8833aa79b61240::t_ae5788f79f0de4 1-11
+legacy/javascript-info-review/node_modules/typescript/dist/enums/jsxEmit.enum.js.map
+  s_8833aa79b61240::t_44839ebf79de52 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/jsxEmit.js
+  s_8833aa79b61240::t_902d529f071880 1-11
+legacy/javascript-info-review/node_modules/typescript/dist/enums/jsxEmit.js.map
+  s_8833aa79b61240::t_505a3b5d749351 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/languageVariant.d.ts
+  s_8833aa79b61240::t_491d8d2ee35bda 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/languageVariant.d.ts.map
+  s_8833aa79b61240::t_5cb385357051de 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/languageVariant.enum.d.ts
+  s_8833aa79b61240::t_c62387a4a8e837 1-5
+legacy/javascript-info-review/node_modules/typescript/dist/enums/languageVariant.enum.d.ts.map
+  s_8833aa79b61240::t_b61415d5fce1d4 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/languageVariant.enum.js
+  s_8833aa79b61240::t_8fd26f8f8a4c2a 1-6
+legacy/javascript-info-review/node_modules/typescript/dist/enums/languageVariant.enum.js.map
+  s_8833aa79b61240::t_0680f238621c4e 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/languageVariant.js
+  s_8833aa79b61240::t_4815a4d5af0b98 1-6
+legacy/javascript-info-review/node_modules/typescript/dist/enums/languageVariant.js.map
+  s_8833aa79b61240::t_11b162f9602887 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/modifierFlags.d.ts
+  s_8833aa79b61240::t_684bb8d11f8e41 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/modifierFlags.d.ts.map
+  s_8833aa79b61240::t_ea5b526bd70536 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/modifierFlags.enum.d.ts
+  s_8833aa79b61240::t_933b2ee4eab7c1 1-42
+legacy/javascript-info-review/node_modules/typescript/dist/enums/modifierFlags.enum.d.ts.map
+  s_8833aa79b61240::t_d51006ffd9a4f4 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/modifierFlags.enum.js
+  s_8833aa79b61240::t_ce934837e4b6c8 1-44
+legacy/javascript-info-review/node_modules/typescript/dist/enums/modifierFlags.enum.js.map
+  s_8833aa79b61240::t_c61cb47e253e25 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/modifierFlags.js
+  s_8833aa79b61240::t_cf5d51add4b550 1-44
+legacy/javascript-info-review/node_modules/typescript/dist/enums/modifierFlags.js.map
+  s_8833aa79b61240::t_b423d04a7655a0 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleDetectionKind.d.ts
+  s_8833aa79b61240::t_f04c8b672c5a79 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleDetectionKind.d.ts.map
+  s_8833aa79b61240::t_e816b35e1f3b5f 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleDetectionKind.enum.d.ts
+  s_8833aa79b61240::t_e13795e821ee94 1-7
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleDetectionKind.enum.d.ts.map
+  s_8833aa79b61240::t_6e9857870ffb5b 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleDetectionKind.enum.js
+  s_8833aa79b61240::t_c5ec7b5f0ac151 1-9
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleDetectionKind.enum.js.map
+  s_8833aa79b61240::t_b1942c7b268596 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleDetectionKind.js
+  s_8833aa79b61240::t_9e60db0b91bd03 1-9
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleDetectionKind.js.map
+  s_8833aa79b61240::t_227fb378d97a43 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleKind.d.ts
+  s_8833aa79b61240::t_f745de4fa27e19 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleKind.d.ts.map
+  s_8833aa79b61240::t_3e97ae30774bc8 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleKind.enum.d.ts
+  s_8833aa79b61240::t_8551794c60ed9c 1-17
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleKind.enum.d.ts.map
+  s_8833aa79b61240::t_21499e529e12e7 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleKind.enum.js
+  s_8833aa79b61240::t_ebc546624cb147 1-19
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleKind.enum.js.map
+  s_8833aa79b61240::t_8d95d6262e0253 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleKind.js
+  s_8833aa79b61240::t_c4e960b698cd56 1-19
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleKind.js.map
+  s_8833aa79b61240::t_0332e8e492e062 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleResolutionKind.d.ts
+  s_8833aa79b61240::t_e9e73f31c11180 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleResolutionKind.d.ts.map
+  s_8833aa79b61240::t_a8ec0a33ef5c58 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleResolutionKind.enum.d.ts
+  s_8833aa79b61240::t_f1356bef8aa875 1-9
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleResolutionKind.enum.d.ts.map
+  s_8833aa79b61240::t_530006acf418e2 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleResolutionKind.enum.js
+  s_8833aa79b61240::t_68d399927e6aac 1-11
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleResolutionKind.enum.js.map
+  s_8833aa79b61240::t_7acf6d88e44e11 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleResolutionKind.js
+  s_8833aa79b61240::t_08d911ae5e5279 1-11
+legacy/javascript-info-review/node_modules/typescript/dist/enums/moduleResolutionKind.js.map
+  s_8833aa79b61240::t_3e9bcbf75feaa2 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/newLineKind.d.ts
+  s_8833aa79b61240::t_026e2600da8eed 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/newLineKind.d.ts.map
+  s_8833aa79b61240::t_125adcf067e01c 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/newLineKind.enum.d.ts
+  s_8833aa79b61240::t_c4321b2d72c941 1-6
+legacy/javascript-info-review/node_modules/typescript/dist/enums/newLineKind.enum.d.ts.map
+  s_8833aa79b61240::t_9a209b2a32fceb 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/newLineKind.enum.js
+  s_8833aa79b61240::t_f908232a3f0d26 1-8
+legacy/javascript-info-review/node_modules/typescript/dist/enums/newLineKind.enum.js.map
+  s_8833aa79b61240::t_3bc02eb3965408 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/newLineKind.js
+  s_8833aa79b61240::t_43bbe7fd4dbddf 1-8
+legacy/javascript-info-review/node_modules/typescript/dist/enums/newLineKind.js.map
+  s_8833aa79b61240::t_3ab8d946bee654 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeBuilderFlags.d.ts
+  s_8833aa79b61240::t_c7ee7512246f07 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeBuilderFlags.d.ts.map
+  s_8833aa79b61240::t_6192431f3944a9 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeBuilderFlags.enum.d.ts
+  s_8833aa79b61240::t_bd721c73cfcc66 1-36
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeBuilderFlags.enum.d.ts.map
+  s_8833aa79b61240::t_28b67f115d706f 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeBuilderFlags.enum.js
+  s_8833aa79b61240::t_706c0b4ae3fae9 1-38
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeBuilderFlags.enum.js.map
+  s_8833aa79b61240::t_719c4bb8203cfc 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeBuilderFlags.js
+  s_8833aa79b61240::t_268825fd6f3b06 1-38
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeBuilderFlags.js.map
+  s_8833aa79b61240::t_1b3d836a040cac 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeFlags.d.ts
+  s_8833aa79b61240::t_b61409aeefcf74 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeFlags.d.ts.map
+  s_8833aa79b61240::t_e9edea976a7c99 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeFlags.enum.d.ts
+  s_8833aa79b61240::t_099fa59273963c 1-44
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeFlags.enum.d.ts.map
+  s_8833aa79b61240::t_1a43e6eb7f5080 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeFlags.enum.js
+  s_8833aa79b61240::t_b7c20b6c251e50 1-46
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeFlags.enum.js.map
+  s_8833aa79b61240::t_1c76365fd09866 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeFlags.js
+  s_8833aa79b61240::t_eb3ea2b192e8a6 1-46
+legacy/javascript-info-review/node_modules/typescript/dist/enums/nodeFlags.js.map
+  s_8833aa79b61240::t_eda66937ac8f60 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/objectFlags.d.ts
+  s_8833aa79b61240::t_1ffee881b1ad1d 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/objectFlags.d.ts.map
+  s_8833aa79b61240::t_68ae40813f93f7 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/objectFlags.enum.d.ts
+  s_8833aa79b61240::t_6906489ddfd720 1-50
+legacy/javascript-info-review/node_modules/typescript/dist/enums/objectFlags.enum.d.ts.map
+  s_8833aa79b61240::t_1474e44edbe86e 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/objectFlags.enum.js
+  s_8833aa79b61240::t_c6ef9c84144d06 1-52
+legacy/javascript-info-review/node_modules/typescript/dist/enums/objectFlags.enum.js.map
+  s_8833aa79b61240::t_7df042e9d4657c 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/objectFlags.js
+  s_8833aa79b61240::t_6107641b0efbc7 1-52
+legacy/javascript-info-review/node_modules/typescript/dist/enums/objectFlags.js.map
+  s_8833aa79b61240::t_4f29ba5f6ce142 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/outerExpressionKinds.d.ts
+  s_8833aa79b61240::t_156962abc73489 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/outerExpressionKinds.d.ts.map
+  s_8833aa79b61240::t_072482a379ce1e 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/outerExpressionKinds.enum.d.ts
+  s_8833aa79b61240::t_88cbfc81bcd850 1-16
+legacy/javascript-info-review/node_modules/typescript/dist/enums/outerExpressionKinds.enum.d.ts.map
+  s_8833aa79b61240::t_10fa730152bad0 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/outerExpressionKinds.enum.js
+  s_8833aa79b61240::t_003eaea95ecd89 1-18
+legacy/javascript-info-review/node_modules/typescript/dist/enums/outerExpressionKinds.enum.js.map
+  s_8833aa79b61240::t_6e965ded094702 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/outerExpressionKinds.js
+  s_8833aa79b61240::t_467a8a363e6630 1-18
+legacy/javascript-info-review/node_modules/typescript/dist/enums/outerExpressionKinds.js.map
+  s_8833aa79b61240::t_7fc99eec7e58e9 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/regularExpressionFlags.d.ts
+  s_8833aa79b61240::t_4e4d394541b50a 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/regularExpressionFlags.d.ts.map
+  s_8833aa79b61240::t_65b4102f1b93fb 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/regularExpressionFlags.enum.d.ts
+  s_8833aa79b61240::t_5c990f04df3d43 1-13
+legacy/javascript-info-review/node_modules/typescript/dist/enums/regularExpressionFlags.enum.d.ts.map
+  s_8833aa79b61240::t_b469957661ddd2 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/regularExpressionFlags.enum.js
+  s_8833aa79b61240::t_97c69d324152a3 1-14
+legacy/javascript-info-review/node_modules/typescript/dist/enums/regularExpressionFlags.enum.js.map
+  s_8833aa79b61240::t_3b794017ba33e0 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/regularExpressionFlags.js
+  s_8833aa79b61240::t_12d1ef8abe20f9 1-14
+legacy/javascript-info-review/node_modules/typescript/dist/enums/regularExpressionFlags.js.map
+  s_8833aa79b61240::t_cef53227a0c67c 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptKind.d.ts
+  s_8833aa79b61240::t_a6ac1a2f988ea3 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptKind.d.ts.map
+  s_8833aa79b61240::t_6602ed0162c03d 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptKind.enum.d.ts
+  s_8833aa79b61240::t_9832e37bc4a898 1-11
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptKind.enum.d.ts.map
+  s_8833aa79b61240::t_d2aa84260cdedf 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptKind.enum.js
+  s_8833aa79b61240::t_aeddfbd9ee63a8 1-12
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptKind.enum.js.map
+  s_8833aa79b61240::t_ecbbfeddcc3200 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptKind.js
+  s_8833aa79b61240::t_70dc78b8b876c9 1-12
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptKind.js.map
+  s_8833aa79b61240::t_e7426caadb4fc1 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptTarget.d.ts
+  s_8833aa79b61240::t_05d492129ac07f 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptTarget.d.ts.map
+  s_8833aa79b61240::t_30f91c954654e8 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptTarget.enum.d.ts
+  s_8833aa79b61240::t_5a8150400ea0d1 1-17
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptTarget.enum.d.ts.map
+  s_8833aa79b61240::t_69564ad57c2cb3 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptTarget.enum.js
+  s_8833aa79b61240::t_52b5be53605c09 1-18
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptTarget.enum.js.map
+  s_8833aa79b61240::t_ff037a2e5a05a9 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptTarget.js
+  s_8833aa79b61240::t_9d57237fb1f32b 1-18
+legacy/javascript-info-review/node_modules/typescript/dist/enums/scriptTarget.js.map
+  s_8833aa79b61240::t_c1cc9fd4729253 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureFlags.d.ts
+  s_8833aa79b61240::t_8718aaa4ffe84c 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureFlags.d.ts.map
+  s_8833aa79b61240::t_f498562f469cb0 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureFlags.enum.d.ts
+  s_8833aa79b61240::t_825457ed821529 1-15
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureFlags.enum.d.ts.map
+  s_8833aa79b61240::t_fba96e69fcc455 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureFlags.enum.js
+  s_8833aa79b61240::t_4c8c4cc4fcf60d 1-17
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureFlags.enum.js.map
+  s_8833aa79b61240::t_8e1f8421b23236 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureFlags.js
+  s_8833aa79b61240::t_e0ba873c1e7db8 1-17
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureFlags.js.map
+  s_8833aa79b61240::t_3f236aeb84e4f4 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureKind.d.ts
+  s_8833aa79b61240::t_c82871d7a31b43 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureKind.d.ts.map
+  s_8833aa79b61240::t_5893064a8d49c0 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureKind.enum.d.ts
+  s_8833aa79b61240::t_fd25031d35cfbb 1-5
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureKind.enum.d.ts.map
+  s_8833aa79b61240::t_1b305191447457 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureKind.enum.js
+  s_8833aa79b61240::t_84f3a6a3006416 1-7
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureKind.enum.js.map
+  s_8833aa79b61240::t_6d34af88ba343f 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureKind.js
+  s_8833aa79b61240::t_7baac062bc8a68 1-7
+legacy/javascript-info-review/node_modules/typescript/dist/enums/signatureKind.js.map
+  s_8833aa79b61240::t_c1bbd843c7aac0 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/symbolFlags.d.ts
+  s_8833aa79b61240::t_90615fa529b804 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/symbolFlags.d.ts.map
+  s_8833aa79b61240::t_9780173e7c3575 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/symbolFlags.enum.d.ts
+  s_8833aa79b61240::t_5ff20d6dbd7f0d 1-71
+legacy/javascript-info-review/node_modules/typescript/dist/enums/symbolFlags.enum.d.ts.map
+  s_8833aa79b61240::t_d67acd419cf3f7 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/symbolFlags.enum.js
+  s_8833aa79b61240::t_23edb5c283cc54 1-73
+legacy/javascript-info-review/node_modules/typescript/dist/enums/symbolFlags.enum.js.map
+  s_8833aa79b61240::t_385c4bc6734368 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/symbolFlags.js
+  s_8833aa79b61240::t_bbf93641521448 1-73
+legacy/javascript-info-review/node_modules/typescript/dist/enums/symbolFlags.js.map
+  s_8833aa79b61240::t_7324c4d70868ca 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/syntaxKind.d.ts
+  s_8833aa79b61240::t_734b77527fae8f 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/syntaxKind.d.ts.map
+  s_8833aa79b61240::t_33a40e9669d71c 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/syntaxKind.enum.d.ts
+  s_8833aa79b61240::t_edf6e887093355 1-389
+legacy/javascript-info-review/node_modules/typescript/dist/enums/syntaxKind.enum.d.ts.map
+  s_8833aa79b61240::t_6a27ba35bfe0e8 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/syntaxKind.enum.js
+  s_8833aa79b61240::t_1d95a3efde0b5a 1-391
+legacy/javascript-info-review/node_modules/typescript/dist/enums/syntaxKind.enum.js.map
+  s_8833aa79b61240::t_143172da7322d0 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/syntaxKind.js
+  s_8833aa79b61240::t_9049d2f462be41 1-391
+legacy/javascript-info-review/node_modules/typescript/dist/enums/syntaxKind.js.map
+  s_8833aa79b61240::t_5d9f6e228b5be3 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/tokenFlags.d.ts
+  s_8833aa79b61240::t_0592908c674871 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/tokenFlags.d.ts.map
+  s_8833aa79b61240::t_be4ca7bad55fcc 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/tokenFlags.enum.d.ts
+  s_8833aa79b61240::t_67860b97b00906 1-30
+legacy/javascript-info-review/node_modules/typescript/dist/enums/tokenFlags.enum.d.ts.map
+  s_8833aa79b61240::t_480b65a7398054 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/tokenFlags.enum.js
+  s_8833aa79b61240::t_b9f43a541c2168 1-32
+legacy/javascript-info-review/node_modules/typescript/dist/enums/tokenFlags.enum.js.map
+  s_8833aa79b61240::t_c4cd5a8be115a5 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/tokenFlags.js
+  s_8833aa79b61240::t_a9336849cd89c3 1-32
+legacy/javascript-info-review/node_modules/typescript/dist/enums/tokenFlags.js.map
+  s_8833aa79b61240::t_c848d3366282cc 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typeFlags.d.ts
+  s_8833aa79b61240::t_d01dce8042b124 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typeFlags.d.ts.map
+  s_8833aa79b61240::t_e9920ccc67ad27 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typeFlags.enum.d.ts
+  s_8833aa79b61240::t_cb279720ca8dce 1-76
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typeFlags.enum.d.ts.map
+  s_8833aa79b61240::t_18b0d8ee90c538 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typeFlags.enum.js
+  s_8833aa79b61240::t_f7a4e91a476a41 1-78
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typeFlags.enum.js.map
+  s_8833aa79b61240::t_477087342f05a7 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typeFlags.js
+  s_8833aa79b61240::t_2badfc9d034587 1-78
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typeFlags.js.map
+  s_8833aa79b61240::t_5293bec5960ce0 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typePredicateKind.d.ts
+  s_8833aa79b61240::t_98292ff0f3c832 1-2
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typePredicateKind.d.ts.map
+  s_8833aa79b61240::t_824a090940c73e 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typePredicateKind.enum.d.ts
+  s_8833aa79b61240::t_6850aae1e52ea9 1-7
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typePredicateKind.enum.d.ts.map
+  s_8833aa79b61240::t_51f07c670a47bf 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typePredicateKind.enum.js
+  s_8833aa79b61240::t_32827c77a0f572 1-9
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typePredicateKind.enum.js.map
+  s_8833aa79b61240::t_4daa5a68927b34 1
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typePredicateKind.js
+  s_8833aa79b61240::t_653aba33883a45 1-9
+legacy/javascript-info-review/node_modules/typescript/dist/enums/typePredicateKind.js.map
+  s_8833aa79b61240::t_51b2f3a9f79003 1
+legacy/javascript-info-review/node_modules/typescript/dist/internal/utils.d.ts
+  s_8833aa79b61240::t_e6cdbe8949e005 1-23
+legacy/javascript-info-review/node_modules/typescript/dist/internal/utils.d.ts.map
+  s_8833aa79b61240::t_40d2a6419f1467 1
+legacy/javascript-info-review/node_modules/typescript/dist/internal/utils.js
+  s_8833aa79b61240::t_9ced5318d2a202 1-25
+legacy/javascript-info-review/node_modules/typescript/dist/internal/utils.js.map
+  s_8833aa79b61240::t_13d658c11613d4 1
+legacy/javascript-info-review/node_modules/typescript/lib/getExePath.d.ts
+  s_8833aa79b61240::t_477da281da8fe3 1-2
+legacy/javascript-info-review/node_modules/typescript/lib/getExePath.js
+  s_8833aa79b61240::t_b610fddb9c3567 1-70
+legacy/javascript-info-review/node_modules/typescript/lib/tsc.js
+  s_8833aa79b61240::t_7bb30defc871d3 1-28
+legacy/javascript-info-review/node_modules/typescript/lib/version.cjs
+  s_8833aa79b61240::t_0c5a55e45620be 1-3
+legacy/javascript-info-review/node_modules/typescript/lib/version.d.cts
+  s_8833aa79b61240::t_0f1ca80cac781f 1-2
+legacy/javascript-info-review/node_modules/typescript/package.json
+  s_8833aa79b61240::t_13626b754d2371 1-87
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/License.txt
+  s_8833aa79b61240::t_7c108bd8d16337 1-11
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/README.md
+  s_8833aa79b61240::t_40597cdf5abfe4 1-54
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/browser/main.d.ts
+  s_8833aa79b61240::t_edd86d3a825151 1-17
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/browser/main.js
+  s_8833aa79b61240::t_80fe9b9503b88b 1-83
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/browser/ril.d.ts
+  s_8833aa79b61240::t_759b7360310acb 1-22
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/browser/ril.js
+  s_8833aa79b61240::t_7e7190c413634b 1-210
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/api.d.ts
+  s_8833aa79b61240::t_277cdf932e606e 1-14
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/api.js
+  s_8833aa79b61240::t_f08807bcce559b 1-87
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/cancellation.d.ts
+  s_8833aa79b61240::t_9da6d91b5a08ad 1-32
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/cancellation.js
+  s_8833aa79b61240::t_498d63941ea0f0 1-132
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/connection.d.ts
+  s_8833aa79b61240::t_7cfb177172cfc2 1-367
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/connection.js
+  s_8833aa79b61240::t_813601463df40f 1-1271
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/disposable.d.ts
+  s_8833aa79b61240::t_df462fc45c87aa 1-9
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/disposable.js
+  s_8833aa79b61240::t_6cee061de7c95b 1-16
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/encoding.d.ts
+  s_8833aa79b61240::t_e16336bcebbdb2 1-52
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/encoding.js
+  s_8833aa79b61240::t_b4bad0302e2509 1-70
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/events.d.ts
+  s_8833aa79b61240::t_10d8929b86ec11 1-39
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/events.js
+  s_8833aa79b61240::t_75f5eacaf1d95c 1-135
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/is.d.ts
+  s_8833aa79b61240::t_5520da88439236 1-7
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/is.js
+  s_8833aa79b61240::t_44de6add81c5ab 1-34
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/linkedMap.d.ts
+  s_8833aa79b61240::t_a63231f13aad56 1-55
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/linkedMap.js
+  s_8833aa79b61240::t_ccd09ad316e922 1-412
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/messageBuffer.d.ts
+  s_8833aa79b61240::t_7238ec26390769 1-18
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/messageBuffer.js
+  s_8833aa79b61240::t_40f92dc601ef8a 1-155
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/messageReader.d.ts
+  s_8833aa79b61240::t_bffaa6ebae6b92 1-77
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/messageReader.js
+  s_8833aa79b61240::t_0cab333f37c7be 1-246
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/messageWriter.d.ts
+  s_8833aa79b61240::t_d5f04acf923790 1-60
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/messageWriter.js
+  s_8833aa79b61240::t_a06aeba11e2100 1-157
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/messages.d.ts
+  s_8833aa79b61240::t_851faf22c446c5 1-369
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/messages.js
+  s_8833aa79b61240::t_ec11ef9e4ce920 1-436
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/ral.d.ts
+  s_8833aa79b61240::t_d81ac201845bd2 1-74
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/ral.js
+  s_8833aa79b61240::t_fa156bdf8dc2a7 1-23
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/semaphore.d.ts
+  s_8833aa79b61240::t_e3d714e0c8ee47 1-10
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/semaphore.js
+  s_8833aa79b61240::t_74b1b37324ba3b 1-74
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/sharedArrayCancellation.d.ts
+  s_8833aa79b61240::t_3cdf56360de7a3 1-15
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/common/sharedArrayCancellation.js
+  s_8833aa79b61240::t_a10ffc685869f6 1-77
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/node/main.d.ts
+  s_8833aa79b61240::t_d997c7be1f9757 1-58
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/node/main.js
+  s_8833aa79b61240::t_f5bfed0b217777 1-289
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/node/ril.d.ts
+  s_8833aa79b61240::t_b9c27480f1a739 1-12
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/lib/node/ril.js
+  s_8833aa79b61240::t_ade98bae3d0af2 1-163
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/package.json
+  s_8833aa79b61240::t_5d7dc6441c316a 1-54
+legacy/javascript-info-review/node_modules/typescript/vendor/vscode-jsonrpc/typings/thenable.d.ts
+  s_8833aa79b61240::t_e1c0cb93b58849 1-5
+legacy/javascript-info-review/node_modules/undici-types/LICENSE
+  s_8833aa79b61240::t_39a234dfae41e5 1-21
+legacy/javascript-info-review/node_modules/undici-types/README.md
+  s_8833aa79b61240::t_7d99067901777c 1-6
+legacy/javascript-info-review/node_modules/undici-types/agent.d.ts
+  s_8833aa79b61240::t_68ece49a3850d6 1-30
+legacy/javascript-info-review/node_modules/undici-types/api.d.ts
+  s_8833aa79b61240::t_75064ead580d10 1-43
+legacy/javascript-info-review/node_modules/undici-types/balanced-pool.d.ts
+  s_8833aa79b61240::t_da6a4570a5f876 1-30
+legacy/javascript-info-review/node_modules/undici-types/cache-interceptor.d.ts
+  s_8833aa79b61240::t_f934a54f599c75 1-179
+legacy/javascript-info-review/node_modules/undici-types/cache.d.ts
+  s_8833aa79b61240::t_ef7ac7b0d81cac 1-36
+legacy/javascript-info-review/node_modules/undici-types/client-stats.d.ts
+  s_8833aa79b61240::t_53d02eebe4a1c3 1-15
+legacy/javascript-info-review/node_modules/undici-types/client.d.ts
+  s_8833aa79b61240::t_e0a9057113e65b 1-129
+legacy/javascript-info-review/node_modules/undici-types/connector.d.ts
+  s_8833aa79b61240::t_d976bc01496acf 1-36
+legacy/javascript-info-review/node_modules/undici-types/content-type.d.ts
+  s_8833aa79b61240::t_efa471df524854 1-21
+legacy/javascript-info-review/node_modules/undici-types/cookies.d.ts
+  s_8833aa79b61240::t_9842b4d1afaaea 1-30
+legacy/javascript-info-review/node_modules/undici-types/diagnostics-channel.d.ts
+  s_8833aa79b61240::t_b6c7f81f4329f8 1-74
+legacy/javascript-info-review/node_modules/undici-types/dispatcher.d.ts
+  s_8833aa79b61240::t_5e048f438e7116 1-253
+legacy/javascript-info-review/node_modules/undici-types/dispatcher1-wrapper.d.ts
+  s_8833aa79b61240::t_e8e2bd85ce3cd1 1-7
+legacy/javascript-info-review/node_modules/undici-types/env-http-proxy-agent.d.ts
+  s_8833aa79b61240::t_809f30f0819932 1-22
+legacy/javascript-info-review/node_modules/undici-types/errors.d.ts
+  s_8833aa79b61240::t_a3fb07d1dcc665 1-177
+legacy/javascript-info-review/node_modules/undici-types/eventsource.d.ts
+  s_8833aa79b61240::t_aa5956df631a56 1-66
+legacy/javascript-info-review/node_modules/undici-types/fetch.d.ts
+  s_8833aa79b61240::t_88338859ebf327 1-231
+legacy/javascript-info-review/node_modules/undici-types/formdata.d.ts
+  s_8833aa79b61240::t_c05a2b19e7f7f9 1-108
+legacy/javascript-info-review/node_modules/undici-types/global-dispatcher.d.ts
+  s_8833aa79b61240::t_069df329161457 1-9
+legacy/javascript-info-review/node_modules/undici-types/global-origin.d.ts
+  s_8833aa79b61240::t_1818f77290b27f 1-7
+legacy/javascript-info-review/node_modules/undici-types/h2c-client.d.ts
+  s_8833aa79b61240::t_797bf6e6e53d1e 1-73
+legacy/javascript-info-review/node_modules/undici-types/handlers.d.ts
+  s_8833aa79b61240::t_bf402c70bb1e37 1-14
+legacy/javascript-info-review/node_modules/undici-types/header.d.ts
+  s_8833aa79b61240::t_fcf3f713c9b565 1-165
+legacy/javascript-info-review/node_modules/undici-types/index.d.ts
+  s_8833aa79b61240::t_f547d162722638 1-93
+legacy/javascript-info-review/node_modules/undici-types/interceptors.d.ts
+  s_8833aa79b61240::t_a9a8613de2c90b 1-80
+legacy/javascript-info-review/node_modules/undici-types/mock-agent.d.ts
+  s_8833aa79b61240::t_d13cd3684e8d22 1-68
+legacy/javascript-info-review/node_modules/undici-types/mock-call-history.d.ts
+  s_8833aa79b61240::t_0bae1a8c0b62b7 1-111
+legacy/javascript-info-review/node_modules/undici-types/mock-client.d.ts
+  s_8833aa79b61240::t_411dc77d3e1b01 1-27
+legacy/javascript-info-review/node_modules/undici-types/mock-errors.d.ts
+  s_8833aa79b61240::t_3d9b0c8c77835c 1-12
+legacy/javascript-info-review/node_modules/undici-types/mock-interceptor.d.ts
+  s_8833aa79b61240::t_b402ca299e4f3c 1-94
+legacy/javascript-info-review/node_modules/undici-types/mock-pool.d.ts
+  s_8833aa79b61240::t_84ba08b483f3e5 1-27
+legacy/javascript-info-review/node_modules/undici-types/package.json
+  s_8833aa79b61240::t_7397d765ec0f1a 1-55
+legacy/javascript-info-review/node_modules/undici-types/patch.d.ts
+  s_8833aa79b61240::t_baba9609ab9ec5 1-29
+legacy/javascript-info-review/node_modules/undici-types/pool-stats.d.ts
+  s_8833aa79b61240::t_3af69bded3506c 1-19
+legacy/javascript-info-review/node_modules/undici-types/pool.d.ts
+  s_8833aa79b61240::t_6ea21ffc464049 1-39
+legacy/javascript-info-review/node_modules/undici-types/proxy-agent.d.ts
+  s_8833aa79b61240::t_077ade3d4f2bbc 1-29
+legacy/javascript-info-review/node_modules/undici-types/readable.d.ts
+  s_8833aa79b61240::t_0fe967f785e88f 1-68
+legacy/javascript-info-review/node_modules/undici-types/retry-agent.d.ts
+  s_8833aa79b61240::t_8a16ec17c4b0f4 1-8
+legacy/javascript-info-review/node_modules/undici-types/retry-handler.d.ts
+  s_8833aa79b61240::t_b3186d4f63df12 1-125
+legacy/javascript-info-review/node_modules/undici-types/round-robin-pool.d.ts
+  s_8833aa79b61240::t_6c7994a9b1b62e 1-39
+legacy/javascript-info-review/node_modules/undici-types/snapshot-agent.d.ts
+  s_8833aa79b61240::t_fb6eede1c1a117 1-113
+legacy/javascript-info-review/node_modules/undici-types/socks5-proxy-agent.d.ts
+  s_8833aa79b61240::t_0dab30465d9fde 1-25
+legacy/javascript-info-review/node_modules/undici-types/util.d.ts
+  s_8833aa79b61240::t_9203fef0fd5b52 1-18
+legacy/javascript-info-review/node_modules/undici-types/utility.d.ts
+  s_8833aa79b61240::t_9b936da2c370a3 1-7
+legacy/javascript-info-review/node_modules/undici-types/webidl.d.ts
+  s_8833aa79b61240::t_e9a1e143078ee2 1-346
+legacy/javascript-info-review/node_modules/undici-types/websocket.d.ts
+  s_8833aa79b61240::t_1457c127b719ac 1-188
+legacy/javascript-info-review/package-lock.json
+  s_8833aa79b61240::t_7b8bf9de128419 1-927
+legacy/javascript-info-review/part1-language/04-objects-basics/this.js
+  s_8833aa79b61240::t_9a3f6a953efaa2 1-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "cdc15c1e96169c029c6d4cd4f0a5002f00489757",
+  "prompts": {},
+  "sessions": {
+    "s_0e5ee203bc3bc0": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f2eec-5a96-7aa2-a45c-ce269d1f296a",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    },
+    "s_8833aa79b61240": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a0ace153-f0fd-4a22-b919-38cae2425f2e",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
