@@ -1,0 +1,45 @@
+tests/unit/legacy-playground-scripts.test.ts
+  s_ca99aa2b0251f7::t_92f06330c6c3b7 1-75
+legacy/javascript-info-review/README.md
+  s_ca99aa2b0251f7::t_a181c4c0904ca3 12-14
+legacy/javascript-info-review/part2-browser/01-document/README.md
+  s_ca99aa2b0251f7::t_79bd167cbf1fcc 3
+legacy/javascript-info-review/part2-browser/02-events/README.md
+  s_ca99aa2b0251f7::t_39117bb3097da6 3
+legacy/javascript-info-review/part2-browser/03-ui-events/README.md
+  s_ca99aa2b0251f7::t_e0f30365310781 3
+legacy/javascript-info-review/part2-browser/04-forms/README.md
+  s_ca99aa2b0251f7::t_179b71cf761123 3
+legacy/javascript-info-review/part2-browser/05-resource-loading/README.md
+  s_ca99aa2b0251f7::t_c02c72c9534001 3
+legacy/javascript-info-review/part2-browser/06-misc/README.md
+  s_ca99aa2b0251f7::t_c3aff338411b48 3
+legacy/javascript-info-review/part3-extras/01-frames-windows/README.md
+  s_ca99aa2b0251f7::t_b03d5fe9141a89 3
+legacy/javascript-info-review/part3-extras/01-frames-windows/playground.js
+  s_ca99aa2b0251f7::t_814f776a36991f 1-90
+legacy/javascript-info-review/part3-extras/01-frames-windows/playground.ts
+  s_ca99aa2b0251f7::t_01d2d2744d4a7f 1-94
+legacy/javascript-info-review/part3-extras/04-storage/README.md
+  s_ca99aa2b0251f7::t_7060e10dcd90bc 3
+legacy/javascript-info-review/part3-extras/05-animation/README.md
+  s_ca99aa2b0251f7::t_a469415125c9f6 3
+legacy/javascript-info-review/part3-extras/06-web-components/README.md
+  s_ca99aa2b0251f7::t_01fe8ac315395b 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.11",
+  "base_commit_sha": "7d80eff627fbfc2ace141576d50b2af4c4d2d224",
+  "prompts": {},
+  "sessions": {
+    "s_ca99aa2b0251f7": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f49e9-61ed-75e1-ae98-2e32a94c9ab4",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Michael Shuff <mjshuff23@gmail.com>"
+    }
+  }
+}
