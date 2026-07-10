@@ -1,0 +1,16 @@
+{
+  "name": "javascript-info-review",
+  "version": "1.0.0",
+  "description": "Intermediate/expert JavaScript + TypeScript review structured after javascript.info",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check": "tsc --noEmit",
+    "serve": "npx serve ."
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2"
+  }
+}

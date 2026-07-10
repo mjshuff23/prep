@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Storage playground</title>
+  <style>
+    body { font-family: system-ui; margin: 2rem; max-width: 860px; }
+    section { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    button, input { margin: .25rem .25rem .25rem 0; }
+    output { display: block; background: #f6f6f6; padding: .5rem; margin-top: .5rem; white-space: pre-wrap; font-family: monospace; max-height: 220px; overflow: auto; }
+  </style>
+</head>
+<body>
+  <h1>Cookies, Web Storage, IndexedDB</h1>
+
+  <section>
+    <h2>1. Cookies via document.cookie</h2>
+    <input id="cookieValue" value="vanilla" />
+    <button id="setCookie">set cookie</button>
+    <button id="readCookie">read document.cookie</button>
+    <button id="clearCookie">expire cookie</button>
+    <output id="cookieOut"></output>
+  </section>
+
+  <section>
+    <h2>2. localStorage vs sessionStorage</h2>
+    <input id="storageValue" value="draft note" />
+    <button id="writeStorage">write both</button>
+    <button id="readStorage">read both</button>
+    <button id="openTwin">open same page in another tab</button>
+    <output id="storageOut"></output>
+  </section>
+
+  <section>
+    <h2>3. Minimal IndexedDB wrapper</h2>
+    <input id="noteText" value="IndexedDB note" />
+    <button id="addNote">add note</button>
+    <button id="listNotes">list notes</button>
+    <button id="clearNotes">clear notes</button>
+    <output id="idbOut"></output>
+  </section>
+
+  <script>
+    const log = (el, line) => {
+      el.textContent += line + "\n";
+      el.scrollTop = el.scrollHeight;
+    };
+
+    const cookieOut = document.getElementById("cookieOut");
+    const storageOut = document.getElementById("storageOut");
+    const idbOut = document.getElementById("idbOut");
+
+    document.getElementById("setCookie").addEventListener("click", () => {
+      const value = encodeURIComponent(document.getElementById("cookieValue").value);
+      document.cookie = `reviewCookie=${value}; max-age=3600; SameSite=Lax`;
+      log(cookieOut, "wrote one cookie assignment");
+    });
+
+    document.getElementById("readCookie").addEventListener("click", () => {
+      log(cookieOut, document.cookie || "(empty; cookies may require http://localhost)");
+    });
+
+    document.getElementById("clearCookie").addEventListener("click", () => {
+      document.cookie = "reviewCookie=; max-age=0; SameSite=Lax";
+      log(cookieOut, "expired reviewCookie");
+    });
+
+    window.addEventListener("storage", (event) => {
+      log(storageOut, `storage event from another tab: ${event.key} -> ${event.newValue}`);
+    });
+
+    document.getElementById("writeStorage").addEventListener("click", () => {
+      const value = document.getElementById("storageValue").value;
+      localStorage.setItem("js-info-review:local", value);
+      sessionStorage.setItem("js-info-review:session", value);
+      log(storageOut, "wrote localStorage and sessionStorage in this tab");
+    });
+
+    document.getElementById("readStorage").addEventListener("click", () => {
+      log(storageOut, `local: ${localStorage.getItem("js-info-review:local")}`);
+      log(storageOut, `session: ${sessionStorage.getItem("js-info-review:session")}`);
+    });
+
+    document.getElementById("openTwin").addEventListener("click", () => {
+      window.open(location.href, "storageTwin");
+      log(storageOut, "opened/reused a same-origin tab; write here and watch there");
+    });
+
+    const DB_NAME = "js-info-review-storage";
+    const STORE = "notes";
+
+    function openDb() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, 1);
+        request.onupgradeneeded = () => {
+          const db = request.result;
+          if (!db.objectStoreNames.contains(STORE)) {
+            db.createObjectStore(STORE, { keyPath: "id", autoIncrement: true });
+          }
+        };
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    }
+
+    async function addIndexedNote(text) {
+      const db = await openDb();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, "readwrite");
+        tx.objectStore(STORE).add({ text, createdAt: new Date().toISOString() });
+        tx.oncomplete = () => {
+          db.close();
+          resolve();
+        };
+        tx.onerror = () => {
+          db.close();
+          reject(tx.error);
+        };
+      });
+    }
+
+    async function listIndexedNotes() {
+      const db = await openDb();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, "readonly");
+        const request = tx.objectStore(STORE).getAll();
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+        tx.oncomplete = () => db.close();
+      });
+    }
+
+    async function clearIndexedNotes() {
+      const db = await openDb();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, "readwrite");
+        tx.objectStore(STORE).clear();
+        tx.oncomplete = () => {
+          db.close();
+          resolve();
+        };
+        tx.onerror = () => {
+          db.close();
+          reject(tx.error);
+        };
+      });
+    }
+
+    document.getElementById("addNote").addEventListener("click", async () => {
+      try {
+        await addIndexedNote(document.getElementById("noteText").value);
+        log(idbOut, "note stored in IndexedDB");
+      } catch (error) {
+        log(idbOut, `IndexedDB error: ${error.message}`);
+      }
+    });
+
+    document.getElementById("listNotes").addEventListener("click", async () => {
+      try {
+        const notes = await listIndexedNotes();
+        log(idbOut, notes.length ? JSON.stringify(notes, null, 2) : "(no notes)");
+      } catch (error) {
+        log(idbOut, `IndexedDB error: ${error.message}`);
+      }
+    });
+
+    document.getElementById("clearNotes").addEventListener("click", async () => {
+      try {
+        await clearIndexedNotes();
+        log(idbOut, "notes cleared");
+      } catch (error) {
+        log(idbOut, `IndexedDB error: ${error.message}`);
+      }
+    });
+  </script>
+</body>
+</html>

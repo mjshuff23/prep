@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Ch 3 — UI events playground</title>
+  <style>
+    body { font-family: system-ui; margin: 2rem; max-width: 760px; }
+    section { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    output { display: block; background: #f6f6f6; padding: .5rem; margin-top: .5rem; white-space: pre-wrap; font-family: monospace; max-height: 140px; overflow: auto; }
+    #hoverZone { display: flex; gap: 8px; padding: 12px; background: #eef; }
+    #hoverZone div { padding: 16px; background: #cce; }
+    #dragMe { width: 60px; height: 60px; background: coral; border-radius: 8px; position: relative; cursor: grab; touch-action: none; user-select: none; }
+    #dropTarget { width: 180px; height: 80px; border: 3px dashed #999; display: inline-block; vertical-align: top; margin-left: 2rem; }
+    #dropTarget.over { border-color: seagreen; background: #efe; }
+  </style>
+</head>
+<body>
+  <h1>UI events: mouse, mouseover vs mouseenter, pointer drag, keyboard, scroll</h1>
+
+  <section>
+    <h2>1. Mouse events &amp; modifiers (click, dblclick — watch the order)</h2>
+    <button id="mouseBtn">click / dblclick / shift-click me</button>
+    <output id="mouseOut"></output>
+  </section>
+
+  <section>
+    <h2>2. mouseover (bubbles, fires per child) vs mouseenter (no bubble, once)</h2>
+    <div id="hoverZone"><div>A</div><div>B</div><div>C</div></div>
+    <output id="hoverOut"></output>
+  </section>
+
+  <section>
+    <h2>3. Drag with POINTER events (works for mouse + touch + pen)</h2>
+    <div id="dragMe"></div><div id="dropTarget">drop zone</div>
+    <output id="dragOut"></output>
+  </section>
+
+  <section>
+    <h2>4. Keyboard: key vs code</h2>
+    <input id="kbdInput" placeholder="type here — try Shift, z, Ctrl+Z, arrows" />
+    <output id="kbdOut"></output>
+  </section>
+
+  <section>
+    <h2>5. Scroll (throttled log)</h2>
+    <output id="scrollOut">scroll the page…</output>
+  </section>
+
+<script>
+  const log = (el, ...a) => { el.textContent += a.join(" ") + "\n"; el.scrollTop = 1e9; };
+
+  // 1 ── Order for dblclick: mousedown mouseup click ×2 then dblclick.
+  for (const type of ["mousedown", "mouseup", "click", "dblclick", "contextmenu"]) {
+    mouseBtn.addEventListener(type, (e) => {
+      const mods = ["shift", "ctrl", "alt", "meta"].filter((m) => e[m + "Key"]).join("+");
+      log(mouseOut, `${type} button=${e.button}${mods ? " +" + mods : ""}`);
+      if (type === "contextmenu") e.preventDefault(); // suppress the browser menu here
+    });
+  }
+
+  // 2 ── Hover the A/B/C children and compare
+  hoverZone.addEventListener("mouseover", (e) =>
+    log(hoverOut, `mouseover: target=${e.target.textContent.trim().slice(0, 12)} relatedTarget=${e.relatedTarget?.tagName ?? "null"}`));
+  hoverZone.addEventListener("mouseenter", () =>
+    log(hoverOut, "mouseenter: fires ONCE per entry into the zone, children don't retrigger"));
+
+  // 3 ── The canonical drag'n'drop algorithm, in pointer events:
+  //     down → setPointerCapture → move (position by pageX/Y minus grab offset) → up
+  dragMe.addEventListener("pointerdown", (e) => {
+    const rect = dragMe.getBoundingClientRect();
+    const shiftX = e.clientX - rect.left; // grab point inside the element —
+    const shiftY = e.clientY - rect.top;  // without this, the corner "jumps" to the cursor
+    const startLeft = dragMe.offsetLeft, startTop = dragMe.offsetTop;
+
+    dragMe.setPointerCapture(e.pointerId); // capture: all moves come here even
+    // when the pointer leaves the element — no document-level listeners needed!
+
+    const onMove = (ev) => {
+      dragMe.style.left = ev.pageX - shiftX - (dragMe.offsetParent?.getBoundingClientRect().left ?? 0) - window.pageXOffset + "px";
+      dragMe.style.top = ev.pageY - shiftY - (dragMe.offsetParent?.getBoundingClientRect().top ?? 0) - window.pageYOffset + "px";
+      // droppable detection: the dragged element is under the cursor, so PEEK below it:
+      dragMe.hidden = true;
+      const below = document.elementFromPoint(ev.clientX, ev.clientY);
+      dragMe.hidden = false;
+      dropTarget.classList.toggle("over", !!below?.closest?.("#dropTarget"));
+    };
+    const onUp = () => {
+      dragMe.removeEventListener("pointermove", onMove);
+      dragMe.removeEventListener("pointerup", onUp);
+      log(dragOut, dropTarget.classList.contains("over") ? "dropped ON target ✓" : "released elsewhere");
+      dropTarget.classList.remove("over");
+    };
+    dragMe.addEventListener("pointermove", onMove);
+    dragMe.addEventListener("pointerup", onUp);
+    // (HTML5 native DnD — dragstart/dragover/drop — exists for cross-window/file
+    // drags but is clunkier; pointer events are the go-to for in-page dragging.)
+  });
+
+  // 4 ── key = the MEANING ("z", "Z", "Ω"); code = the PHYSICAL KEY ("KeyZ")
+  kbdInput.addEventListener("keydown", (e) => {
+    log(kbdOut, `key="${e.key}" code="${e.code}" repeat=${e.repeat}`);
+    if (e.ctrlKey && e.code === "KeyZ") log(kbdOut, "  hotkey by code — works on any layout position");
+    if (e.key === "ArrowDown") e.preventDefault(); // stop caret/scroll default
+  });
+
+  // 5 ── scroll fires A LOT — throttle before doing work
+  let scrollTicking = false;
+  document.addEventListener("scroll", () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {           // rAF-throttle: at most once per frame
+      log(scrollOut, "scrollY =", Math.round(window.scrollY));
+      scrollTicking = false;
+    });
+  }, { passive: true }); // passive: never blocks scrolling (can't preventDefault)
+</script>
+</body>
+</html>

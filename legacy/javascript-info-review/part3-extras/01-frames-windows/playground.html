@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Frames and windows playground</title>
+  <style>
+    body { font-family: system-ui; margin: 2rem; max-width: 860px; }
+    section { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    button { margin: .25rem .25rem .25rem 0; }
+    output { display: block; background: #f6f6f6; padding: .5rem; margin-top: .5rem; white-space: pre-wrap; font-family: monospace; max-height: 220px; overflow: auto; }
+    .clickjack-demo { position: relative; width: 340px; height: 150px; border: 1px solid #aaa; overflow: hidden; }
+    .clickjack-demo iframe { width: 100%; height: 100%; border: 0; }
+    .fake-overlay { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(255, 255, 255, .78); cursor: pointer; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>Popups, postMessage, and clickjacking</h1>
+
+  <section>
+    <h2>1. Popup plus postMessage</h2>
+    <button id="openPopup">open/reuse popup</button>
+    <button id="sendPopup">send message to popup</button>
+    <button id="checkPopup">check popup.closed</button>
+    <output id="popupOut"></output>
+  </section>
+
+  <section>
+    <h2>2. Clickjacking shape</h2>
+    <p>The pale overlay is what receives the click. The framed button underneath is the
+      real target an attacker would try to disguise.</p>
+    <div class="clickjack-demo">
+      <iframe
+        title="framed sensitive page"
+        srcdoc="<button style='margin:48px 80px;padding:12px 18px'>Sensitive action</button>">
+      </iframe>
+      <div id="fakeOverlay" class="fake-overlay">Click to claim prize</div>
+    </div>
+    <output id="frameOut"></output>
+  </section>
+
+  <script>
+    const popupOut = document.getElementById("popupOut");
+    const frameOut = document.getElementById("frameOut");
+    const log = (el, line) => {
+      el.textContent += line + "\n";
+      el.scrollTop = el.scrollHeight;
+    };
+
+    let child = null;
+
+    window.addEventListener("message", (event) => {
+      // Demo uses "*" because about:blank/file demos can have awkward origins.
+      // Production code should check event.origin and validate event.data.
+      log(popupOut, `parent received from ${event.origin}: ${JSON.stringify(event.data)}`);
+    });
+
+    document.getElementById("openPopup").addEventListener("click", () => {
+      child = window.open("", "jsInfoReviewPopup", "popup,width=430,height=310");
+      if (!child) {
+        log(popupOut, "popup blocked; allow popups for this page and try again");
+        return;
+      }
+
+      child.document.open();
+      child.document.write(`<!doctype html>
+        <html lang="en">
+        <head><meta charset="utf-8"><title>Child popup</title></head>
+        <body style="font-family:system-ui;margin:1.5rem">
+          <h1>Child popup</h1>
+          <button id="reply">postMessage to opener</button>
+          <output id="out" style="display:block;background:#f6f6f6;padding:.5rem;margin-top:.5rem;white-space:pre-wrap"></output>
+          <script>
+            const out = document.getElementById("out");
+            const write = (line) => out.textContent += line + "\\n";
+            window.addEventListener("message", (event) => {
+              write("child received: " + JSON.stringify(event.data));
+            });
+            document.getElementById("reply").addEventListener("click", () => {
+              opener.postMessage({ kind: "child-reply", at: Date.now() }, "*");
+            });
+            opener.postMessage({ kind: "child-ready" }, "*");
+          <\/script>
+        </body>
+        </html>`);
+      child.document.close();
+      child.focus();
+      log(popupOut, "opened/reused popup named jsInfoReviewPopup");
+    });
+
+    document.getElementById("sendPopup").addEventListener("click", () => {
+      if (!child || child.closed) {
+        log(popupOut, "open the popup first");
+        return;
+      }
+      child.postMessage({ kind: "parent-message", text: "hello from parent" }, "*");
+      log(popupOut, "parent sent message");
+    });
+
+    document.getElementById("checkPopup").addEventListener("click", () => {
+      log(popupOut, `popup.closed = ${child ? child.closed : "(no popup reference)"}`);
+    });
+
+    document.getElementById("fakeOverlay").addEventListener("click", () => {
+      log(frameOut, "overlay got the click; frame headers are the real defense");
+    });
+  </script>
+</body>
+</html>

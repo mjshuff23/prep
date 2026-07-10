@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Ch 5 — Resource loading playground</title>
+  <style>
+    body { font-family: system-ui; margin: 2rem; max-width: 760px; }
+    section { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    output { display: block; background: #f6f6f6; padding: .5rem; margin-top: .5rem; white-space: pre-wrap; font-family: monospace; max-height: 200px; overflow: auto; }
+  </style>
+  <script>
+    // Runs FIRST (blocking, in head): the DOM below doesn't exist yet.
+    window.timeline = [];
+    const mark = (what) => window.timeline.push(`${(performance.now()).toFixed(0)}ms — ${what}`);
+    mark("head script ran (document.body is " + document.body + ")");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      mark("DOMContentLoaded (DOM tree complete; images/styles may still load)");
+    });
+    window.addEventListener("load", () => {
+      mark("window load (EVERYTHING loaded: images, styles, iframes)");
+      document.getElementById("timelineOut").textContent = window.timeline.join("\n");
+    });
+    // beforeunload: ask before leaving (must preventDefault; custom text is ignored):
+    // window.addEventListener("beforeunload", (e) => e.preventDefault());
+    // unload/pagehide: last-gasp analytics — use navigator.sendBeacon(url, data),
+    // regular fetch may be killed mid-flight.
+  </script>
+</head>
+<body>
+  <h1>Resource loading: lifecycle, async/defer, onload/onerror</h1>
+
+  <section>
+    <h2>1. Page lifecycle timeline</h2>
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='20'%3E%3Ctext y='15'%3Eimg%3C/text%3E%3C/svg%3E" alt="tiny">
+    <output id="timelineOut">waiting for load…</output>
+  </section>
+
+  <section>
+    <h2>2. Dynamic script loading with onload/onerror</h2>
+    <button id="loadOk">load real script (data: URL)</button>
+    <button id="loadBad">load missing script</button>
+    <output id="scriptOut"></output>
+  </section>
+
+  <section>
+    <h2>3. async vs defer (concept demo)</h2>
+    <output id="conceptOut">— &lt;script&gt;            blocks parsing right there; DOM below is invisible to it
+— &lt;script defer&gt;   downloads in parallel, runs AFTER parsing, IN ORDER, before DOMContentLoaded
+— &lt;script async&gt;   downloads in parallel, runs WHENEVER READY, order = luck, DCL doesn't wait
+— type="module"      defer semantics by default (async attr opts into async)
+Rule: defer for app scripts that need each other; async for independents (analytics/ads).</output>
+  </section>
+
+<script>
+  const log = (el, ...a) => { el.textContent += a.join(" ") + "\n"; };
+
+  // 2 ── The dynamic-script pattern (how loaders/bundlers bootstrap):
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = src;
+      // Dynamic scripts behave ASYNC by default; set s.async = false to queue in order.
+      s.onload = () => resolve(s);
+      s.onerror = () => reject(new Error(`failed to load ${src}`)); // no HTTP details — just failed
+      document.head.append(s);
+    });
+  }
+  loadOk.onclick = async () => {
+    try {
+      await loadScript("data:text/javascript,window.dynamicRan=true");
+      log(scriptOut, "loaded ✓ dynamicRan =", window.dynamicRan);
+    } catch (e) { log(scriptOut, e.message); }
+  };
+  loadBad.onclick = async () => {
+    try {
+      await loadScript("./definitely-missing.js");
+    } catch (e) {
+      log(scriptOut, "onerror ✗", e.message);
+      // For runtime errors INSIDE loaded scripts: window.onerror — but cross-origin
+      // scripts report only "Script error." unless crossorigin + CORS headers agree.
+    }
+  };
+  // img.onload/onerror work the same; iframes fire load even on error pages.
+</script>
+</body>
+</html>

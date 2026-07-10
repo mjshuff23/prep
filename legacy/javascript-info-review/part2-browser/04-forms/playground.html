@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Ch 4 — Forms playground</title>
+  <style>
+    body { font-family: system-ui; margin: 2rem; max-width: 760px; }
+    section { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    output { display: block; background: #f6f6f6; padding: .5rem; margin-top: .5rem; white-space: pre-wrap; font-family: monospace; max-height: 140px; overflow: auto; }
+    .invalid { border: 2px solid crimson; }
+    label { display: block; margin: .25rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Forms: navigation, focus/blur, change/input, submit</h1>
+
+  <section>
+    <h2>1. Form navigation &amp; value extraction</h2>
+    <form name="order" id="orderForm">
+      <label>name: <input name="user" value="Ann"></label>
+      <label>size:
+        <select name="size">
+          <option value="s">small</option>
+          <option value="m" selected>medium</option>
+          <option value="l">large</option>
+        </select>
+      </label>
+      <label><input type="checkbox" name="gift" value="yes"> gift wrap</label>
+      <label><input type="radio" name="pay" value="card" checked> card</label>
+      <label><input type="radio" name="pay" value="cash"> cash</label>
+    </form>
+    <button id="navBtn">read the form via document.forms</button>
+    <output id="navOut"></output>
+  </section>
+
+  <section>
+    <h2>2. focus/blur, focusin delegation, tabindex</h2>
+    <form id="focusForm">
+      <input name="a" placeholder="field a">
+      <input name="b" placeholder="field b">
+      <span tabindex="0" style="border:1px dotted; padding:2px 6px">focusable span (tabindex=0)</span>
+    </form>
+    <output id="focusOut"></output>
+  </section>
+
+  <section>
+    <h2>3. input vs change (type in both, then tab away)</h2>
+    <label>input event: <input id="inputEv"></label>
+    <label>change event: <input id="changeEv"></label>
+    <output id="ioOut"></output>
+  </section>
+
+  <section>
+    <h2>4. submit: validate, prevent, FormData</h2>
+    <form id="loginForm">
+      <label>email: <input name="email" type="email" required placeholder="a@b.c"></label>
+      <label>password: <input name="password" type="password" minlength="4" required></label>
+      <button type="submit">Log in</button>
+    </form>
+    <output id="submitOut"></output>
+  </section>
+
+<script>
+  const log = (el, ...a) => { el.textContent += a.join(" ") + "\n"; el.scrollTop = 1e9; };
+
+  // 1 ── document.forms.name / form.elements.name — the classic navigation
+  navBtn.onclick = () => {
+    navOut.textContent = "";
+    const form = document.forms.order;            // by name (also document.forms[0])
+    const els = form.elements;
+    log(navOut, "user:", els.user.value);
+    log(navOut, "size:", els.size.value, "| selectedIndex:", els.size.selectedIndex);
+    log(navOut, "gift checked:", els.gift.checked); // checkboxes: .checked, not .value!
+    log(navOut, "pay (RadioNodeList.value):", els.pay.value); // radios group into one list
+    log(navOut, "element.form backreference:", els.user.form === form);
+    // Bulk extraction — FormData sees only named, enabled, checked-appropriate fields:
+    log(navOut, "FormData:", JSON.stringify(Object.fromEntries(new FormData(form))));
+  };
+
+  // 2 ── focus/blur don't bubble; focusin/focusout DO → delegation
+  focusForm.addEventListener("focusin", (e) =>
+    log(focusOut, "focusin →", e.target.name || e.target.tagName.toLowerCase()));
+  focusForm.addEventListener("focusout", (e) =>
+    log(focusOut, "focusout ←", e.target.name || e.target.tagName.toLowerCase()));
+  // tabindex=0 makes any element keyboard-focusable; -1 = script-focusable only.
+  // el.focus({preventScroll:true}), document.activeElement = who has focus now.
+
+  // 3 ── input: every value change, immediately (typing, paste, drop).
+  //      change: on COMMIT — blur for text fields, immediately for select/checkbox.
+  inputEv.addEventListener("input", (e) => log(ioOut, "input:", e.target.value));
+  changeEv.addEventListener("change", (e) => log(ioOut, "change (on blur):", e.target.value));
+  // Note: input is NOT cancelable — it fires after the fact; intercept keydown/beforeinput instead.
+
+  // 4 ── submit: fires on button click AND Enter; preventDefault stops navigation
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();                       // SPA-style handling
+    const data = new FormData(loginForm);     // name → value, ready for fetch body
+    const email = data.get("email");
+    // Constraint Validation API — the built-in validators, scriptable:
+    if (!loginForm.checkValidity()) {
+      log(submitOut, "invalid:", [...loginForm.elements]
+        .filter((el) => el.willValidate && !el.validity.valid)
+        .map((el) => `${el.name}(${el.validationMessage})`).join("; "));
+      return;
+    }
+    log(submitOut, `would fetch("/login", {method:"POST", body: FormData}) for ${email}`);
+    // form.submit() — programmatic submit, SKIPS the submit event & validation entirely.
+  });
+</script>
+</body>
+</html>

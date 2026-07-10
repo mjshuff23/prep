@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Ch 2 — Events playground</title>
+  <style>
+    body { font-family: system-ui; margin: 2rem; max-width: 760px; }
+    section { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    output { display: block; background: #f6f6f6; padding: .5rem; margin-top: .5rem; white-space: pre-wrap; font-family: monospace; max-height: 160px; overflow: auto; }
+    .box { padding: 20px; border: 2px solid; margin: 4px; }
+    #outer { border-color: tomato; } #middle { border-color: goldenrod; } #inner { border-color: seagreen; }
+    #menu button { margin: 2px; }
+  </style>
+</head>
+<body>
+  <h1>Events: bubbling, capturing, delegation, defaults, custom events</h1>
+
+  <section>
+    <h2>1. Bubbling &amp; capturing (click the green box)</h2>
+    <div id="outer" class="box">outer
+      <div id="middle" class="box">middle
+        <div id="inner" class="box">inner — click me</div>
+      </div>
+    </div>
+    <label><input type="checkbox" id="stopProp"> stopPropagation() at middle (bubbling)</label>
+    <output id="phaseOut"></output>
+  </section>
+
+  <section>
+    <h2>2. Event delegation — ONE listener, many buttons</h2>
+    <div id="menu">
+      <button data-action="save">Save</button>
+      <button data-action="load">Load</button>
+      <button data-action="search">Search</button>
+      <span>(not a button — clicks here are ignored)</span>
+    </div>
+    <output id="delegateOut"></output>
+  </section>
+
+  <section>
+    <h2>3. Default actions</h2>
+    <a href="https://javascript.info" id="link">a real link — click intercepted</a><br>
+    <label><input type="checkbox" id="allowDefault"> allow navigation</label>
+    <output id="defaultOut"></output>
+  </section>
+
+  <section>
+    <h2>4. Custom events</h2>
+    <button id="fireBtn">dispatch "user:login"</button>
+    <output id="customOut"></output>
+  </section>
+
+<script>
+  const log = (el, ...a) => { el.textContent += a.join(" ") + "\n"; el.scrollTop = 1e9; };
+
+  // 1 ── Both phases on all three boxes: capture runs root→target, bubble target→root
+  for (const id of ["outer", "middle", "inner"]) {
+    const el = document.getElementById(id);
+    el.addEventListener("click", (e) => {
+      log(phaseOut, `capturing: ${id} (target=${e.target.id}, currentTarget=${e.currentTarget.id})`);
+    }, { capture: true }); // 3rd arg {capture:true} — capture listeners are rare but exist
+    el.addEventListener("click", (e) => {
+      log(phaseOut, `bubbling:  ${id}`);
+      if (id === "middle" && stopProp.checked) {
+        e.stopPropagation();     // outer's bubble listener won't run
+        log(phaseOut, "  ✋ stopped at middle");
+      }
+    });
+  }
+  // Expected click on inner: capturing outer→middle→inner, then bubbling inner→middle→outer.
+
+  // 2 ── Delegation: one listener on the container, closest() finds the real target
+  menu.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-action]"); // survives nested spans/icons
+    if (!btn || !menu.contains(btn)) return;
+    log(delegateOut, `action: ${btn.dataset.action}`);
+    // New buttons added later Just Work — no listener wiring:
+    if (btn.dataset.action === "save") {
+      const extra = document.createElement("button");
+      extra.dataset.action = `dynamic-${Date.now() % 100}`;
+      extra.textContent = extra.dataset.action;
+      menu.append(extra);
+    }
+  });
+
+  // 3 ── preventDefault: the browser's built-in behavior is optional
+  link.addEventListener("click", (e) => {
+    if (!allowDefault.checked) {
+      e.preventDefault();        // stop navigation; propagation continues regardless!
+      log(defaultOut, "navigation prevented (e.defaultPrevented =", e.defaultPrevented + ")");
+    } else {
+      log(defaultOut, "navigating away…");
+    }
+  });
+  // passive:true tells the browser you WON'T preventDefault (smooth scroll on touch/wheel):
+  document.addEventListener("wheel", () => {}, { passive: true });
+
+  // 4 ── CustomEvent: your own event type + detail payload, through the same pipeline
+  document.addEventListener("user:login", (e) => {
+    log(customOut, `caught user:login for "${e.detail.name}" (bubbled to document)`);
+  });
+  fireBtn.addEventListener("user:login", (e) => log(customOut, "also seen on the button itself"));
+  fireBtn.onclick = () => {
+    const ok = fireBtn.dispatchEvent(new CustomEvent("user:login", {
+      bubbles: true,                     // default is false — non-bubbling customs are common bug #1
+      cancelable: true,                  // allows preventDefault by listeners
+      detail: { name: "Ann" },           // the payload convention
+    }));
+    log(customOut, "dispatchEvent returned", ok, "(false would mean a listener called preventDefault)");
+    // Note: dispatchEvent runs listeners SYNCHRONOUSLY, unlike real user events.
+  };
+</script>
+</body>
+</html>

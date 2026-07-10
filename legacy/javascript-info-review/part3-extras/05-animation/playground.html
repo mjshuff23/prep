@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Animation playground</title>
+  <style>
+    body { font-family: system-ui; margin: 2rem; max-width: 900px; }
+    section { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    button { margin: .25rem .25rem .25rem 0; }
+    output { display: block; background: #f6f6f6; padding: .5rem; margin-top: .5rem; white-space: pre-wrap; font-family: monospace; max-height: 220px; overflow: auto; }
+    .track { position: relative; height: 72px; border: 1px dashed #aaa; margin: 1rem 0; overflow: hidden; }
+    .box, .ball { width: 48px; height: 48px; border-radius: 8px; background: #28666e; transform: translateX(0); }
+    .box { transition-property: transform, background-color; transition-duration: 700ms; transition-timing-function: var(--ease, ease); }
+    .box.moved { transform: translateX(280px); background: #ef8354; }
+    .ball { position: absolute; left: 0; top: 12px; border-radius: 50%; background: #7c3aed; }
+    .swatches button { min-width: 9rem; }
+  </style>
+</head>
+<body>
+  <h1>CSS transitions and requestAnimationFrame</h1>
+
+  <section>
+    <h2>1. CSS transition timing functions</h2>
+    <div class="swatches">
+      <button data-ease="linear">linear</button>
+      <button data-ease="ease-in">ease-in</button>
+      <button data-ease="ease-out">ease-out</button>
+      <button data-ease="cubic-bezier(.2,.8,.2,1)">custom bezier</button>
+    </div>
+    <button id="toggleBox">toggle transform</button>
+    <div class="track"><div id="box" class="box"></div></div>
+    <output id="cssOut"></output>
+  </section>
+
+  <section>
+    <h2>2. JavaScript animation with rAF</h2>
+    <button id="runLinear">run linear</button>
+    <button id="runEaseOut">run ease-out</button>
+    <button id="cancelAnimation">cancel</button>
+    <div class="track"><div id="ball" class="ball"></div></div>
+    <output id="rafOut"></output>
+  </section>
+
+  <script>
+    const cssOut = document.getElementById("cssOut");
+    const rafOut = document.getElementById("rafOut");
+    const log = (el, line) => {
+      el.textContent += line + "\n";
+      el.scrollTop = el.scrollHeight;
+    };
+
+    const box = document.getElementById("box");
+    document.querySelectorAll("[data-ease]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const easing = button.dataset.ease;
+        box.style.setProperty("--ease", easing);
+        log(cssOut, `transition-timing-function = ${easing}`);
+      });
+    });
+
+    document.getElementById("toggleBox").addEventListener("click", () => {
+      box.classList.toggle("moved");
+      log(cssOut, "class changed; CSS owns the interpolation");
+    });
+
+    box.addEventListener("transitionend", (event) => {
+      log(cssOut, `transitionend for ${event.propertyName}`);
+    });
+
+    const ball = document.getElementById("ball");
+    let rafId = 0;
+
+    const easings = {
+      linear: (t) => t,
+      easeOut: (t) => 1 - Math.pow(1 - t, 3),
+    };
+
+    function animateBall(easeName) {
+      cancelAnimationFrame(rafId);
+      const ease = easings[easeName];
+      const start = performance.now();
+      const duration = 900;
+      const distance = 300;
+      log(rafOut, `start ${easeName}; position is time-based`);
+
+      function frame(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = ease(progress);
+        ball.style.transform = `translateX(${Math.round(eased * distance)}px)`;
+        if (progress < 1) {
+          rafId = requestAnimationFrame(frame);
+        } else {
+          log(rafOut, `done in ${Math.round(now - start)}ms`);
+        }
+      }
+
+      rafId = requestAnimationFrame(frame);
+    }
+
+    document.getElementById("runLinear").addEventListener("click", () => animateBall("linear"));
+    document.getElementById("runEaseOut").addEventListener("click", () => animateBall("easeOut"));
+    document.getElementById("cancelAnimation").addEventListener("click", () => {
+      cancelAnimationFrame(rafId);
+      log(rafOut, "canceled current rAF loop");
+    });
+  </script>
+</body>
+</html>

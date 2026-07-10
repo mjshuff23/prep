@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Ch 6 - Misc browser APIs playground</title>
+  <style>
+    body { font-family: system-ui; margin: 2rem; max-width: 860px; }
+    section { border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+    button { margin: .25rem .25rem .25rem 0; }
+    output { display: block; background: #f6f6f6; padding: .5rem; margin-top: .5rem; white-space: pre-wrap; font-family: monospace; max-height: 220px; overflow: auto; }
+    #watched { border: 1px dashed #888; padding: .75rem; margin-top: .5rem; }
+    #editable { border: 1px solid #aaa; border-radius: 6px; min-height: 4rem; padding: .75rem; line-height: 1.5; }
+    mark { background: #fff2a8; padding: 0 .15rem; }
+  </style>
+</head>
+<body>
+  <h1>MutationObserver, Selection and Range</h1>
+
+  <section>
+    <h2>1. MutationObserver batches DOM changes</h2>
+    <button id="addItem">append item</button>
+    <button id="changeAttr">change attribute</button>
+    <button id="editText">edit text node</button>
+    <button id="disconnectObserver">disconnect observer</button>
+    <div id="watched" data-version="0">
+      <p>Observed text</p>
+    </div>
+    <output id="mutationOut"></output>
+  </section>
+
+  <section>
+    <h2>2. Selection and Range are live DOM coordinates</h2>
+    <p>Select part of this editable text, then inspect or wrap it.</p>
+    <div id="editable" contenteditable="true">
+      JavaScript selections belong to the document. A Range stores boundary points,
+      not just copied text, so DOM edits can move the selection under your feet.
+    </div>
+    <button id="selectFirst">select first sentence</button>
+    <button id="inspectSelection">inspect selection</button>
+    <button id="wrapSelection">wrap selection with mark</button>
+    <button id="clearSelection">clear selection</button>
+    <output id="rangeOut"></output>
+  </section>
+
+  <script>
+    const write = (el, line) => {
+      el.textContent += line + "\n";
+      el.scrollTop = el.scrollHeight;
+    };
+
+    // 1 -- MutationObserver callbacks run as microtasks after the current script
+    // finishes. One callback can contain several MutationRecord objects.
+    const watched = document.getElementById("watched");
+    const mutationOut = document.getElementById("mutationOut");
+    const observer = new MutationObserver((records) => {
+      write(mutationOut, `observer callback: ${records.length} record(s)`);
+      for (const record of records) {
+        const target =
+          record.target instanceof Element
+            ? record.target.tagName.toLowerCase()
+            : "text node";
+        write(mutationOut, `- ${record.type} on ${target}`);
+      }
+    });
+    observer.observe(watched, {
+      childList: true,
+      attributes: true,
+      characterData: true,
+      subtree: true,
+      attributeOldValue: true,
+      characterDataOldValue: true,
+    });
+
+    let itemCount = 0;
+    document.getElementById("addItem").addEventListener("click", () => {
+      const item = document.createElement("p");
+      item.textContent = `Appended item ${++itemCount}`;
+      watched.append(item);
+      write(mutationOut, "sync: append() returned; observer has not run yet");
+    });
+    document.getElementById("changeAttr").addEventListener("click", () => {
+      const version = Number(watched.dataset.version ?? "0") + 1;
+      watched.dataset.version = String(version);
+      write(mutationOut, `sync: data-version is now ${version}`);
+    });
+    document.getElementById("editText").addEventListener("click", () => {
+      const text = watched.querySelector("p")?.firstChild;
+      if (text) text.textContent = `Observed text edited at ${new Date().toLocaleTimeString()}`;
+    });
+    document.getElementById("disconnectObserver").addEventListener("click", () => {
+      observer.disconnect();
+      write(mutationOut, "observer disconnected; future changes are silent");
+    });
+
+    // 2 -- Selection is the user-facing object; Range is the precise pair of DOM
+    // boundary points. Many editors keep their own model because DOM ranges are live.
+    const editable = document.getElementById("editable");
+    const rangeOut = document.getElementById("rangeOut");
+
+    function getCurrentRange() {
+      const selection = window.getSelection();
+      if (!selection || selection.rangeCount === 0) return null;
+      return selection.getRangeAt(0);
+    }
+
+    document.getElementById("selectFirst").addEventListener("click", () => {
+      const firstText = editable.firstChild;
+      if (!firstText) return;
+      const text = firstText.textContent ?? "";
+      const end = text.indexOf(".");
+      const range = document.createRange();
+      range.setStart(firstText, 0);
+      range.setEnd(firstText, end === -1 ? text.length : end + 1);
+      const selection = window.getSelection();
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+      write(rangeOut, "selected the first sentence programmatically");
+    });
+
+    document.getElementById("inspectSelection").addEventListener("click", () => {
+      const selection = window.getSelection();
+      const range = getCurrentRange();
+      if (!selection || !range) {
+        write(rangeOut, "no active selection");
+        return;
+      }
+      write(rangeOut, `text: "${selection.toString()}"`);
+      write(rangeOut, `collapsed: ${selection.isCollapsed}`);
+      write(rangeOut, `start: ${range.startContainer.nodeName} @ ${range.startOffset}`);
+      write(rangeOut, `end: ${range.endContainer.nodeName} @ ${range.endOffset}`);
+    });
+
+    document.getElementById("wrapSelection").addEventListener("click", () => {
+      const range = getCurrentRange();
+      if (!range || range.collapsed) {
+        write(rangeOut, "select some text first");
+        return;
+      }
+      const mark = document.createElement("mark");
+      try {
+        range.surroundContents(mark);
+      } catch {
+        // surroundContents throws if the range cuts across element boundaries.
+        mark.append(range.extractContents());
+        range.insertNode(mark);
+      }
+      window.getSelection()?.removeAllRanges();
+      write(rangeOut, "wrapped selection in <mark>");
+    });
+
+    document.getElementById("clearSelection").addEventListener("click", () => {
+      window.getSelection()?.removeAllRanges();
+      write(rangeOut, "selection cleared");
+    });
+  </script>
+</body>
+</html>
