@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit --project tsconfig.json && tsc --noEmit --project legacy/javascript-info-review/tsconfig.json",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
@@ -58,11 +58,5 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.1.9"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@prisma/engines",
-      "prisma"
-    ]
   }
 }
