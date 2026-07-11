@@ -28,33 +28,41 @@ class UserClass {
 }
 console.log(new UserClass("Ann")); // UserClass { isAdmin: false, name: 'Ann' }
 
-// ── Typing "any constructor of T": useful for factories/DI ──
-type Ctor<T, A extends unknown[] = any[]> = new (...args: A) => T;
+// ── Typing "any class that builds a value": useful for factories/DI ──
+type ConstructorThatCreates<CreatedValue, ConstructorArguments extends unknown[] = any[]> =
+  new (...args: ConstructorArguments) => CreatedValue;
 
-function build<T>(Ctor: Ctor<T, [string]>, arg: string): T {
-  return new Ctor(arg);
+function buildWithName<CreatedValue>(
+  ClassToBuild: ConstructorThatCreates<CreatedValue, [string]>,
+  name: string,
+): CreatedValue {
+  return new ClassToBuild(name);
 }
-console.log(build(UserClass, "Kim").name); // Kim
+console.log(buildWithName(UserClass, "Kim").name); // Kim
 
-// ── InstanceType / ConstructorParameters: derive types from the class ──
-type U = InstanceType<typeof UserClass>; // UserClass
-type Args = ConstructorParameters<typeof UserClass>; // [name: string]
-const args: Args = ["Lee"];
-const fromArgs: U = new UserClass(...args);
-console.log(fromArgs.name); // Lee
+// ── Derive useful types from an existing class ──
+type UserClassInstance = InstanceType<typeof UserClass>; // the object made by `new UserClass(...)`
+type UserClassConstructorArguments = ConstructorParameters<typeof UserClass>; // [name: string]
 
-// ── new.target is typed too (used for no-new guards / abstract-at-runtime) ──
-class OnlySubclassed {
+const savedConstructorArguments: UserClassConstructorArguments = ["Lee"];
+const userBuiltFromSavedArguments: UserClassInstance = new UserClass(...savedConstructorArguments);
+console.log(userBuiltFromSavedArguments.name); // Lee
+
+// ── new.target knows which class was actually called with `new` ──
+class MustBeSubclassed {
+  name = 'FakeName';
+  isSubclassed = true;
   constructor() {
-    if (new.target === OnlySubclassed) {
-      throw new Error("abstract"); // TS `abstract class` enforces this at compile time
+    if (new.target === MustBeSubclassed) {
+      throw new Error("use a subclass"); // TS `abstract class` enforces this at compile time
     }
   }
 }
-class Ok extends OnlySubclassed {}
-new Ok(); // fine
+class RealSubclass extends MustBeSubclassed {}
+const exampleRealSubclass = new RealSubclass();
+console.log(exampleRealSubclass.name, exampleRealSubclass.isSubclassed); // fine: new.target is RealSubclass, not MustBeSubclassed
 try {
-  new OnlySubclassed();
+  new MustBeSubclassed();
 } catch (e) {
-  console.log((e as Error).message); // abstract
+  console.log((e as Error).message); // use a subclass
 }

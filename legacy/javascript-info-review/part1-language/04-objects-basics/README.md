@@ -46,10 +46,10 @@ arrows perfect for callbacks inside methods, and wrong as methods themselves.
 
 The three ways to lose `this`, and the fixes:
 
-| How it's lost | Fix |
-|---|---|
-| `const f = obj.method; f()` | `obj.method.bind(obj)` |
-| `setTimeout(obj.method, 0)` | `setTimeout(() => obj.method(), 0)` |
+|         How it's lost       |                    Fix                   |
+|        --------------       |                    ---                   |
+| `const f = obj.method; f()` |          `obj.method.bind(obj)`          |
+| `setTimeout(obj.method, 0)` |    `setTimeout(() => obj.method(), 0)`   |
 | passing methods as handlers | class field arrow `method = () => {...}` |
 
 TS extra: `this` parameters (`function f(this: User)`) make detachment a *compile*

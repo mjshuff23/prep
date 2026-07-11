@@ -1,62 +1,86 @@
-// Object methods and "this" — javascript.info 4.4
-// Run: node this.js
-// NOTE: this file is an ES module, so it runs in strict mode automatically.
-
-// ── Rule: `this` is decided at CALL time by what's left of the dot ──
-const user = {
-  name: "John",
-  sayHi() {
-    console.log(`Hi, I'm ${this.name}`);
-  },
-};
-user.sayHi(); // "Hi, I'm John" — called as user.sayHi(), so this === user
-
-// ── Gotcha #1: detaching a method loses `this` ──
-const hi = user.sayHi; // just a function value now; the `user.` is gone
+// "this" — the TypeScript lens
+// Run: npx tsx this.ts
+// TS can TYPE `this` and catch detachment bugs at compile time.
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+// ── `this` parameter: a fake first parameter, erased at runtime ──
+function sayHi() {
+    console.log("Hi, I'm ".concat(this.name));
+}
+var user = { name: "John", sayHi: sayHi };
+user.sayHi(); // OK — this is { name: string }
+// sayHi();   // TS error: The 'this' context of type 'void' is not assignable
+// ── `this: void` forbids using this — good for callbacks you'll detach ──
+function onTick() {
+    console.log("tick");
+}
+setTimeout(onTick, 0); // safe by construction
+var testUser = { onTick: onTick };
+setTimeout(testUser.onTick, 0); // TS error: The 'this' context of type '{ onTick: () => void; }' is not assignable to method's 'this' of type 'void'.
+// ── Classes + strict mode: TS still can't stop runtime detachment... ──
+var Counter = /** @class */ (function () {
+    function Counter() {
+        var _this = this;
+        this.n = 0;
+        // Arrow property: `this` is bound per-instance at construction time.
+        // Costs one closure per instance, but survives detachment.
+        this.reset = function () {
+            _this.n = 0;
+        };
+    }
+    Counter.prototype.inc = function () {
+        this.n++;
+        return this;
+    };
+    return Counter;
+}());
+var c = new Counter();
+var inc = c.inc;
 try {
-  hi(); // strict mode: this === undefined → TypeError reading .name
-} catch (e) {
-  console.log(e.constructor.name); // TypeError
+    inc(); // compiles (method type doesn't track its receiver) — runtime TypeError
 }
-// (In sloppy mode `this` would be globalThis — arguably worse: silent bugs.)
-
-// ── Gotcha #2: passing a method as a callback is the same detachment ──
-setTimeout(user.sayHi.bind(user), 0); // fix: bind (or () => user.sayHi())
-// setTimeout(user.sayHi, 0)          // would throw like above
-
-// ── Two objects sharing one function: this follows the call site ──
-function whoAmI() {
-  console.log(this.name);
+catch (e) {
+    console.log(e.constructor.name); // TypeError
 }
-const a = { name: "A", whoAmI };
-const b = { name: "B", whoAmI };
-a.whoAmI(); // "A"
-b.whoAmI(); // "B"
-
-// ── Arrow functions have NO own `this`: they capture the enclosing one ──
-const team = {
-  title: "core",
-  members: ["ann", "bob"],
-  list() {
-    // arrow inherits `this` from list() → team. A regular function wouldn't.
-    this.members.forEach((m) => console.log(`${this.title}: ${m}`));
-  },
-};
-team.list(); // "core: ann" / "core: bob"
-
-// ── ...which also means arrows make BAD methods ──
-const broken = {
-  name: "obj",
-  greet: () => console.log(this?.name), // `this` = module scope (undefined), not broken
-};
-broken.greet(); // undefined — the object literal does NOT create a this scope
-
-// ── Chaining: return this ──
-const counter = {
-  n: 0,
-  inc() {
-    this.n++;
-    return this; // enables chaining
-  },
-};
-console.log(counter.inc().inc().inc().n); // 3
+var reset = c.reset;
+reset(); // fine — arrow captured the instance
+console.log(c.n); // 0
+// ── Polymorphic `this` type: fluent APIs that survive subclassing ──
+var QueryBuilder = /** @class */ (function () {
+    function QueryBuilder() {
+        this.parts = [];
+    }
+    QueryBuilder.prototype.where = function (clause) {
+        // `this` type, not `QueryBuilder`
+        this.parts.push(clause);
+        return this;
+    };
+    return QueryBuilder;
+}());
+var SqlQueryBuilder = /** @class */ (function (_super) {
+    __extends(SqlQueryBuilder, _super);
+    function SqlQueryBuilder() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SqlQueryBuilder.prototype.orderBy = function (col) {
+        this.parts.push("ORDER BY ".concat(col));
+        return this;
+    };
+    return SqlQueryBuilder;
+}(QueryBuilder));
+// Because where() returns `this` (not QueryBuilder), chaining keeps the subtype:
+var q = new SqlQueryBuilder().where("x = 1").orderBy("y"); // OK
+console.log(q.parts); // [ 'x = 1', 'ORDER BY y' ]

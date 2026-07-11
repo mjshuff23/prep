@@ -17,11 +17,13 @@ console.log(u.name, u.isAdmin); // Jack false
 // ── Gotcha: forgetting `new` ──
 // In strict mode (modules), this === undefined → TypeError. In sloppy mode it
 // would silently pollute globalThis. new.target lets a function detect the mode:
-function Guarded(name) {
-  if (!new.target) return new Guarded(name); // called without new? fix it up
+function GuardedUser(name) {
+  if (!new.target) return new GuardedUser(name); // called without new? fix it up
   this.name = name;
+  this.isAdmin = false;
 }
-console.log(Guarded("no-new").name); // "no-new" — still worked
+
+console.log(GuardedUser("Jill").name, GuardedUser("Jill").isAdmin); // Jill false
 
 // ── Return-value rule: returned OBJECTS replace this, primitives are ignored ──
 function BigUser() {
