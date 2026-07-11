@@ -9,7 +9,9 @@ picture), structured after [javascript.info](https://javascript.info). Every cha
 - **`*.ts`** — the same ideas through TypeScript's lens: what the type system adds,
   catches, or forces you to think about. All pass strict `tsc`.
 - **`*.html`** — self-contained playgrounds for DOM-bound chapters (Part 2 and some
-  of Part 3). Open directly in a browser or `npm run serve`.
+  of Part 3). Playground HTML imports readable `playground.js` files and keeps
+  matching `playground.ts` sidecars for strict type-checking. Open directly in a
+  browser or `npm run serve`.
 
 ## Setup & running
 

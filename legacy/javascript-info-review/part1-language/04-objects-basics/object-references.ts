@@ -2,30 +2,30 @@
 // Run: npx tsx object-references.ts
 
 // TS types describe SHAPES, not identity — the reference semantics are identical.
-// What TS adds: `readonly` and `Readonly<T>` to make "const-ness" reach into objects.
+// What TS adds: `readonly` and `Readonly<Type>` to make "const-ness" reach into objects.
 
-interface Sizes {
+interface Dimensions {
   w: number;
   h: number;
 }
 interface User {
   name: string;
-  sizes: Sizes;
+  dimensions: Dimensions;
 }
 
-const user: User = { name: "Ann", sizes: { w: 10, h: 20 } };
+const user: User = { name: "Ann", dimensions: { w: 10, h: 20 } };
 
 // ── `const` vs `readonly`: const stops rebinding; readonly stops mutation ──
 const frozen: Readonly<User> = user;
 // frozen.name = "Bea"; // TS error: Cannot assign to 'name' (read-only)
 // ...but Readonly is SHALLOW, same as the runtime spread gotcha:
-frozen.sizes.w = 99; // compiles! sizes itself isn't readonly
-console.log(user.sizes.w); // 99
+frozen.dimensions.w = 99; // compiles! dimensions itself isn't readonly
+console.log(user.dimensions.w); // 99
 
 // A DeepReadonly must be built recursively (or use a lib):
-type DeepReadonly<T> = { readonly [K in keyof T]: DeepReadonly<T[K]> };
+type DeepReadonly<Type> = { readonly [Key in keyof Type]: DeepReadonly<Type[Key]> };
 const deepFrozen: DeepReadonly<User> = user;
-// deepFrozen.sizes.w = 1; // TS error now — the mapped type recursed
+// deepFrozen.dimensions.w = 1; // TS error now — the mapped type recursed
 
 // ── readonly is COMPILE-TIME only; Object.freeze is runtime (also shallow) ──
 const cfg = Object.freeze({ debug: false, nested: { x: 1 } });
@@ -33,10 +33,10 @@ const cfg = Object.freeze({ debug: false, nested: { x: 1 } });
 cfg.nested.x = 2; // freeze is shallow too — this works
 console.log(cfg.nested.x); // 2
 
-// ── structuredClone is typed: it returns the same T ──
+// ── structuredClone is typed: it returns the same Type ──
 const clone: User = structuredClone(user);
-clone.sizes.h = 1;
-console.log(user.sizes.h, clone.sizes.h); // 20 1
+clone.dimensions.h = 1;
+console.log(user.dimensions.h, clone.dimensions.h); // 20 1
 
 // ── Structural typing gotcha: two different objects, same type, equal never ──
 const a = { name: "x" };

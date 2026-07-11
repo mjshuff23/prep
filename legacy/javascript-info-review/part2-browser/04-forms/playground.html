@@ -60,52 +60,6 @@
     <output id="submitOut"></output>
   </section>
 
-<script>
-  const log = (el, ...a) => { el.textContent += a.join(" ") + "\n"; el.scrollTop = 1e9; };
-
-  // 1 ── document.forms.name / form.elements.name — the classic navigation
-  navBtn.onclick = () => {
-    navOut.textContent = "";
-    const form = document.forms.order;            // by name (also document.forms[0])
-    const els = form.elements;
-    log(navOut, "user:", els.user.value);
-    log(navOut, "size:", els.size.value, "| selectedIndex:", els.size.selectedIndex);
-    log(navOut, "gift checked:", els.gift.checked); // checkboxes: .checked, not .value!
-    log(navOut, "pay (RadioNodeList.value):", els.pay.value); // radios group into one list
-    log(navOut, "element.form backreference:", els.user.form === form);
-    // Bulk extraction — FormData sees only named, enabled, checked-appropriate fields:
-    log(navOut, "FormData:", JSON.stringify(Object.fromEntries(new FormData(form))));
-  };
-
-  // 2 ── focus/blur don't bubble; focusin/focusout DO → delegation
-  focusForm.addEventListener("focusin", (e) =>
-    log(focusOut, "focusin →", e.target.name || e.target.tagName.toLowerCase()));
-  focusForm.addEventListener("focusout", (e) =>
-    log(focusOut, "focusout ←", e.target.name || e.target.tagName.toLowerCase()));
-  // tabindex=0 makes any element keyboard-focusable; -1 = script-focusable only.
-  // el.focus({preventScroll:true}), document.activeElement = who has focus now.
-
-  // 3 ── input: every value change, immediately (typing, paste, drop).
-  //      change: on COMMIT — blur for text fields, immediately for select/checkbox.
-  inputEv.addEventListener("input", (e) => log(ioOut, "input:", e.target.value));
-  changeEv.addEventListener("change", (e) => log(ioOut, "change (on blur):", e.target.value));
-  // Note: input is NOT cancelable — it fires after the fact; intercept keydown/beforeinput instead.
-
-  // 4 ── submit: fires on button click AND Enter; preventDefault stops navigation
-  loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();                       // SPA-style handling
-    const data = new FormData(loginForm);     // name → value, ready for fetch body
-    const email = data.get("email");
-    // Constraint Validation API — the built-in validators, scriptable:
-    if (!loginForm.checkValidity()) {
-      log(submitOut, "invalid:", [...loginForm.elements]
-        .filter((el) => el.willValidate && !el.validity.valid)
-        .map((el) => `${el.name}(${el.validationMessage})`).join("; "));
-      return;
-    }
-    log(submitOut, `would fetch("/login", {method:"POST", body: FormData}) for ${email}`);
-    // form.submit() — programmatic submit, SKIPS the submit event & validation entirely.
-  });
-</script>
+<script src="./playground.js"></script>
 </body>
 </html>

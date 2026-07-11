@@ -1,6 +1,6 @@
 # Part 2.5 - Document and resource loading
 
-Files: `playground.html` (3 interactive sections)
+Files: `playground.html` · `playground-head.js` · `playground-head.ts` · `playground.js` · `playground.ts` (3 interactive sections)
 
 ## Page lifecycle
 

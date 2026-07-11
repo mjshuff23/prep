@@ -1,6 +1,6 @@
 # Part 2.2 — Introduction to Events
 
-Files: `playground.html` (4 interactive sections) · `events.ts`
+Files: `playground.html` · `playground.js` · `playground.ts` (4 interactive sections) · `events.ts`
 
 ## The dispatch model: three phases
 

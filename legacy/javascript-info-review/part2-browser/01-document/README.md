@@ -1,6 +1,6 @@
 # Part 2.1 — Document
 
-Files: `playground.html` (open in a browser — 5 interactive sections) · `dom.ts`
+Files: `playground.html` · `playground.js` · `playground.ts` (5 interactive sections) · `dom.ts`
 
 ## The DOM in one paragraph
 

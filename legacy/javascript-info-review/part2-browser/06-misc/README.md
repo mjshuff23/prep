@@ -1,7 +1,6 @@
 # Part 2.6 - Miscellaneous browser APIs
 
-Files: `playground.html` (MutationObserver + Selection/Range) - `event-loop.js` -
-`event-loop.ts`
+Files: `playground.html` · `playground.js` · `playground.ts` (MutationObserver + Selection/Range) - `event-loop.js` - `event-loop.ts`
 
 ## MutationObserver
 

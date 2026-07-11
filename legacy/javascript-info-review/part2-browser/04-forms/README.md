@@ -1,6 +1,6 @@
 # Part 2.4 — Forms, controls
 
-Files: `playground.html` (4 interactive sections)
+Files: `playground.html` · `playground.js` · `playground.ts` (4 interactive sections)
 
 ## Navigation & values
 

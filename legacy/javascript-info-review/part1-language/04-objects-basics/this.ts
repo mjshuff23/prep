@@ -10,11 +10,26 @@ const user = { name: "John", sayHi };
 user.sayHi(); // OK — this is { name: string }
 // sayHi();   // TS error: The 'this' context of type 'void' is not assignable
 
-// ── `this: void` forbids using this — good for callbacks you'll detach ──
+// ── `this: void` means "this callback must not need a receiver" ──
 function onTick(this: void) {
   console.log("tick");
 }
-setTimeout(onTick, 0); // safe by construction
+setTimeout(onTick, 0); // safe: onTick does not need any `this` value
+
+function runDetached(callback: (this: void) => void) {
+  callback();
+}
+
+const timerOwner = {
+  name: "TimerOwner",
+  tick(this: { name: string }) {
+    console.log(`${this.name} tick`);
+  },
+};
+
+runDetached(onTick); // OK
+// runDetached(timerOwner.tick); // TS error: this callback needs `{ name: string }`
+runDetached(timerOwner.tick.bind(timerOwner)); // OK: bind supplies the missing this
 
 // ── Classes + strict mode: TS still can't stop runtime detachment... ──
 class Counter {

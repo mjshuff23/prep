@@ -1,6 +1,6 @@
 # Part 3.6 - Web components
 
-Files: `playground.html` (custom elements, Shadow DOM, slots, styling, events)
+Files: `playground.html` · `playground.js` · `playground.ts` (custom elements, Shadow DOM, slots, styling, events)
 
 ## From the orbital height
 
