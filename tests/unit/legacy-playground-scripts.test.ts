@@ -40,9 +40,16 @@ describe('legacy JavaScript.info playground scripts', () => {
     const inlineScriptLocations = playgrounds.flatMap((filePath) => {
       const html = readFileSync(filePath, 'utf8')
 
-      return [...html.matchAll(/<script\b(?![^>]*\bsrc\s*=)[^>]*>[\s\S]*?<\/script>/gi)].map(
-        (match) => `${relativeToRepo(filePath)}:${lineForIndex(html, match.index ?? 0)}`,
-      )
+      return [...html.matchAll(/<script\b(?![^>]*\bsrc\s*=)[^>]*>[\s\S]*?<\/script>/gi)]
+        .filter((match) => {
+          const typeMatch = match[0].match(/^<script\b[^>]*\btype\s*=\s*["']?([^"'>\s]+)["']?/i)
+          if (!typeMatch) return true
+          const type = typeMatch[1].toLowerCase()
+          return ['text/javascript', 'module', 'application/javascript'].includes(type)
+        })
+        .map(
+          (match) => `${relativeToRepo(filePath)}:${lineForIndex(html, match.index ?? 0)}`,
+        )
     })
 
     expect(inlineScriptLocations).toEqual([])

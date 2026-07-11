@@ -105,7 +105,10 @@ async function listIndexedNotes(): Promise<StoredNote[]> {
     const tx = db.transaction(STORE, "readonly");
     const request = tx.objectStore(STORE).getAll();
     request.onsuccess = () => resolve(request.result as StoredNote[]);
-    request.onerror = () => reject(request.error);
+    request.onerror = () => {
+      db.close();
+      reject(request.error);
+    };
     tx.oncomplete = () => db.close();
   });
 }

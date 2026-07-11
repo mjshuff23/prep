@@ -73,7 +73,8 @@ function getCurrentRange() {
 }
 
 selectFirst.addEventListener("click", () => {
-  const firstText = editable.firstChild;
+  const walker = document.createTreeWalker(editable, NodeFilter.SHOW_TEXT);
+  const firstText = walker.nextNode();
   if (!firstText) return;
   const text = firstText.textContent ?? "";
   const end = text.indexOf(".");

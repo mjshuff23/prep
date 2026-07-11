@@ -60,7 +60,7 @@ class MustBeSubclassed {
 }
 class RealSubclass extends MustBeSubclassed {}
 const exampleRealSubclass = new RealSubclass();
-console.log(exampleRealSubclass.name, exampleRealSubclass.isSubclassed); // fine: new.target is RealSubclass, not MustBeSubclassed
+console.log(exampleRealSubclass.name, exampleRealSubclass.isSubclassed); // FakeName true
 try {
   new MustBeSubclassed();
 } catch (e) {

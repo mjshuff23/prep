@@ -70,6 +70,8 @@ inputEv.addEventListener("input", () => log(ioOut, "input:", inputEv.value));
 changeEv.addEventListener("change", () => log(ioOut, "change (on blur):", changeEv.value));
 // Note: input is NOT cancelable -- it fires after the fact; intercept keydown/beforeinput instead.
 
+loginForm.noValidate = true;
+
 // 4 -- submit: fires on button click AND Enter; preventDefault stops navigation
 loginForm.addEventListener("submit", (event) => {
   event.preventDefault(); // SPA-style handling

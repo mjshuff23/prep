@@ -70,11 +70,13 @@ dragMe.addEventListener("pointerdown", (event) => {
   const onUp = () => {
     dragMe.removeEventListener("pointermove", onMove);
     dragMe.removeEventListener("pointerup", onUp);
+    dragMe.removeEventListener("pointercancel", onUp);
     log(dragOut, dropTarget.classList.contains("over") ? "dropped ON target" : "released elsewhere");
     dropTarget.classList.remove("over");
   };
   dragMe.addEventListener("pointermove", onMove);
   dragMe.addEventListener("pointerup", onUp);
+  dragMe.addEventListener("pointercancel", onUp);
   // HTML5 native DnD exists for cross-window/file drags but is clunkier;
   // pointer events are the go-to for in-page dragging.
 });
